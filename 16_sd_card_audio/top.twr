@@ -1,0 +1,1079 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf sd_card_audio.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 952 paths analyzed, 485 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   8.000ns.
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/txr_3 (SLICE_X23Y31.A4), 9 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.329ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_7 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.610ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.518 - 0.544)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_7 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y32.DQ      Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_7
+    SLICE_X23Y31.B2      net (fanout=2)        0.775   i2c_config_m0/lut_index<7>
+    SLICE_X23Y31.B       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       lut_wm8731_m0/_n0036<9>1
+    SLICE_X23Y31.C4      net (fanout=6)        0.335   lut_wm8731_m0/_n0036
+    SLICE_X23Y31.CMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>_SW0
+    SLICE_X23Y31.A4      net (fanout=1)        1.006   N34
+    SLICE_X23Y31.CLK     Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.610ns (1.494ns logic, 2.116ns route)
+                                                       (41.4% logic, 58.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.351ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_4 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.588ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.518 - 0.544)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_4 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y32.AQ      Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_4
+    SLICE_X23Y31.B1      net (fanout=2)        0.753   i2c_config_m0/lut_index<4>
+    SLICE_X23Y31.B       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       lut_wm8731_m0/_n0036<9>1
+    SLICE_X23Y31.C4      net (fanout=6)        0.335   lut_wm8731_m0/_n0036
+    SLICE_X23Y31.CMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>_SW0
+    SLICE_X23Y31.A4      net (fanout=1)        1.006   N34
+    SLICE_X23Y31.CLK     Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.588ns (1.494ns logic, 2.094ns route)
+                                                       (41.6% logic, 58.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.464ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_6 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.475ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.518 - 0.544)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_6 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y32.CQ      Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_6
+    SLICE_X23Y31.B3      net (fanout=2)        0.640   i2c_config_m0/lut_index<6>
+    SLICE_X23Y31.B       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       lut_wm8731_m0/_n0036<9>1
+    SLICE_X23Y31.C4      net (fanout=6)        0.335   lut_wm8731_m0/_n0036
+    SLICE_X23Y31.CMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>_SW0
+    SLICE_X23Y31.A4      net (fanout=1)        1.006   N34
+    SLICE_X23Y31.CLK     Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      3.475ns (1.494ns logic, 1.981ns route)
+                                                       (43.0% logic, 57.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1 (SLICE_X20Y28.C3), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.379ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.563ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.023ns (0.302 - 0.325)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y27.AMUX    Tshcko                0.518   i2c_config_m0/i2c_master_top_m0/byte_controller/rst_i2c_al_OR_229_o
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack
+    SLICE_X21Y28.A2      net (fanout=15)       1.036   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.C3      net (fanout=3)        0.584   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<1>1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.563ns (1.463ns logic, 2.100ns route)
+                                                       (41.1% logic, 58.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.625ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.318ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.302 - 0.324)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y28.AQ      Tcko                  0.525   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack
+    SLICE_X21Y28.A1      net (fanout=12)       0.784   i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.C3      net (fanout=3)        0.584   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<1>1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.318ns (1.470ns logic, 1.848ns route)
+                                                       (44.3% logic, 55.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.793ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.150ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.302 - 0.324)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1 to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y28.CQ      Tcko                  0.525   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+    SLICE_X21Y28.A3      net (fanout=11)       0.616   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.C3      net (fanout=3)        0.584   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<1>1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1
+    -------------------------------------------------  ---------------------------
+    Total                                      3.150ns (1.470ns logic, 1.680ns route)
+                                                       (46.7% logic, 53.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0 (SLICE_X20Y28.A4), 8 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     16.480ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.462ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.023ns (0.302 - 0.325)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y27.AMUX    Tshcko                0.518   i2c_config_m0/i2c_master_top_m0/byte_controller/rst_i2c_al_OR_229_o
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack
+    SLICE_X21Y28.A2      net (fanout=15)       1.036   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.A4      net (fanout=3)        0.483   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<0>2
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.462ns (1.463ns logic, 1.999ns route)
+                                                       (42.3% logic, 57.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.726ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.217ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.302 - 0.324)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y28.AQ      Tcko                  0.525   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack
+    SLICE_X21Y28.A1      net (fanout=12)       0.784   i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.A4      net (fanout=3)        0.483   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<0>2
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.217ns (1.470ns logic, 1.747ns route)
+                                                       (45.7% logic, 54.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.894ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.049ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.022ns (0.302 - 0.324)
+  Source Clock:         clk_bufg_BUFG rising at 0.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1 to i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X22Y28.CQ      Tcko                  0.525   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+    SLICE_X21Y28.A3      net (fanout=11)       0.616   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1
+    SLICE_X21Y28.AMUX    Tilo                  0.337   i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1_SW0
+    SLICE_X21Y27.A4      net (fanout=1)        0.480   N46
+    SLICE_X21Y27.A       Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd<3>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.A4      net (fanout=3)        0.483   i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<3>1
+    SLICE_X20Y28.CLK     Tas                   0.349   i2c_config_m0/i2c_master_top_m0/byte_controller/shift
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/c_state[4]_core_cmd[3]_select_44_OUT<0>2
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.049ns (1.470ns logic, 1.579ns route)
+                                                       (48.2% logic, 51.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/sr_3 (SLICE_X20Y30.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.392ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/sr_2 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/sr_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.392ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/sr_2 to i2c_config_m0/i2c_master_top_m0/byte_controller/sr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X20Y30.BQ      Tcko                  0.200   i2c_config_m0/i2c_master_top_m0/byte_controller/sr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/sr_2
+    SLICE_X20Y30.B5      net (fanout=1)        0.071   i2c_config_m0/i2c_master_top_m0/byte_controller/sr<2>
+    SLICE_X20Y30.CLK     Tah         (-Th)    -0.121   i2c_config_m0/i2c_master_top_m0/byte_controller/sr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/mux311
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/sr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.392ns (0.321ns logic, 0.071ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/state_FSM_FFd2 (SLICE_X21Y29.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.408ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_master_top_m0/state_FSM_FFd1 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/state_FSM_FFd2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.408ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_master_top_m0/state_FSM_FFd1 to i2c_config_m0/i2c_master_top_m0/state_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X21Y29.AQ      Tcko                  0.198   i2c_config_m0/i2c_master_top_m0/state_FSM_FFd5
+                                                       i2c_config_m0/i2c_master_top_m0/state_FSM_FFd1
+    SLICE_X21Y29.BX      net (fanout=4)        0.151   i2c_config_m0/i2c_master_top_m0/state_FSM_FFd1
+    SLICE_X21Y29.CLK     Tckdi       (-Th)    -0.059   i2c_config_m0/i2c_master_top_m0/state_FSM_FFd5
+                                                       i2c_config_m0/i2c_master_top_m0/state_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.408ns (0.257ns logic, 0.151ns route)
+                                                       (63.0% logic, 37.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1 (SLICE_X24Y26.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.415ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.415ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_bufg_BUFG rising at 20.000ns
+  Destination Clock:    clk_bufg_BUFG rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1 to i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y26.AQ      Tcko                  0.200   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd2
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1
+    SLICE_X24Y26.A6      net (fanout=5)        0.025   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1
+    SLICE_X24Y26.CLK     Tah         (-Th)    -0.190   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd2
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1-In1
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.415ns (0.390ns logic, 0.025ns route)
+                                                       (94.0% logic, 6.0% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 7.010ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.990ns (334.448MHz) (Tdcmper_CLKOUT)
+  Physical resource: sys_pll_m0/dcm_sp_inst/CLK2X
+  Logical resource: sys_pll_m0/dcm_sp_inst/CLK2X
+  Location pin: DCM_X0Y1.CLK2X
+  Clock network: sys_pll_m0/clk2x
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: sys_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: sys_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: sys_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: sys_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: sys_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: sys_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_sys_pll_m0_clk2x = PERIOD TIMEGRP "sys_pll_m0_clk2x" 
+TS_sys_clk_pin * 2         HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 12567 paths analyzed, 2720 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.659ns.
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1 (SLICE_X29Y13.AX), 80 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.341ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.416ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.COUT    Topcya                0.472   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y13.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y13.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+    SLICE_X32Y14.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+    SLICE_X32Y14.CMUX    Tcinc                 0.289   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<13>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<13>
+    SLICE_X32Y17.A3      net (fanout=1)        1.079   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<12>
+    SLICE_X32Y17.COUT    Topcya                0.472   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X28Y14.C4      net (fanout=16)       1.365   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X28Y14.C       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT161
+    SLICE_X29Y13.AX      net (fanout=1)        0.564   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<1>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.416ns (2.103ns logic, 4.313ns route)
+                                                       (32.8% logic, 67.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.535ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.222ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.DMUX    Topad                 0.667   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y16.B1      net (fanout=1)        1.006   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<5>
+    SLICE_X32Y16.COUT    Topcyb                0.448   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<1>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X28Y14.C4      net (fanout=16)       1.365   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X28Y14.C       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT161
+    SLICE_X29Y13.AX      net (fanout=1)        0.564   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<1>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.222ns (1.985ns logic, 4.237ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.576ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.181ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.CMUX    Topac                 0.636   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y16.B2      net (fanout=1)        0.996   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<4>
+    SLICE_X32Y16.COUT    Topcyb                0.448   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<1>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X28Y14.C4      net (fanout=16)       1.365   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X28Y14.C       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT161
+    SLICE_X29Y13.AX      net (fanout=1)        0.564   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<1>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1
+    -------------------------------------------------  ---------------------------
+    Total                                      6.181ns (1.954ns logic, 4.227ns route)
+                                                       (31.6% logic, 68.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2 (SLICE_X29Y13.BX), 81 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.540ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.217ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.COUT    Topcya                0.472   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y13.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y13.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+    SLICE_X32Y14.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<9>
+    SLICE_X32Y14.CMUX    Tcinc                 0.289   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<13>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<13>
+    SLICE_X32Y17.A3      net (fanout=1)        1.079   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<12>
+    SLICE_X32Y17.COUT    Topcya                0.472   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X31Y13.C4      net (fanout=16)       0.992   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X31Y13.C       Tilo                  0.259   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT181
+    SLICE_X29Y13.BX      net (fanout=1)        0.714   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<2>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    -------------------------------------------------  ---------------------------
+    Total                                      6.217ns (2.127ns logic, 4.090ns route)
+                                                       (34.2% logic, 65.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.734ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      6.023ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.DMUX    Topad                 0.667   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y16.B1      net (fanout=1)        1.006   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<5>
+    SLICE_X32Y16.COUT    Topcyb                0.448   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<1>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X31Y13.C4      net (fanout=16)       0.992   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X31Y13.C       Tilo                  0.259   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT181
+    SLICE_X29Y13.BX      net (fanout=1)        0.714   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<2>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    -------------------------------------------------  ---------------------------
+    Total                                      6.023ns (2.009ns logic, 4.014ns route)
+                                                       (33.4% logic, 66.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.775ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.982ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.008ns (0.445 - 0.453)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X23Y16.AQ      Tcko                  0.430   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2
+    SLICE_X32Y12.A2      net (fanout=4)        1.299   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len<2>
+    SLICE_X32Y12.CMUX    Topac                 0.636   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_lut<2>_INV_0
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Msub_cmd_data_len[15]_GND_24_o_sub_56_OUT_cy<5>
+    SLICE_X32Y16.B2      net (fanout=1)        0.996   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_data_len[15]_GND_24_o_sub_56_OUT<4>
+    SLICE_X32Y16.COUT    Topcyb                0.448   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_lut<1>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.CIN     net (fanout=1)        0.003   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mcompar_byte_cnt[15]_cmd_data_len[15]_equal_57_o_cy<3>
+    SLICE_X32Y17.COUT    Tbyp                  0.091   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011_cy1
+    SLICE_X31Y13.C4      net (fanout=16)       0.992   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT1011
+    SLICE_X31Y13.C       Tilo                  0.259   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2_1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/Mmux_state[3]_byte_cnt[15]_wide_mux_98_OUT181
+    SLICE_X29Y13.BX      net (fanout=1)        0.714   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state[3]_byte_cnt[15]_wide_mux_98_OUT<2>
+    SLICE_X29Y13.CLK     Tdick                 0.114   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt<4>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2
+    -------------------------------------------------  ---------------------------
+    Total                                      5.982ns (1.978ns logic, 4.004ns route)
+                                                       (33.1% logic, 66.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3 (SLICE_X26Y13.A5), 47 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     3.764ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_0 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.982ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.320 - 0.339)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_0 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y11.AQ      Tcko                  0.476   sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_0
+    SLICE_X28Y13.B5      net (fanout=4)        0.873   sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift<0>
+    SLICE_X28Y13.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258_SW0
+    SLICE_X28Y13.A3      net (fanout=2)        0.473   N20
+    SLICE_X28Y13.A       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258
+    SLICE_X36Y14.B2      net (fanout=5)        1.430   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n0025
+    SLICE_X36Y14.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In11
+    SLICE_X26Y13.B5      net (fanout=3)        1.185   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In1
+    SLICE_X26Y13.B       Tilo                  0.254   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In4_SW1
+    SLICE_X26Y13.A5      net (fanout=1)        0.247   N75
+    SLICE_X26Y13.CLK     Tas                   0.339   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      5.982ns (1.774ns logic, 4.208ns route)
+                                                       (29.7% logic, 70.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.777ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_4 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.969ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.320 - 0.339)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_4 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y11.CMUX    Tshcko                0.535   sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift<5>
+                                                       sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_4
+    SLICE_X28Y13.B2      net (fanout=4)        0.801   sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift<4>
+    SLICE_X28Y13.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258_SW0
+    SLICE_X28Y13.A3      net (fanout=2)        0.473   N20
+    SLICE_X28Y13.A       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258
+    SLICE_X36Y14.B2      net (fanout=5)        1.430   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n0025
+    SLICE_X36Y14.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In11
+    SLICE_X26Y13.B5      net (fanout=3)        1.185   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In1
+    SLICE_X26Y13.B       Tilo                  0.254   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In4_SW1
+    SLICE_X26Y13.A5      net (fanout=1)        0.247   N75
+    SLICE_X26Y13.CLK     Tas                   0.339   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      5.969ns (1.833ns logic, 4.136ns route)
+                                                       (30.7% logic, 69.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.779ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_7 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3 (FF)
+  Requirement:          10.000ns
+  Data Path Delay:      5.967ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.019ns (0.320 - 0.339)
+  Source Clock:         clk_100mhz rising at 0.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.235ns
+
+  Clock Uncertainty:          0.235ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.400ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_7 to sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y11.CMUX    Tshcko                0.518   N22
+                                                       sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_7
+    SLICE_X28Y13.B3      net (fanout=5)        0.816   sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift<7>
+    SLICE_X28Y13.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258_SW0
+    SLICE_X28Y13.A3      net (fanout=2)        0.473   N20
+    SLICE_X28Y13.A       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/_n0501_inv5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n00258
+    SLICE_X36Y14.B2      net (fanout=5)        1.430   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/n0025
+    SLICE_X36Y14.B       Tilo                  0.235   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd1
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In11
+    SLICE_X26Y13.B5      net (fanout=3)        1.185   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In1
+    SLICE_X26Y13.B       Tilo                  0.254   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In4_SW1
+    SLICE_X26Y13.A5      net (fanout=1)        0.247   N75
+    SLICE_X26Y13.CLK     Tas                   0.339   sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3-In5
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3
+    -------------------------------------------------  ---------------------------
+    Total                                      5.967ns (1.816ns logic, 4.151ns route)
+                                                       (30.4% logic, 69.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_pll_m0_clk2x = PERIOD TIMEGRP "sys_pll_m0_clk2x" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (SLICE_X16Y5.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.382ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 (FF)
+  Destination:          sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.382ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6 to sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y5.CQ       Tcko                  0.200   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6
+    SLICE_X16Y5.C5       net (fanout=1)        0.061   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<6>
+    SLICE_X16Y5.CLK      Tah         (-Th)    -0.121   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<6>_rt
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6
+    -------------------------------------------------  ---------------------------
+    Total                                      0.382ns (0.321ns logic, 0.061ns route)
+                                                       (84.0% logic, 16.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_5 (SLICE_X16Y5.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.392ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_5 (FF)
+  Destination:          sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_5 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.392ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_5 to sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_5
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y5.BQ       Tcko                  0.200   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_5
+    SLICE_X16Y5.B5       net (fanout=1)        0.071   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<5>
+    SLICE_X16Y5.CLK      Tah         (-Th)    -0.121   sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<7>
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/D<5>_rt
+                                                       sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_5
+    -------------------------------------------------  ---------------------------
+    Total                                      0.392ns (0.321ns logic, 0.071ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_20 (SLICE_X25Y18.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.398ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_20 (FF)
+  Destination:          sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_20 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.400ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
+  Source Clock:         clk_100mhz rising at 10.000ns
+  Destination Clock:    clk_100mhz rising at 10.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_20 to sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y18.AQ      Tcko                  0.200   sd_card_audio_m0/wav_read_m0/sd_sec_read_addr<23>
+                                                       sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_20
+    SLICE_X25Y18.AX      net (fanout=2)        0.141   sd_card_audio_m0/wav_read_m0/sd_sec_read_addr<20>
+    SLICE_X25Y18.CLK     Tckdi       (-Th)    -0.059   sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr<23>
+                                                       sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_20
+    -------------------------------------------------  ---------------------------
+    Total                                      0.400ns (0.259ns logic, 0.141ns route)
+                                                       (64.8% logic, 35.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_pll_m0_clk2x = PERIOD TIMEGRP "sys_pll_m0_clk2x" TS_sys_clk_pin * 2
+        HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X1Y4.CLKA
+  Clock network: clk_100mhz
+--------------------------------------------------------------------------------
+Slack: 6.430ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Logical resource: sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Location pin: RAMB16_X1Y4.CLKB
+  Clock network: clk_100mhz
+--------------------------------------------------------------------------------
+Slack: 7.334ns (period - min period limit)
+  Period: 10.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: sys_pll_m0/clkout1_buf/I0
+  Logical resource: sys_pll_m0/clkout1_buf/I0
+  Location pin: BUFGMUX_X2Y2.I0
+  Clock network: sys_pll_m0/clk2x
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      8.000ns|     13.318ns|            0|            0|          952|        12567|
+| TS_sys_pll_m0_clk2x           |     10.000ns|      6.659ns|          N/A|            0|            0|        12567|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.659|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 13519 paths, 0 nets, and 3402 connections
+
+Design statistics:
+   Minimum period:   8.000ns{1}   (Maximum frequency: 125.000MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jul 02 15:49:14 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 233 MB
+
+
+

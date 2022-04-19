@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="ConstraintSystem" num="196" delta="old" >The <arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">sys_clk_pin</arg>&apos;, does not directly or indirectly drive any flip-flops, latches and/or RAMs and will be removed from the design.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="197" delta="old" >The following specification is invalid because the referenced TNM constraint was removed:
+<arg fmt="%s" index="1">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(3)]</arg>
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="197" delta="old" >The following specification is invalid because the referenced TNM constraint was removed:
+<arg fmt="%s" index="1">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(24)]</arg>
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="196" delta="old" >The <arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">sys_clk_pin</arg>&apos;, does not directly or indirectly drive any flip-flops, latches and/or RAMs and will be removed from the design.
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="197" delta="old" >The following specification is invalid because the referenced TNM constraint was removed:
+<arg fmt="%s" index="1">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(24)]</arg>
+</msg>
+
+<msg type="warning" file="ConstraintSystem" num="197" delta="old" >The following specification is invalid because the referenced TNM constraint was removed:
+<arg fmt="%s" index="1">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(3)]</arg>
+</msg>
+
+<msg type="warning" file="NgdBuild" num="1345" delta="old" >The constraint <arg fmt="%s" index="1">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(3)]</arg> is overridden by the constraint <arg fmt="%s" index="2">&lt;TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;&gt; [pll_test.ucf(24)]</arg>. The overriden constraint usually comes from the input netlist or ncf files. Please set XIL_NGDBUILD_CONSTR_OVERRIDE_ERROR to promote this message to an error.
+</msg>
+
+</messages>
+

@@ -1,0 +1,11 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/16_sd_card_audio/top.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/16_sd_card_audio/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc sd_card_audio.ucf -p xc6slx16-csg324-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf sd_card_audio.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc sd_card_audio.ucf -p xc6slx16-csg324-2 top.ngc top.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -mt off top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf sd_card_audio.ucf 
+bitgen -intstyle ise -f top.ut top.ncd 

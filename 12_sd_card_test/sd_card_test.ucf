@@ -1,0 +1,19 @@
+NET "clk" LOC = V10 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+##
+NET rst_n                  LOC = N4 | IOSTANDARD = "LVCMOS15"; ## reset pushbutton
+##
+NET key1                   LOC = P7 | IOSTANDARD = "LVCMOS33";       ## KEY1
+
+########SPI Flash Pin define##################### 
+NET SD_DCLK                LOC = U18 | IOSTANDARD = "LVCMOS33";
+NET SD_nCS                 LOC = L14 | IOSTANDARD = "LVCMOS33";
+NET SD_MISO                LOC = N14 | IOSTANDARD = "LVCMOS33";
+NET SD_MOSI                LOC = P15 | IOSTANDARD = "LVCMOS33";
+
+########LED Pin define#####################
+NET led<0>                LOC = V5 | IOSTANDARD = "LVCMOS33";       ## LED1
+NET led<1>                LOC = R3 | IOSTANDARD = "LVCMOS33";       ## LED2
+NET led<2>                LOC = T3 | IOSTANDARD = "LVCMOS33";       ## LED3
+NET led<3>                LOC = T4 | IOSTANDARD = "LVCMOS33";       ## LED4

@@ -1,0 +1,838 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\spi_master.v" into library work
+Parsing module <spi_master>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_io.v" into library work
+Parsing module <ds1302_io>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_tx.v" into library work
+Parsing module <uart_tx>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_rx.v" into library work
+Parsing module <uart_rx>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302.v" into library work
+Parsing module <ds1302>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_send.v" into library work
+Parsing module <uart_send>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_test.v" into library work
+Parsing module <ds1302_test>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+
+Elaborating module <uart_send>.
+
+Elaborating module <uart_rx(CLK_FRE=50,BAUD_RATE=115200)>.
+
+Elaborating module <uart_tx(CLK_FRE=50,BAUD_RATE=115200)>.
+
+Elaborating module <ds1302_test>.
+
+Elaborating module <ds1302>.
+
+Elaborating module <ds1302_io>.
+WARNING:HDLCompiler:413 - "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_io.v" Line 90: Result of 32-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <spi_master>.
+WARNING:HDLCompiler:413 - "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_test.v" Line 157: Result of 32-bit expression is truncated to fit in 3-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\top.v".
+    Summary:
+	no macro.
+Unit <top> synthesized.
+
+Synthesizing Unit <uart_send>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_send.v".
+        CLK_FRE = 50
+WARNING:Xst:647 - Input <read_week> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <read_second_d1>.
+    Found 8-bit register for signal <tx_data>.
+    Found 8-bit register for signal <read_second_d0>.
+    Found 4-bit register for signal <state>.
+    Found 6-bit register for signal <tx_cnt>.
+    Found 1-bit register for signal <tx_data_valid>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 13                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit adder for signal <tx_cnt[5]_GND_2_o_add_5_OUT> created at line 91.
+    Found 7-bit adder for signal <n0153[6:0]> created at line 139.
+    Found 7-bit adder for signal <n0155[6:0]> created at line 140.
+    Found 7-bit adder for signal <n0157[6:0]> created at line 142.
+    Found 7-bit adder for signal <n0159[6:0]> created at line 143.
+    Found 7-bit adder for signal <n0161[6:0]> created at line 145.
+    Found 7-bit adder for signal <n0163[6:0]> created at line 146.
+    Found 7-bit adder for signal <n0165[6:0]> created at line 148.
+    Found 7-bit adder for signal <n0167[6:0]> created at line 149.
+    Found 7-bit adder for signal <n0169[6:0]> created at line 151.
+    Found 7-bit adder for signal <n0171[6:0]> created at line 152.
+    Found 7-bit adder for signal <n0173[6:0]> created at line 154.
+    Found 7-bit adder for signal <n0175[6:0]> created at line 155.
+    Found 6-bit comparator greater for signal <tx_cnt[5]_GND_2_o_LessThan_5_o> created at line 89
+    Found 8-bit comparator equal for signal <n0014> created at line 117
+    Summary:
+	inferred  13 Adder/Subtractor(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_send> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_rx.v".
+        CLK_FRE = 50
+        BAUD_RATE = 115200
+    Found 8-bit register for signal <rx_data>.
+    Found 8-bit register for signal <rx_bits>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 16-bit register for signal <cycle_cnt>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <rx_d1>.
+    Found 1-bit register for signal <rx_data_valid>.
+    Found 1-bit register for signal <rx_d0>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_cnt[2]_GND_3_o_add_25_OUT> created at line 144.
+    Found 16-bit adder for signal <cycle_cnt[15]_GND_3_o_add_33_OUT> created at line 159.
+    Found 3-bit comparator not equal for signal <n0021> created at line 132
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\uart_tx.v".
+        CLK_FRE = 50
+        BAUD_RATE = 115200
+    Found 1-bit register for signal <tx_reg>.
+    Found 8-bit register for signal <tx_data_latch>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 16-bit register for signal <cycle_cnt>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <tx_data_ready>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 001                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <bit_cnt[2]_GND_5_o_add_30_OUT> created at line 126.
+    Found 16-bit adder for signal <cycle_cnt[15]_GND_5_o_add_38_OUT> created at line 141.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[2]_tx_data_latch[7]_Mux_42_o> created at line 155.
+    Found 3-bit comparator not equal for signal <n0034> created at line 138
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <ds1302_test>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_test.v".
+    Found 3-bit register for signal <state>.
+    Found 8-bit register for signal <write_second_reg>.
+    Found 8-bit register for signal <write_minute_reg>.
+    Found 8-bit register for signal <write_hour_reg>.
+    Found 8-bit register for signal <write_date_reg>.
+    Found 8-bit register for signal <write_month_reg>.
+    Found 8-bit register for signal <write_week_reg>.
+    Found 8-bit register for signal <write_year_reg>.
+    Found 1-bit register for signal <read_time_req>.
+    Found 1-bit register for signal <write_time_req>.
+    Summary:
+	inferred  61 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <ds1302_test> synthesized.
+
+Synthesizing Unit <ds1302>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302.v".
+    Found 8-bit register for signal <read_second>.
+    Found 8-bit register for signal <read_minute>.
+    Found 8-bit register for signal <read_hour>.
+    Found 8-bit register for signal <read_date>.
+    Found 8-bit register for signal <read_month>.
+    Found 8-bit register for signal <read_week>.
+    Found 8-bit register for signal <read_year>.
+    Found 8-bit register for signal <read_addr>.
+    Found 8-bit register for signal <write_addr>.
+    Found 8-bit register for signal <write_data>.
+    Found 5-bit register for signal <state>.
+    Found 1-bit register for signal <cmd_read>.
+    Found 1-bit register for signal <cmd_write>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 17                                             |
+    | Transitions        | 34                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 26                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  82 D-type flip-flop(s).
+	inferred   1 Finite State Machine(s).
+Unit <ds1302> synthesized.
+
+Synthesizing Unit <ds1302_io>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\ds1302_io.v".
+WARNING:Xst:647 - Input <read_addr<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <read_addr<7:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <write_addr<0:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <write_addr<7:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 20-bit register for signal <delay_cnt>.
+    Found 8-bit register for signal <read_data>.
+    Found 8-bit register for signal <send_data>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <wr_req>.
+    Found 1-bit register for signal <ds1302_io_dir>.
+    Found 1-bit register for signal <CS_reg>.
+    Found 20-bit adder for signal <delay_cnt[19]_GND_9_o_add_16_OUT> created at line 132.
+    Found 1-bit tristate buffer for signal <ds1302_io> created at line 67
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Tristate(s).
+Unit <ds1302_io> synthesized.
+
+Synthesizing Unit <spi_master>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\07_rtc_ds1302\src\spi_master.v".
+    Found 16-bit register for signal <clk_cnt>.
+    Found 5-bit register for signal <clk_edge_cnt>.
+    Found 8-bit register for signal <MOSI_shift>.
+    Found 8-bit register for signal <MISO_shift>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <DCLK_reg>.
+    Found finite state machine <FSM_4> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 8                                              |
+    | Clock              | sys_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <clk_cnt[15]_GND_11_o_add_16_OUT> created at line 124.
+    Found 5-bit adder for signal <clk_edge_cnt[4]_GND_11_o_add_20_OUT> created at line 134.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_master> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 20
+ 16-bit adder                                          : 3
+ 20-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 5-bit adder                                           : 1
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 12
+# Registers                                            : 51
+ 1-bit register                                        : 14
+ 16-bit register                                       : 3
+ 20-bit register                                       : 1
+ 3-bit register                                        : 3
+ 4-bit register                                        : 1
+ 5-bit register                                        : 1
+ 6-bit register                                        : 1
+ 8-bit register                                        : 27
+# Comparators                                          : 4
+ 3-bit comparator not equal                            : 2
+ 6-bit comparator greater                              : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 32
+ 1-bit 2-to-1 multiplexer                              : 15
+ 1-bit 8-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 20-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 3
+ 4-bit 2-to-1 multiplexer                              : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 6
+# Tristates                                            : 1
+ 1-bit tristate buffer                                 : 1
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <write_addr_0> in Unit <ds1302_m0> is equivalent to the following 3 FFs/Latches, which will be removed : <write_addr_4> <write_addr_5> <write_addr_6> 
+INFO:Xst:2261 - The FF/Latch <read_addr_4> in Unit <ds1302_m0> is equivalent to the following 2 FFs/Latches, which will be removed : <read_addr_5> <read_addr_6> 
+INFO:Xst:2261 - The FF/Latch <write_minute_reg_0> in Unit <ds1302_test_m0> is equivalent to the following 41 FFs/Latches, which will be removed : <write_minute_reg_1> <write_minute_reg_2> <write_minute_reg_3> <write_minute_reg_5> <write_minute_reg_6> <write_minute_reg_7> <write_second_reg_1> <write_second_reg_2> <write_second_reg_3> <write_second_reg_4> <write_second_reg_5> <write_second_reg_6> <write_second_reg_7> <write_month_reg_0> <write_month_reg_2> <write_month_reg_3> <write_month_reg_5> <write_month_reg_6> <write_month_reg_7> <write_hour_reg_2> <write_hour_reg_3> <write_hour_reg_5> <write_hour_reg_6> <write_hour_reg_7> <write_date_reg_2> <write_date_reg_3> <write_date_reg_5> <write_date_reg_6> <write_date_reg_7> <write_week_reg_0> <write_week_reg_2> <write_week_reg_3> <write_week_reg_4> <write_week_reg_5> <write_week_reg_6> <write_week_reg_7> <write_year_reg_0> <write_year_reg_3> <write_year_reg_5> <write_year_reg_6> <write_year_reg_7> 
+INFO:Xst:2261 - The FF/Latch <write_minute_reg_4> in Unit <ds1302_test_m0> is equivalent to the following 13 FFs/Latches, which will be removed : <write_second_reg_0> <write_month_reg_1> <write_month_reg_4> <write_hour_reg_0> <write_hour_reg_1> <write_hour_reg_4> <write_date_reg_0> <write_date_reg_1> <write_date_reg_4> <write_week_reg_1> <write_year_reg_1> <write_year_reg_2> <write_year_reg_4> 
+WARNING:Xst:1710 - FF/Latch <write_addr_0> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_3> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_5> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_6> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_data_7> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <read_addr_4> (without init value) has a constant value of 0 in block <ds1302_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_minute_reg_0> (without init value) has a constant value of 0 in block <ds1302_test_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <write_addr_7> of sequential type is unconnected in block <ds1302_m0>.
+WARNING:Xst:2677 - Node <read_addr_0> of sequential type is unconnected in block <ds1302_m0>.
+WARNING:Xst:2677 - Node <read_addr_7> of sequential type is unconnected in block <ds1302_m0>.
+WARNING:Xst:2404 -  FFs/Latches <write_second_reg<7:1>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_hour_reg<7:5>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_minute_reg<7:5>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_date_reg<7:5>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_week_reg<7:2>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_month_reg<7:5>> (without init value) have a constant value of 0 in block <ds1302_test>.
+WARNING:Xst:2404 -  FFs/Latches <write_year_reg<7:5>> (without init value) have a constant value of 0 in block <ds1302_test>.
+
+Synthesizing (advanced) Unit <ds1302_io>.
+The following registers are absorbed into counter <delay_cnt>: 1 register on signal <delay_cnt>.
+Unit <ds1302_io> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_master>.
+The following registers are absorbed into counter <clk_cnt>: 1 register on signal <clk_cnt>.
+The following registers are absorbed into counter <clk_edge_cnt>: 1 register on signal <clk_edge_cnt>.
+Unit <spi_master> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_rx>.
+The following registers are absorbed into counter <cycle_cnt>: 1 register on signal <cycle_cnt>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+Unit <uart_rx> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_send>.
+The following registers are absorbed into counter <tx_cnt>: 1 register on signal <tx_cnt>.
+Unit <uart_send> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx>.
+The following registers are absorbed into counter <cycle_cnt>: 1 register on signal <cycle_cnt>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+Unit <uart_tx> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 12
+ 7-bit adder                                           : 12
+# Counters                                             : 8
+ 16-bit up counter                                     : 3
+ 20-bit up counter                                     : 1
+ 3-bit up counter                                      : 2
+ 5-bit up counter                                      : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 209
+ Flip-Flops                                            : 209
+# Comparators                                          : 4
+ 3-bit comparator not equal                            : 2
+ 6-bit comparator greater                              : 1
+ 8-bit comparator equal                                : 1
+# Multiplexers                                         : 29
+ 1-bit 2-to-1 multiplexer                              : 22
+ 1-bit 8-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 5
+# FSMs                                                 : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <write_hour_reg_2> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_hour_reg_3> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_week_reg_0> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_minute_reg_0> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_minute_reg_1> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_minute_reg_2> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_minute_reg_3> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_date_reg_2> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_date_reg_3> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_month_reg_0> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_month_reg_2> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_month_reg_3> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_year_reg_0> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_year_reg_3> (without init value) has a constant value of 0 in block <ds1302_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <write_addr_0> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_addr_4> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_addr_5> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_addr_6> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_addr_4> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_addr_5> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <read_addr_6> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <write_hour_reg_0> in Unit <ds1302_test> is equivalent to the following 13 FFs/Latches, which will be removed : <write_hour_reg_1> <write_hour_reg_4> <write_second_reg> <write_week_reg_1> <write_minute_reg_4> <write_date_reg_0> <write_date_reg_1> <write_date_reg_4> <write_month_reg_1> <write_month_reg_4> <write_year_reg_1> <write_year_reg_2> <write_year_reg_4> 
+WARNING:Xst:1710 - FF/Latch <write_data_3> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_5> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_6> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <write_data_7> (without init value) has a constant value of 0 in block <ds1302>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart_send_m0/FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 00
+ 0001  | 01
+ 0010  | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart_send_m0/uart_rx_inst/FSM_1> on signal <state[1:3]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 000
+ 010   | 001
+ 011   | 011
+ 100   | 010
+ 101   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart_send_m0/uart_tx_inst/FSM_2> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 001   | 00
+ 010   | 01
+ 011   | 11
+ 100   | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ds1302_test_m0/ds1302_m0/FSM_3> on signal <state[1:5]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 00000
+ 01000 | 01000
+ 00001 | 00001
+ 00010 | 00010
+ 00011 | 00011
+ 00100 | 00100
+ 10000 | 10000
+ 00101 | 00101
+ 00110 | 00110
+ 00111 | 00111
+ 01110 | 01110
+ 01001 | 01001
+ 01010 | 01010
+ 01111 | 01111
+ 01011 | 01011
+ 01100 | 01100
+ 01101 | 01101
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ds1302_test_m0/ds1302_m0/ds1302_io_m0/spi_master_m0/FSM_4> on signal <state[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000001
+ 010   | 000010
+ 100   | 000100
+ 001   | 001000
+ 101   | 010000
+ 011   | 100000
+-------------------
+INFO:Xst:2261 - The FF/Latch <read_addr_0> in Unit <ds1302> is equivalent to the following FF/Latch, which will be removed : <read_addr_7> 
+WARNING:Xst:1710 - FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/send_data_2> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/send_data_1> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_addr_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/write_addr_7> of sequential type is unconnected in block <top>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <uart_send> ...
+WARNING:Xst:1710 - FF/Latch <tx_cnt_5> (without init value) has a constant value of 0 in block <uart_send>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <spi_master> ...
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <ds1302_test_m0/ds1302_m0/read_week_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:1710 - FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_19> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_18> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_17> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_16> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_15> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_14> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_13> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_12> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ds1302_test_m0/ds1302_m0/ds1302_io_m0/delay_cnt_9> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <uart_send_m0/uart_rx_inst/rx_data_valid> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <uart_send_m0/uart_rx_inst/state_FSM_FFd1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 248
+ Flip-Flops                                            : 248
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 413
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 30
+#      LUT2                        : 11
+#      LUT3                        : 82
+#      LUT4                        : 33
+#      LUT5                        : 69
+#      LUT6                        : 66
+#      MUXCY                       : 53
+#      MUXF7                       : 7
+#      VCC                         : 1
+#      XORCY                       : 57
+# FlipFlops/Latches                : 248
+#      FDC                         : 116
+#      FDCE                        : 128
+#      FDP                         : 2
+#      FDR                         : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 2
+#      IOBUF                       : 1
+#      OBUF                        : 3
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             248  out of  18224     1%  
+ Number of Slice LUTs:                  294  out of   9112     3%  
+    Number used as Logic:               294  out of   9112     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    370
+   Number with an unused Flip Flop:     122  out of    370    32%  
+   Number with an unused LUT:            76  out of    370    20%  
+   Number of fully used LUT-FF pairs:   172  out of    370    46%  
+   Number of unique control sets:        20
+
+IO Utilization: 
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    232     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 248   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.039ns (Maximum Frequency: 165.590MHz)
+   Minimum input arrival time before clock: 5.152ns
+   Maximum output required time after clock: 4.202ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.039ns (frequency: 165.590MHz)
+  Total number of paths / destination ports: 3880 / 376
+-------------------------------------------------------------------------
+Delay:               6.039ns (Levels of Logic = 4)
+  Source:            uart_send_m0/uart_rx_inst/cycle_cnt_8 (FF)
+  Destination:       uart_send_m0/uart_rx_inst/cycle_cnt_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: uart_send_m0/uart_rx_inst/cycle_cnt_8 to uart_send_m0/uart_rx_inst/cycle_cnt_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   1.221  uart_send_m0/uart_rx_inst/cycle_cnt_8 (uart_send_m0/uart_rx_inst/cycle_cnt_8)
+     LUT6:I0->O            1   0.254   0.790  uart_send_m0/uart_rx_inst/GND_3_o_GND_3_o_equal_10_o<15>1_SW1 (N30)
+     LUT6:I4->O           18   0.250   1.235  uart_send_m0/uart_rx_inst/GND_3_o_GND_3_o_equal_10_o<15>2 (uart_send_m0/uart_rx_inst/GND_3_o_GND_3_o_equal_10_o)
+     LUT6:I5->O           16   0.254   1.182  uart_send_m0/uart_rx_inst/Mcount_cycle_cnt_eqn_011 (uart_send_m0/uart_rx_inst/Mcount_cycle_cnt_eqn_01)
+     LUT3:I2->O            1   0.254   0.000  uart_send_m0/uart_rx_inst/Mcount_cycle_cnt_eqn_151 (uart_send_m0/uart_rx_inst/Mcount_cycle_cnt_eqn_15)
+     FDC:D                     0.074          uart_send_m0/uart_rx_inst/cycle_cnt_15
+    ----------------------------------------
+    Total                      6.039ns (1.611ns logic, 4.428ns route)
+                                       (26.7% logic, 73.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 256 / 256
+-------------------------------------------------------------------------
+Offset:              5.152ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       ds1302_test_m0/state_2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to ds1302_test_m0/state_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            246   0.255   2.429  rst_n_INV_43_o1_INV_0 (uart_send_m0/rst_n_inv)
+     FDC:CLR                   0.459          uart_send_m0/read_second_d0_0
+    ----------------------------------------
+    Total                      5.152ns (2.042ns logic, 3.110ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 5 / 4
+-------------------------------------------------------------------------
+Offset:              4.202ns (Levels of Logic = 1)
+  Source:            ds1302_test_m0/ds1302_m0/ds1302_io_m0/spi_master_m0/MOSI_shift_7 (FF)
+  Destination:       rtc_data (PAD)
+  Source Clock:      clk rising
+
+  Data Path: ds1302_test_m0/ds1302_m0/ds1302_io_m0/spi_master_m0/MOSI_shift_7 to rtc_data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.525   0.765  ds1302_test_m0/ds1302_m0/ds1302_io_m0/spi_master_m0/MOSI_shift_7 (ds1302_test_m0/ds1302_m0/ds1302_io_m0/spi_master_m0/MOSI_shift_7)
+     IOBUF:I->IO               2.912          rtc_data_IOBUF (rtc_data)
+    ----------------------------------------
+    Total                      4.202ns (3.437ns logic, 0.765ns route)
+                                       (81.8% logic, 18.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.039|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.27 secs
+ 
+--> 
+
+Total memory usage is 264172 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   73 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

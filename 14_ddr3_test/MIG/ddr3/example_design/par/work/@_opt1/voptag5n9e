@@ -1,0 +1,12 @@
+`protect BEGIN_PROTECTED
+`protect version = 1
+`protect encrypt_agent = "Model Technology", encrypt_agent_info = "DEV"
+`protect data_method = "aes128-cbc"
+`protect encoding = ( enctype = "base64" , bytes = 168 )
+`protect DATA_BLOCK
+RuaCQoo1rssAp7lqtgnBWS6x3KAmHqCKuY12r6h//DcqbbjAQuQrBeLK9WPFAD98
+sXdLCdeur6ooG3cjd8vj4ATPI4L6jDbcr45dGmn+xOmtjQLFB01tZCrWTsmSNwMF
+ilDPSypZgKVDLVnbEUYDQfbtStfAkrLC0kB4Yexh3vYxap/i9x3efe4AVuwIlPdr
+dZ86sJeXrdFVIHGwb31aIYbFd2SjzRg1esBosQCrn1VzT+Mfpg4NFeo5Z8wpzb5v
+ZrWQCexl2aHopuCbyqIJWg==
+`protect END_PROTECTED

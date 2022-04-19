@@ -1,0 +1,8 @@
+verilog work "src/spi_master.v"
+verilog work "src/ds1302_io.v"
+verilog work "src/uart_tx.v"
+verilog work "src/uart_rx.v"
+verilog work "src/ds1302.v"
+verilog work "src/uart_send.v"
+verilog work "src/ds1302_test.v"
+verilog work "src/top.v"

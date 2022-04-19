@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\BaiduYunDownload\AX516.190526\demo\19_1_ddr_ov5640_vga\top.ncd
+OUTFILE=E:\BaiduYunDownload\AX516.190526\demo\19_1_ddr_ov5640_vga\top.bit
+FAMILY=Spartan6
+PART=xc6slx16-2csg324
+WORKINGDIR=E:\BaiduYunDownload\AX516.190526\demo\19_1_ddr_ov5640_vga
+LICENSE=WebPack
+USER_INFO=__0_0_0

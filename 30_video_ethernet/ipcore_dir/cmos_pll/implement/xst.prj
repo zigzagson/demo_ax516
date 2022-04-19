@@ -1,0 +1,2 @@
+verilog work ../../cmos_pll.v
+verilog work ../example_design/cmos_pll_exdes.v

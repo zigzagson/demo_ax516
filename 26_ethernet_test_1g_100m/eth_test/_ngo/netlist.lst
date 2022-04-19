@@ -1,0 +1,8 @@
+E:\BaiduYunDownload\AX516.190526\demo\23_ethernet_test_1g_100m\eth_test\ethernet_test.ngc 1562491090
+ipcore_dir/eth_data_fifo.ngc 1562485869
+ipcore_dir/len_fifo.ngc 1562486313
+ipcore_dir/udp_tx_data_fifo.ngc 1562489132
+ipcore_dir/udp_checksum_fifo.ngc 1562489387
+ipcore_dir/udp_rx_ram_8_2048.ngc 1562488891
+ipcore_dir/icmp_rx_ram_8_256.ngc 1562488747
+OK

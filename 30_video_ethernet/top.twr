@@ -1,0 +1,1254 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf video_ethernet.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   8.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: cmos_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: cmos_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 16.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 4.000ns (250.000MHz) (Tdcmper_CLKIN)
+  Physical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Logical resource: cmos_pll_m0/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y0.CLKIN
+  Clock network: cmos_pll_m0/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 64767 paths analyzed, 8693 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.574ns.
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/reply_checksum_tmp_31 (SLICE_X18Y9.CIN), 1650 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.426ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_31 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.492ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X18Y4.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<8>
+    SLICE_X18Y4.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<8>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.313   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    -------------------------------------------------  ---------------------------
+    Total                                      7.492ns (1.965ns logic, 5.527ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.426ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_31 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.492ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+    SLICE_X18Y5.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<12>
+    SLICE_X18Y5.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<12>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.313   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    -------------------------------------------------  ---------------------------
+    Total                                      7.492ns (1.965ns logic, 5.527ns route)
+                                                       (26.2% logic, 73.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.434ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_31 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.487ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.044ns (0.288 - 0.332)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y11.CQ      Tcko                  0.525   mac_test0/mac_top0/icmp0/icmp_rx_cnt<15>
+                                                       mac_test0/mac_top0/icmp0/icmp_rx_cnt_14
+    SLICE_X27Y11.C3      net (fanout=8)        1.290   mac_test0/mac_top0/icmp0/icmp_rx_cnt<14>
+    SLICE_X27Y11.C       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>1
+    SLICE_X27Y11.A6      net (fanout=2)        0.333   mac_test0/mac_top0/icmp0/_n0422<15>
+    SLICE_X27Y11.A       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>3
+    SLICE_X32Y14.B3      net (fanout=17)       1.153   mac_test0/mac_top0/icmp0/_n0422
+    SLICE_X32Y14.BMUX    Tilo                  0.298   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11_1
+    SLICE_X18Y2.B6       net (fanout=15)       1.916   mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11
+    SLICE_X18Y2.COUT     Topcyb                0.483   mac_test0/mac_top0/icmp0/reply_checksum_tmp<3>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<1>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<7>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.313   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_31
+    -------------------------------------------------  ---------------------------
+    Total                                      7.487ns (2.695ns logic, 4.792ns route)
+                                                       (36.0% logic, 64.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/reply_checksum_tmp_29 (SLICE_X18Y9.CIN), 1650 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.436ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_29 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.482ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X18Y4.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<8>
+    SLICE_X18Y4.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<8>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.303   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    -------------------------------------------------  ---------------------------
+    Total                                      7.482ns (1.955ns logic, 5.527ns route)
+                                                       (26.1% logic, 73.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.436ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_29 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.482ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+    SLICE_X18Y5.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<12>
+    SLICE_X18Y5.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<12>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.303   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    -------------------------------------------------  ---------------------------
+    Total                                      7.482ns (1.955ns logic, 5.527ns route)
+                                                       (26.1% logic, 73.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.444ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_29 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.477ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.044ns (0.288 - 0.332)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y11.CQ      Tcko                  0.525   mac_test0/mac_top0/icmp0/icmp_rx_cnt<15>
+                                                       mac_test0/mac_top0/icmp0/icmp_rx_cnt_14
+    SLICE_X27Y11.C3      net (fanout=8)        1.290   mac_test0/mac_top0/icmp0/icmp_rx_cnt<14>
+    SLICE_X27Y11.C       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>1
+    SLICE_X27Y11.A6      net (fanout=2)        0.333   mac_test0/mac_top0/icmp0/_n0422<15>
+    SLICE_X27Y11.A       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>3
+    SLICE_X32Y14.B3      net (fanout=17)       1.153   mac_test0/mac_top0/icmp0/_n0422
+    SLICE_X32Y14.BMUX    Tilo                  0.298   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11_1
+    SLICE_X18Y2.B6       net (fanout=15)       1.916   mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11
+    SLICE_X18Y2.COUT     Topcyb                0.483   mac_test0/mac_top0/icmp0/reply_checksum_tmp<3>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<1>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<7>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.303   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_29
+    -------------------------------------------------  ---------------------------
+    Total                                      7.477ns (2.685ns logic, 4.792ns route)
+                                                       (35.9% logic, 64.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/reply_checksum_tmp_30 (SLICE_X18Y9.CIN), 1650 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_30 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.451ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X18Y4.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<8>
+    SLICE_X18Y4.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<8>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.272   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    -------------------------------------------------  ---------------------------
+    Total                                      7.451ns (1.924ns logic, 5.527ns route)
+                                                       (25.8% logic, 74.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.467ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_30 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.451ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.047ns (0.495 - 0.542)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y32.BQ      Tcko                  0.430   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<7>
+                                                       mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2_5
+    SLICE_X14Y5.BX       net (fanout=47)       3.897   mac_test0/mac_top0/mac_rx0/mac0/mac_rx_data_d2<5>
+    SLICE_X14Y5.COUT     Tbxcy                 0.156   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<7>
+    SLICE_X14Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<11>
+    SLICE_X14Y7.AMUX     Tcina                 0.220   mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+                                                       mac_test0/mac_top0/icmp0/Madd_GND_43_o_reply_checksum_buf[31]_add_130_OUT_cy<15>
+    SLICE_X18Y5.A1       net (fanout=1)        1.533   mac_test0/mac_top0/icmp0/GND_43_o_reply_checksum_buf[31]_add_130_OUT<12>
+    SLICE_X18Y5.COUT     Topcya                0.474   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<12>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.272   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    -------------------------------------------------  ---------------------------
+    Total                                      7.451ns (1.924ns logic, 5.527ns route)
+                                                       (25.8% logic, 74.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.475ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/reply_checksum_tmp_30 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.446ns (Levels of Logic = 11)
+  Clock Path Skew:      -0.044ns (0.288 - 0.332)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/icmp0/icmp_rx_cnt_14 to mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X26Y11.CQ      Tcko                  0.525   mac_test0/mac_top0/icmp0/icmp_rx_cnt<15>
+                                                       mac_test0/mac_top0/icmp0/icmp_rx_cnt_14
+    SLICE_X27Y11.C3      net (fanout=8)        1.290   mac_test0/mac_top0/icmp0/icmp_rx_cnt<14>
+    SLICE_X27Y11.C       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>1
+    SLICE_X27Y11.A6      net (fanout=2)        0.333   mac_test0/mac_top0/icmp0/_n0422<15>
+    SLICE_X27Y11.A       Tilo                  0.259   mac_test0/mac_top0/icmp0/_n0422<15>
+                                                       mac_test0/mac_top0/icmp0/_n0422<15>3
+    SLICE_X32Y14.B3      net (fanout=17)       1.153   mac_test0/mac_top0/icmp0/_n0422
+    SLICE_X32Y14.BMUX    Tilo                  0.298   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11_1
+    SLICE_X18Y2.B6       net (fanout=15)       1.916   mac_test0/mac_top0/icmp0/reply_checksum_tmp[31]_GND_43_o_mux_133_OUT<0>11
+    SLICE_X18Y2.COUT     Topcyb                0.483   mac_test0/mac_top0/icmp0/reply_checksum_tmp<3>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_lut<1>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<3>
+    SLICE_X18Y3.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<7>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<7>
+    SLICE_X18Y4.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<11>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<11>
+    SLICE_X18Y5.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<15>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<15>
+    SLICE_X18Y6.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<19>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<19>
+    SLICE_X18Y7.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<23>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.CIN      net (fanout=1)        0.082   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<23>
+    SLICE_X18Y8.COUT     Tbyp                  0.093   mac_test0/mac_top0/icmp0/reply_checksum_tmp<27>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CIN      net (fanout=1)        0.003   mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_cy<27>
+    SLICE_X18Y9.CLK      Tcinck                0.272   mac_test0/mac_top0/icmp0/reply_checksum_tmp<31>
+                                                       mac_test0/mac_top0/icmp0/Maccum_reply_checksum_tmp_xor<31>
+                                                       mac_test0/mac_top0/icmp0/reply_checksum_tmp_30
+    -------------------------------------------------  ---------------------------
+    Total                                      7.446ns (2.654ns logic, 4.792ns route)
+                                                       (35.6% logic, 64.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAMB8_X1Y6.ADDRBRDADDR6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.254ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_3 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.259ns (Levels of Logic = 0)
+  Clock Path Skew:      0.005ns (0.124 - 0.119)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_3 to mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X32Y14.DQ         Tcko                  0.200   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+                                                          mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_3
+    RAMB8_X1Y6.ADDRBRDADDR6 net (fanout=1)        0.125   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+    RAMB8_X1Y6.CLKBRDCLK    Trckc_ADDRB (-Th)     0.066   mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+                                                          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    ----------------------------------------------------  ---------------------------
+    Total                                         0.259ns (0.134ns logic, 0.125ns route)
+                                                          (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAMB8_X1Y6.ADDRBRDADDR8), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.279ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.285ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.124 - 0.118)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_5 to mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X32Y13.BQ         Tcko                  0.200   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<7>
+                                                          mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_5
+    RAMB8_X1Y6.ADDRBRDADDR8 net (fanout=1)        0.151   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<5>
+    RAMB8_X1Y6.CLKBRDCLK    Trckc_ADDRB (-Th)     0.066   mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+                                                          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    ----------------------------------------------------  ---------------------------
+    Total                                         0.285ns (0.134ns logic, 0.151ns route)
+                                                          (47.0% logic, 53.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAMB8_X1Y6.ADDRBRDADDR5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.295ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_2 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.300ns (Levels of Logic = 0)
+  Clock Path Skew:      0.005ns (0.124 - 0.119)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_2 to mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    Location                Delay type         Delay(ns)  Physical Resource
+                                                          Logical Resource(s)
+    ----------------------------------------------------  -------------------
+    SLICE_X32Y14.DMUX       Tshcko                0.238   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<3>
+                                                          mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_2
+    RAMB8_X1Y6.ADDRBRDADDR5 net (fanout=1)        0.128   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<2>
+    RAMB8_X1Y6.CLKBRDCLK    Trckc_ADDRB (-Th)     0.066   mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+                                                          mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram
+    ----------------------------------------------------  ---------------------------
+    Total                                         0.300ns (0.172ns logic, 0.128ns route)
+                                                          (57.3% logic, 42.7% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram/CLKAWRCLK
+  Logical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y6.CLKAWRCLK
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram/CLKBRDCLK
+  Logical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/Mram_ram/CLKBRDCLK
+  Location pin: RAMB8_X1Y6.CLKBRDCLK
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: camera_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Logical resource: camera_fifo_inst/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Location pin: RAMB16_X1Y10.CLKB
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_gtxc_clk_pin = PERIOD TIMEGRP "gtxc_clk_pin" 8 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_cmos_pll_m0_clk0 = PERIOD TIMEGRP "cmos_pll_m0_clk0" 
+TS_sys_clk_pin HIGH         50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1549 paths analyzed, 508 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   5.182ns.
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/txr_4 (SLICE_X3Y26.B2), 33 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.818ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_0 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.031ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.188 - 0.204)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_0 to i2c_config_m0/i2c_master_top_m0/txr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y28.AQ       Tcko                  0.525   i2c_config_m0/lut_index<3>
+                                                       i2c_config_m0/lut_index_0
+    SLICE_X0Y29.B2       net (fanout=73)       1.667   i2c_config_m0/lut_index<0>
+    SLICE_X0Y29.BMUX     Topbb                 0.423   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n075881
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f7
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f8
+    SLICE_X3Y28.A3       net (fanout=1)        0.619   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+    SLICE_X3Y28.A        Tilo                  0.259   i2c_config_m0/state_FSM_FFd2
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.B2       net (fanout=1)        1.165   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      5.031ns (1.580ns logic, 3.451ns route)
+                                                       (31.4% logic, 68.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     14.850ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_0 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.999ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.188 - 0.204)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_0 to i2c_config_m0/i2c_master_top_m0/txr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y28.AQ       Tcko                  0.525   i2c_config_m0/lut_index<3>
+                                                       i2c_config_m0/lut_index_0
+    SLICE_X0Y29.A2       net (fanout=73)       1.620   i2c_config_m0/lut_index<0>
+    SLICE_X0Y29.BMUX     Topab                 0.438   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f7
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f8
+    SLICE_X3Y28.A3       net (fanout=1)        0.619   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+    SLICE_X3Y28.A        Tilo                  0.259   i2c_config_m0/state_FSM_FFd2
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.B2       net (fanout=1)        1.165   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      4.999ns (1.595ns logic, 3.404ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.472ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_2 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.377ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.016ns (0.188 - 0.204)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_2 to i2c_config_m0/i2c_master_top_m0/txr_4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y28.CQ       Tcko                  0.525   i2c_config_m0/lut_index<3>
+                                                       i2c_config_m0/lut_index_2
+    SLICE_X0Y29.D1       net (fanout=78)       1.006   i2c_config_m0/lut_index<2>
+    SLICE_X0Y29.BMUX     Topdb                 0.430   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n075883
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f7_0
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07588_f8
+    SLICE_X3Y28.A3       net (fanout=1)        0.619   lut_ov5640_rgb565_800_600_m0/_n0758<28>
+    SLICE_X3Y28.A        Tilo                  0.259   i2c_config_m0/state_FSM_FFd2
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.B2       net (fanout=1)        1.165   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>1
+    SLICE_X3Y26.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<5>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<4>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_4
+    -------------------------------------------------  ---------------------------
+    Total                                      4.377ns (1.587ns logic, 2.790ns route)
+                                                       (36.3% logic, 63.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/txr_3 (SLICE_X2Y22.D3), 33 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     14.966ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_6 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.873ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.334 - 0.360)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_6 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y29.CQ       Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_6
+    SLICE_X4Y23.CX       net (fanout=44)       2.243   i2c_config_m0/lut_index<6>
+    SLICE_X4Y23.BMUX     Tcxb                  0.220   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f7_0
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f8
+    SLICE_X2Y22.C5       net (fanout=1)        0.804   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+    SLICE_X2Y22.C        Tilo                  0.255   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.D3       net (fanout=1)        0.487   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.CLK      Tas                   0.339   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.873ns (1.339ns logic, 3.534ns route)
+                                                       (27.5% logic, 72.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.032ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_5 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.807ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.334 - 0.360)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_5 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y29.BQ       Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_5
+    SLICE_X4Y23.B1       net (fanout=76)       1.974   i2c_config_m0/lut_index<5>
+    SLICE_X4Y23.BMUX     Topbb                 0.423   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n075861
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f7
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f8
+    SLICE_X2Y22.C5       net (fanout=1)        0.804   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+    SLICE_X2Y22.C        Tilo                  0.255   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.D3       net (fanout=1)        0.487   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.CLK      Tas                   0.339   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.807ns (1.542ns logic, 3.265ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.058ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_4 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_3 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.781ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.026ns (0.334 - 0.360)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_4 to i2c_config_m0/i2c_master_top_m0/txr_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y29.AQ       Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_4
+    SLICE_X4Y23.D3       net (fanout=78)       1.941   i2c_config_m0/lut_index<4>
+    SLICE_X4Y23.BMUX     Topdb                 0.430   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n075863
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f7_0
+                                                       lut_ov5640_rgb565_800_600_m0/Mram__n07586_f8
+    SLICE_X2Y22.C5       net (fanout=1)        0.804   lut_ov5640_rgb565_800_600_m0/_n0758<29>
+    SLICE_X2Y22.C        Tilo                  0.255   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.D3       net (fanout=1)        0.487   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>1
+    SLICE_X2Y22.CLK      Tas                   0.339   i2c_config_m0/i2c_master_top_m0/txr<3>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<3>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_3
+    -------------------------------------------------  ---------------------------
+    Total                                      4.781ns (1.549ns logic, 3.232ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/txr_6 (SLICE_X5Y22.B6), 14 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.015ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_0 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.817ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.033ns (0.326 - 0.359)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_0 to i2c_config_m0/i2c_master_top_m0/txr_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y28.AQ       Tcko                  0.525   i2c_config_m0/lut_index<3>
+                                                       i2c_config_m0/lut_index_0
+    SLICE_X0Y28.C5       net (fanout=73)       1.160   i2c_config_m0/lut_index<0>
+    SLICE_X0Y28.C        Tilo                  0.235   i2c_config_m0/i2c_write_req
+                                                       lut_ov5640_rgb565_800_600_m0/_n0758<18>_SW0
+    SLICE_X0Y28.D5       net (fanout=1)        0.251   N4
+    SLICE_X0Y28.D        Tilo                  0.235   i2c_config_m0/i2c_write_req
+                                                       lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A2       net (fanout=6)        1.636   lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A        Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.B6       net (fanout=1)        0.143   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_6
+    -------------------------------------------------  ---------------------------
+    Total                                      4.817ns (1.627ns logic, 3.190ns route)
+                                                       (33.8% logic, 66.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.538ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_1 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.294ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.033ns (0.326 - 0.359)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_1 to i2c_config_m0/i2c_master_top_m0/txr_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y28.BQ       Tcko                  0.525   i2c_config_m0/lut_index<3>
+                                                       i2c_config_m0/lut_index_1
+    SLICE_X0Y28.C3       net (fanout=78)       0.637   i2c_config_m0/lut_index<1>
+    SLICE_X0Y28.C        Tilo                  0.235   i2c_config_m0/i2c_write_req
+                                                       lut_ov5640_rgb565_800_600_m0/_n0758<18>_SW0
+    SLICE_X0Y28.D5       net (fanout=1)        0.251   N4
+    SLICE_X0Y28.D        Tilo                  0.235   i2c_config_m0/i2c_write_req
+                                                       lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A2       net (fanout=6)        1.636   lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A        Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.B6       net (fanout=1)        0.143   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_6
+    -------------------------------------------------  ---------------------------
+    Total                                      4.294ns (1.627ns logic, 2.667ns route)
+                                                       (37.9% logic, 62.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.666ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               i2c_config_m0/lut_index_7 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/txr_6 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.165ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.034ns (0.326 - 0.360)
+  Source Clock:         clk_50 rising at 0.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.135ns
+
+  Clock Uncertainty:          0.135ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: i2c_config_m0/lut_index_7 to i2c_config_m0/i2c_master_top_m0/txr_6
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y29.DQ       Tcko                  0.525   i2c_config_m0/lut_index<7>
+                                                       i2c_config_m0/lut_index_7
+    SLICE_X0Y28.D2       net (fanout=24)       0.994   i2c_config_m0/lut_index<7>
+    SLICE_X0Y28.D        Tilo                  0.235   i2c_config_m0/i2c_write_req
+                                                       lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A2       net (fanout=6)        1.636   lut_ov5640_rgb565_800_600_m0/_n0758<18>
+    SLICE_X5Y22.A        Tilo                  0.259   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.B6       net (fanout=1)        0.143   i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>1
+    SLICE_X5Y22.CLK      Tas                   0.373   i2c_config_m0/i2c_master_top_m0/txr<7>
+                                                       i2c_config_m0/i2c_master_top_m0/state[3]_i2c_slave_dev_addr[7]_select_51_OUT<6>2
+                                                       i2c_config_m0/i2c_master_top_m0/txr_6
+    -------------------------------------------------  ---------------------------
+    Total                                      4.165ns (1.392ns logic, 2.773ns route)
+                                                       (33.4% logic, 66.6% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_cmos_pll_m0_clk0 = PERIOD TIMEGRP "cmos_pll_m0_clk0" TS_sys_clk_pin HIGH
+        50%;
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_1 (SLICE_X28Y12.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.385ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_0 (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.385ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50 rising at 20.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_0 to i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y12.CQ      Tcko                  0.200   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA<1>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_0
+    SLICE_X28Y12.DX      net (fanout=1)        0.137   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA<0>
+    SLICE_X28Y12.CLK     Tckdi       (-Th)    -0.048   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA<1>
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.385ns (0.248ns logic, 0.137ns route)
+                                                       (64.4% logic, 35.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop (SLICE_X4Y14.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.416ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop (FF)
+  Destination:          i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.416ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50 rising at 20.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop to i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X4Y14.AQ       Tcko                  0.200   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+    SLICE_X4Y14.A6       net (fanout=2)        0.026   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+    SLICE_X4Y14.CLK      Tah         (-Th)    -0.190   i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop_rstpot
+                                                       i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop
+    -------------------------------------------------  ---------------------------
+    Total                                      0.416ns (0.390ns logic, 0.026ns route)
+                                                       (93.8% logic, 6.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point i2c_config_m0/i2c_write_req (SLICE_X0Y28.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.417ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               i2c_config_m0/i2c_write_req (FF)
+  Destination:          i2c_config_m0/i2c_write_req (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.417ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50 rising at 20.000ns
+  Destination Clock:    clk_50 rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: i2c_config_m0/i2c_write_req to i2c_config_m0/i2c_write_req
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y28.AQ       Tcko                  0.200   i2c_config_m0/i2c_write_req
+                                                       i2c_config_m0/i2c_write_req
+    SLICE_X0Y28.A6       net (fanout=2)        0.027   i2c_config_m0/i2c_write_req
+    SLICE_X0Y28.CLK      Tah         (-Th)    -0.190   i2c_config_m0/i2c_write_req
+                                                       i2c_config_m0/i2c_write_req_rstpot
+                                                       i2c_config_m0/i2c_write_req
+    -------------------------------------------------  ---------------------------
+    Total                                      0.417ns (0.390ns logic, 0.027ns route)
+                                                       (93.5% logic, 6.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_cmos_pll_m0_clk0 = PERIOD TIMEGRP "cmos_pll_m0_clk0" TS_sys_clk_pin HIGH
+        50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: cmos_pll_m0/clkout1_buf/I0
+  Logical resource: cmos_pll_m0/clkout1_buf/I0
+  Location pin: BUFGMUX_X2Y12.I0
+  Clock network: cmos_pll_m0/clk0
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: i2c_config_m0/lut_index<3>/CLK
+  Logical resource: i2c_config_m0/lut_index_0/CK
+  Location pin: SLICE_X2Y28.CLK
+  Clock network: clk_50
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.240ns (Trpw)
+  Physical resource: i2c_config_m0/lut_index<3>/SR
+  Logical resource: i2c_config_m0/lut_index_0/SR
+  Location pin: SLICE_X2Y28.SR
+  Clock network: mac_test0/mac_top0/cache0/rst_n_inv
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      8.000ns|      5.182ns|            0|            0|            0|         1549|
+| TS_cmos_pll_m0_clk0           |     20.000ns|      5.182ns|          N/A|            0|            0|         1549|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.182|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock e_rxc
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+e_rxc          |    7.574|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 66316 paths, 0 nets, and 10705 connections
+
+Design statistics:
+   Minimum period:   8.000ns{1}   (Maximum frequency: 125.000MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Jul 09 17:56:15 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 270 MB
+
+
+

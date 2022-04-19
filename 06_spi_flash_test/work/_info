@@ -1,0 +1,23 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test
+vspi_master
+!i10b 1
+!s100 2zW0;i]Jn`?M]NH?VJO:52
+I6T:TQ<aD1XjJdW4iI0Wk01
+Vjla62CeYcfjOzeS9ka_1@1
+Z1 dE:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test
+w1512467072
+8src/spi_master.v
+Fsrc/spi_master.v
+L0 29
+Z2 OL;L;10.1c;51
+r1
+!s85 0
+31
+!s108 1558092622.653000
+!s107 src/spi_master.v|
+!s90 -reportprogress|300|src/spi_master.v|
+o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF

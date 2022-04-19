@@ -1,0 +1,1371 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'ethernet_test'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o ethernet_test_map.ncd ethernet_test.ngd
+ethernet_test.pcf 
+Target Device  : xc6slx16
+Target Package : csg324
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Sun Jul 07 17:18:19 2019
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    2
+Slice Logic Utilization:
+  Number of Slice Registers:                 3,227 out of  18,224   17%
+    Number used as Flip Flops:               3,214
+    Number used as Latches:                      1
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:               12
+  Number of Slice LUTs:                      3,418 out of   9,112   37%
+    Number used as logic:                    3,274 out of   9,112   35%
+      Number using O6 output only:           1,556
+      Number using O5 output only:             351
+      Number using O5 and O6:                1,367
+      Number used as ROM:                        0
+    Number used as Memory:                       1 out of   2,176    1%
+      Number used as Dual Port RAM:              0
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:             1
+        Number using O6 output only:             1
+        Number using O5 output only:             0
+        Number using O5 and O6:                  0
+    Number used exclusively as route-thrus:    143
+      Number with same-slice register load:     81
+      Number with same-slice carry load:        62
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,256 out of   2,278   55%
+  Number of MUXCYs used:                     1,776 out of   4,556   38%
+  Number of LUT Flip Flop pairs used:        4,083
+    Number with an unused Flip Flop:         1,452 out of   4,083   35%
+    Number with an unused LUT:                 665 out of   4,083   16%
+    Number of fully used LUT-FF pairs:       1,966 out of   4,083   48%
+    Number of unique control sets:             138
+    Number of slice register sites lost
+      to control set restrictions:             272 out of  18,224    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        32 out of     232   13%
+    Number of LOCed IOBs:                       32 out of      32  100%
+    IOB Flip Flops:                              1
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         7 out of      32   21%
+  Number of RAMB8BWERs:                          4 out of      64    6%
+  Number of BUFIO2/BUFIO2_2CLKs:                 0 out of      32    0%
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             0 out of      32    0%
+  Number of BUFG/BUFGMUXs:                       2 out of      16   12%
+    Number used as BUFGs:                        2
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     0 out of       4    0%
+  Number of ILOGIC2/ISERDES2s:                   0 out of     248    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     248    0%
+  Number of OLOGIC2/OSERDES2s:                   1 out of     248    1%
+    Number used as OLOGIC2s:                     1
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      32    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       2    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.58
+
+Peak Memory Usage:  622 MB
+Total REAL time to MAP completion:  47 secs 
+Total CPU time to MAP completion:   47 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:372 - Gated clock. Clock net
+   smi_config_inst/smi_inst/state[2]_GND_46_o_Mux_14_o is sourced by a
+   combinatorial pin. This is not good design practice. Use the CE pin to
+   control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network e_rxer_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 15 more times for the
+   following (max. 5 shown):
+   e_txc_IBUF,
+   arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+   tv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i,
+   arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+   tv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i,
+   arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+   tv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i,
+   arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gn
+   tv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+ 159 block(s) removed
+  20 block(s) optimized away
+ 160 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<11>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<11>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<11>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_11" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<10>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<10>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<10>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_10" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<9>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<9>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<9>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_9" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<8>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<8>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<8>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_8" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<7>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<7>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<7>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_7" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<6>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<6>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<6>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_6" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<5>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<5>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<5>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_5" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<4>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<4>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<4>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_4" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<3>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<3>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<3>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_3" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<2>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<2>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<2>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_2" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<1>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<1>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<1>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_1" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<0>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" (MUX) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" (ROM) removed.
+  The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<0>" (XOR) removed.
+    The signal "arbi_inst/tx_buffer_inst/tx_fifo/Result<0>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_0" (FF) removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has been removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has been removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/cntr_en" is sourceless and has been removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/ram_rd_en_i1" is sourceless and has been removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<11>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<11>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<11>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_11" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<10>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<10>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<10>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_10" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<9>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<9>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<9>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_9" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<8>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<8>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<8>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_8" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<7>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<7>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<7>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_7" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<6>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<6>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<6>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_6" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<5>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<5>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<5>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_5" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<4>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<4>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<4>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_4" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<3>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<3>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<3>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_3" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<2>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<2>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<2>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_2" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<1>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<1>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<1>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_1" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<0>" is sourceless and has been
+removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" (MUX) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" is sourceless and has
+been removed.
+ Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" (ROM) removed.
+  The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" is sourceless and has
+been removed.
+   Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<0>" (XOR) removed.
+    The signal "arbi_inst/rx_buffer_inst/rx_fifo/Result<0>" is sourceless and has
+been removed.
+     Sourceless block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_0" (FF) removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has been removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has been removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/cntr_en" is sourceless and has been removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/ram_rd_en_i1" is sourceless and has been removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has been
+removed.
+The signal
+"arbi_inst/tx_buffer_inst/tx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has been
+removed.
+The signal "arbi_inst/rx_buffer_inst/rx_len_fifo/dout<0>" is sourceless and has
+been removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has been
+removed.
+The signal
+"arbi_inst/rx_buffer_inst/rx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has been
+removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<11>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<11>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<11>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<11>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_11" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<10>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<10>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<10>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<10>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<10>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_10" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<9>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<9>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<9>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<9>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<9>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_9" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<8>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<8>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<8>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<8>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<8>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_8" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<7>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<7>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<7>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<7>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<7>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_7" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<6>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<6>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<6>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<6>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<6>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_6" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<5>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<5>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<5>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<5>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<5>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_5" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<4>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<4>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<4>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<4>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<4>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_4" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<3>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<3>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<3>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<3>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<3>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_3" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<2>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<2>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<2>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<2>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<2>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_2" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<1>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<1>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<1>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<1>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<1>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_1" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count<0>" is sourceless and has
+been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" (MUX)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_cy<0>" is
+sourceless and has been removed.
+ Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" (ROM)
+removed.
+  The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_lut<0>" is
+sourceless and has been removed.
+   Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/Mcount_count_xor<0>" (XOR)
+removed.
+    The signal "mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/Result<0>" is
+sourceless and has been removed.
+     Sourceless block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/dc/count_0" (SFF) removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has
+been removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has
+been removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/cntr_en" is sourceless and has been
+removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo
+.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" is sourceless and has
+been removed.
+The signal
+"mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo
+.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" is sourceless and has
+been removed.
+The signal "mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/N1" is sourceless
+and has been removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/Mxor_cntr_en_xo<0>1" (ROM) removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/ram_rd_en_i1_1" (ROM) removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"arbi_inst/rx_buffer_inst/rx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.gdc.dc/Mxor_cntr_en_xo<0>1" (ROM) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.rd/ram_rd_en_i1_1" (ROM) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv
+_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"arbi_inst/tx_buffer_inst/tx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/
+gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.gdc.dc/Mxor_cntr_en_xo<0>1" (ROM) removed.
+Unused block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.rf
+/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block
+"mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo
+.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/grss.rsts/ram_empty_i" (FF) removed.
+Unused block
+"mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo
+.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwss.wsts/ram_full_i" (FF) removed.
+Unused block "mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/XST_GND" (ZERO)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+GND
+		arbi_inst/rx_buffer_inst/rx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.
+cstr/XST_GND
+GND 		arbi_inst/rx_buffer_inst/rx_fifo/XST_GND
+VCC 		arbi_inst/rx_buffer_inst/rx_fifo/XST_VCC
+GND
+		arbi_inst/rx_buffer_inst/rx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf
+/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/va
+lid.cstr/XST_GND
+GND 		arbi_inst/rx_buffer_inst/rx_len_fifo/XST_GND
+GND
+		arbi_inst/tx_buffer_inst/tx_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gnt
+v_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.
+cstr/XST_GND
+GND 		arbi_inst/tx_buffer_inst/tx_fifo/XST_GND
+VCC 		arbi_inst/tx_buffer_inst/tx_fifo/XST_VCC
+GND
+		arbi_inst/tx_buffer_inst/tx_len_fifo/U0/xst_fifo_generator/gconvfifo.rf/grf.rf
+/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/va
+lid.cstr/XST_GND
+GND 		arbi_inst/tx_buffer_inst/tx_len_fifo/XST_GND
+GND 		mac_test0/mac_top0/icmp0/icmp_receive_ram/XST_GND
+VCC 		mac_test0/mac_top0/icmp0/icmp_receive_ram/XST_VCC
+GND 		mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/XST_GND
+VCC 		mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/XST_VCC
+GND
+		mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/U0/xst_fifo_generator/gconvfifo.r
+f/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_me
+m_gen/valid.cstr/XST_GND
+GND 		mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/XST_GND
+VCC 		mac_test0/mac_top0/mac_tx0/udp0/tx_data_fifo/XST_VCC
+GND
+		mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfif
+o.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk
+_mem_gen/valid.cstr/XST_GND
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk                                | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| e_gtxc                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_mdc                              | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| e_mdio                             | IOB              | BIDIR     | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| e_reset                            | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| e_rxc                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<0>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<1>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<2>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<3>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<4>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<5>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<6>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxd<7>                           | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxdv                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_rxer                             | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_txc                              | IOB              | INPUT     | LVCMOS33             |       |          |      |              |          |          |
+| e_txd<0>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<1>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<2>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<3>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<4>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<5>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<6>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txd<7>                           | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txen                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| e_txer                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | FAST |              |          |          |
+| led<0>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led<1>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led<2>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW |              |          |          |
+| led<3>                             | IOB              | OUTPUT    | LVCMOS33             |       | 12       | SLOW | OFF          |          |          |
+| rst_n                              | IOB              | INPUT     | LVCMOS15             |       |          |      |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

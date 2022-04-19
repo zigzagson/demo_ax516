@@ -1,0 +1,49 @@
+# Reading C:/modeltech64_10.1c/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {spi_flash_test_tb.fdo} 
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module spi_master
+# 
+# Top level modules:
+# 	spi_master
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# ** Error: src/spi_flash_ctrl.v(29): Cannot find `include file "spi_flash_defines.v" in directories:
+#     C:/modeltech64_10.1c/ovm-2.1.2/../verilog_src/ovm-2.1.2/src, C:/modeltech64_10.1c/uvm-1.1b/../verilog_src/uvm-1.1b/src
+# -- Compiling module spi_flash_ctrl
+# ** Error: src/spi_flash_ctrl.v(148): (vlog-2163) Macro `CMD_READ is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(148): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(152): (vlog-2163) Macro `CMD_BE is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(152): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(154): (vlog-2163) Macro `CMD_SE is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(154): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(156): (vlog-2163) Macro `CMD_RDSR is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(156): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(158): (vlog-2163) Macro `CMD_READ is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(158): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(160): (vlog-2163) Macro `CMD_PP is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(160): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(162): (vlog-2163) Macro `CMD_WREN is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(162): near ";": syntax error, unexpected ';'
+# ** Error: src/spi_flash_ctrl.v(164): (vlog-2163) Macro `CMD_READ is undefined.
+# 
+# ** Error: src/spi_flash_ctrl.v(164): near ";": syntax error, unexpected ';'
+# ** Error: C:/modeltech64_10.1c/win64/vlog failed.
+# Error in macro ./spi_flash_test_tb.fdo line 24
+# C:/modeltech64_10.1c/win64/vlog failed.
+#     while executing
+# "vlog  "src/spi_flash_ctrl.v""

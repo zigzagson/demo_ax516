@@ -1,0 +1,26 @@
+##
+NET clk LOC = V10 | TNM_NET = sys_clk_pin | IOSTANDARD = "LVCMOS33";
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+##
+
+
+##
+NET rst_n                           LOC = N4 | IOSTANDARD = "LVCMOS15"; ## SW2 pushbutton
+##
+
+########SMA Clock out define#####################
+NET clkout1                        	LOC = N11 | IOSTANDARD = "LVCMOS33";  ## J3-PIN3
+NET clkout2                         LOC = M11 | IOSTANDARD = "LVCMOS33";  ## J3-PIN4
+NET clkout3                         LOC = V16 | IOSTANDARD = "LVCMOS33";  ## J3-PIN5
+NET clkout4                         LOC = U16 | IOSTANDARD = "LVCMOS33";  ## J3-PIN6
+
+PIN "pll_inst/clkout4_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "pll_inst/clkout3_buf.O" CLOCK_DEDICATED_ROUTE = FALSE; 
+PIN "pll_inst/clkout2_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "pll_inst/clkout1_buf.O" CLOCK_DEDICATED_ROUTE = FALSE;
+
+##
+NET clk LOC = V10 | TNM_NET = sys_clk_pin | IOSTANDARD = "LVCMOS33";
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+##
+

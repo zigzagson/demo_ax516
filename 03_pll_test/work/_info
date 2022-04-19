@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX516.190526\demo\03_pll_test
+T_opt
+VT_?e^g_WebkV]^S]Li16Y2
+04 11 4 work pll_test_tb fast 0
+04 4 4 work glbl fast 0
+=1-2c534a01a10c-5cd37f36-324-2224
+o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip +acc
+n@_opt
+OL;O;10.1c;51
+vglbl
+ID_fMj]QBM>Ecj5LGgB3e62
+VM[9mS]S:KA1i4VeCMX35[3
+Z1 dE:\BaiduYunDownload\AX516.190526\demo\03_pll_test
+w1381681120
+8C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+FC:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+Z2 OL;L;10.1c;51
+r1
+31
+Z3 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+!i10b 1
+!s100 4BUMBVf6Tzc2Z4KLdBM[:3
+!s85 0
+!s108 1557364534.320000
+!s107 C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+!s90 -reportprogress|300|C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+vpll
+IY`^o=YBQ=^VB2dN9^OjAD1
+Vkzk^n;@Hi?TakTY@ABgWg3
+R1
+w1512466984
+8ipcore_dir/pll.v
+Fipcore_dir/pll.v
+L0 71
+R2
+r1
+31
+R3
+!s100 WJ:__i3B>cMD[R8V;78oJ3
+!s108 1557364533.946000
+!s107 ipcore_dir/pll.v|
+!s90 -reportprogress|300|ipcore_dir/pll.v|
+!i10b 1
+!s85 0
+vpll_test
+I`jJ7EIHAgm7gf7224AG?U3
+VFIVYmJlb4`zhLEQFCAij41
+R1
+w1512466982
+8pll_test.v
+Fpll_test.v
+L0 32
+R2
+r1
+31
+R3
+!s100 >Bz:0i]XB9VdVLbgYkafi3
+!s108 1557364534.070000
+!s107 pll_test.v|
+!s90 -reportprogress|300|pll_test.v|
+!i10b 1
+!s85 0
+vpll_test_tb
+IX=XbO]gzO1OmWnNa0gUbD1
+VYmC5hE8Jae@Z>25e_@7IY1
+R1
+w1512466986
+8sim/pll_test_tb.v
+Fsim/pll_test_tb.v
+L0 2
+R2
+r1
+31
+R3
+!s100 ?bh7`j_11g@D3=MdNT0RE3
+!s108 1557364534.195000
+!s107 sim/pll_test_tb.v|
+!s90 -reportprogress|300|sim/pll_test_tb.v|
+!i10b 1
+!s85 0

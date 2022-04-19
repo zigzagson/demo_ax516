@@ -1,0 +1,3 @@
+verilog work "src/ax_debounce.v"
+verilog work "ipcore_dir/sin_cos.v"
+verilog work "src/dds_wave.v"

@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/08_i2c_eeprom_test/i2c_eeprom_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/08_i2c_eeprom_test/i2c_eeprom_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc i2c_eeprom_test.ucf -p xc6slx16-csg324-2 i2c_eeprom_test.ngc i2c_eeprom_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o i2c_eeprom_test_map.ncd i2c_eeprom_test.ngd i2c_eeprom_test.pcf 
+par -w -intstyle ise -ol high -mt off i2c_eeprom_test_map.ncd i2c_eeprom_test.ncd i2c_eeprom_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml i2c_eeprom_test.twx i2c_eeprom_test.ncd -o i2c_eeprom_test.twr i2c_eeprom_test.pcf -ucf i2c_eeprom_test.ucf 
+bitgen -intstyle ise -f i2c_eeprom_test.ut i2c_eeprom_test.ncd 

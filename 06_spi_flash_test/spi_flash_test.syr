@@ -1,0 +1,763 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.16 secs
+ 
+--> Reading design: spi_flash_test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "spi_flash_test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "spi_flash_test"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : spi_flash_test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_master.v" into library work
+Parsing module <spi_master>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_ctrl.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\/spi_flash_defines.v" included at line 29.
+Parsing module <spi_flash_ctrl>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_cmd.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\/spi_flash_defines.v" included at line 29.
+Parsing module <spi_flash_cmd>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_top.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\/spi_flash_defines.v" included at line 29.
+Parsing module <spi_flash_top>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\ax_debounce.v" into library work
+Parsing module <ax_debounce>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\/spi_flash_defines.v" included at line 29.
+Parsing module <spi_flash_test>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <spi_flash_test>.
+
+Elaborating module <ax_debounce>.
+
+Elaborating module <spi_flash_top>.
+
+Elaborating module <spi_flash_ctrl>.
+
+Elaborating module <spi_flash_cmd>.
+
+Elaborating module <spi_master>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v" Line 180: Assignment to flash_bulk_erase_ack ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <spi_flash_test>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v".
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v" line 71: Output port <button_posedge> of the instance <ax_debounce_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v" line 71: Output port <button_out> of the instance <ax_debounce_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_test.v" line 166: Output port <flash_bulk_erase_ack> of the instance <spi_flash_top_m0> is unconnected or connected to loadless signal.
+    Found 24-bit register for signal <flash_read_addr>.
+    Found 24-bit register for signal <flash_write_addr>.
+    Found 24-bit register for signal <flash_sector_addr>.
+    Found 8-bit register for signal <flash_write_data_in>.
+    Found 32-bit register for signal <timer>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <flash_read>.
+    Found 1-bit register for signal <flash_write>.
+    Found 1-bit register for signal <flash_sector_erase>.
+    Found 8-bit register for signal <read_data>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 7                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <timer[31]_GND_1_o_add_5_OUT> created at line 108.
+    Found 8-bit adder for signal <read_data[7]_GND_1_o_add_9_OUT> created at line 114.
+    Found 32-bit comparator greater for signal <n0003> created at line 105
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_flash_test> synthesized.
+
+Synthesizing Unit <ax_debounce>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\ax_debounce.v".
+        N = 32
+        FREQ = 50
+        MAX_TIME = 20
+    Found 1-bit register for signal <button_out_d0>.
+    Found 1-bit register for signal <button_out>.
+    Found 32-bit register for signal <q_reg>.
+    Found 1-bit register for signal <DFF2>.
+    Found 1-bit register for signal <button_posedge>.
+    Found 1-bit register for signal <button_negedge>.
+    Found 1-bit register for signal <DFF1>.
+    Found 32-bit adder for signal <q_reg[31]_GND_2_o_add_1_OUT> created at line 65.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+Unit <ax_debounce> synthesized.
+
+Synthesizing Unit <spi_flash_top>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_top.v".
+    Summary:
+	no macro.
+Unit <spi_flash_top> synthesized.
+
+Synthesizing Unit <spi_flash_ctrl>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_ctrl.v".
+    Found 9-bit register for signal <size>.
+    Found 24-bit register for signal <addr>.
+    Found 8-bit register for signal <state_reg>.
+    Found 8-bit register for signal <flash_read_data_out>.
+    Found 5-bit register for signal <state>.
+    Found 8-bit register for signal <cmd>.
+    Found 1-bit register for signal <flash_read_data_valid>.
+    Found 1-bit register for signal <cmd_valid>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 29                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 15                                             |
+    | Clock              | sys_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred  59 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_flash_ctrl> synthesized.
+
+Synthesizing Unit <spi_flash_cmd>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_flash_cmd.v".
+        S_IDLE = 0
+        S_CS_LOW = 1
+        S_CS_HIGH = 2
+        S_KEEP_CS_LOW = 3
+        S_READ_BYTES = 4
+        S_WRITE_BYTES = 5
+        S_CMD_LATCH = 6
+        S_WR_CMD_CODE = 7
+        S_CMD_ACK = 8
+    Found 5-bit register for signal <state>.
+    Found 8-bit register for signal <data_out>.
+    Found 8-bit register for signal <send_data>.
+    Found 8-bit register for signal <cmd_code>.
+    Found 9-bit register for signal <byte_cnt>.
+    Found 9-bit register for signal <byte_size>.
+    Found 1-bit register for signal <wr_req>.
+    Found 1-bit register for signal <data_req>.
+    Found 1-bit register for signal <CS_reg>.
+    Found 1-bit register for signal <data_valid>.
+    Found 1-bit register for signal <wr_ack_d0>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 18                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 13                                             |
+    | Clock              | sys_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 9-bit subtractor for signal <byte_size[8]_GND_8_o_sub_10_OUT> created at line 88.
+    Found 9-bit adder for signal <byte_cnt[8]_GND_8_o_add_63_OUT> created at line 164.
+    Found 9-bit adder for signal <GND_8_o_size[8]_add_69_OUT> created at line 179.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0215> created at line 140.
+    Found 8-bit 4-to-1 multiplexer for signal <_n0218> created at line 149.
+    Found 9-bit comparator lessequal for signal <n0008> created at line 88
+    Found 9-bit comparator equal for signal <n0012> created at line 88
+    Found 9-bit comparator lessequal for signal <n0028> created at line 124
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  47 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+	inferred   9 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_flash_cmd> synthesized.
+
+Synthesizing Unit <spi_master>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\06_spi_flash_test\src\spi_master.v".
+    Found 16-bit register for signal <clk_cnt>.
+    Found 5-bit register for signal <clk_edge_cnt>.
+    Found 8-bit register for signal <MOSI_shift>.
+    Found 8-bit register for signal <MISO_shift>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <DCLK_reg>.
+    Found finite state machine <FSM_3> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 8                                              |
+    | Clock              | sys_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 16-bit adder for signal <clk_cnt[15]_GND_9_o_add_16_OUT> created at line 124.
+    Found 5-bit adder for signal <clk_edge_cnt[4]_GND_9_o_add_20_OUT> created at line 134.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  38 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <spi_master> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 8
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 2
+ 5-bit adder                                           : 1
+ 8-bit adder                                           : 1
+ 9-bit adder                                           : 2
+ 9-bit subtractor                                      : 1
+# Registers                                            : 35
+ 1-bit register                                        : 17
+ 16-bit register                                       : 1
+ 24-bit register                                       : 1
+ 32-bit register                                       : 2
+ 5-bit register                                        : 1
+ 8-bit register                                        : 10
+ 9-bit register                                        : 3
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 1
+ 9-bit comparator equal                                : 1
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 18
+ 1-bit 2-to-1 multiplexer                              : 3
+ 16-bit 2-to-1 multiplexer                             : 1
+ 24-bit 2-to-1 multiplexer                             : 2
+ 5-bit 2-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 8
+ 8-bit 4-to-1 multiplexer                              : 2
+ 9-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 4
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <size_1> in Unit <spi_flash_ctrl_m0> is equivalent to the following 8 FFs/Latches, which will be removed : <size_2> <size_3> <size_4> <size_5> <size_6> <size_7> <size_8> <cmd_5> 
+WARNING:Xst:1710 - FF/Latch <size_1> (without init value) has a constant value of 0 in block <spi_flash_ctrl_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cmd_code_5> (without init value) has a constant value of 0 in block <spi_flash_cmd_m0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <state_reg_1> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_2> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_3> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_4> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_5> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_6> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2677 - Node <state_reg_7> of sequential type is unconnected in block <spi_flash_ctrl_m0>.
+WARNING:Xst:2404 -  FFs/Latches <size<8:1>> (without init value) have a constant value of 0 in block <spi_flash_ctrl>.
+
+Synthesizing (advanced) Unit <spi_flash_cmd>.
+The following registers are absorbed into counter <byte_cnt>: 1 register on signal <byte_cnt>.
+Unit <spi_flash_cmd> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_flash_test>.
+The following registers are absorbed into counter <timer>: 1 register on signal <timer>.
+The following registers are absorbed into counter <read_data>: 1 register on signal <read_data>.
+Unit <spi_flash_test> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_master>.
+The following registers are absorbed into counter <clk_cnt>: 1 register on signal <clk_cnt>.
+The following registers are absorbed into counter <clk_edge_cnt>: 1 register on signal <clk_edge_cnt>.
+Unit <spi_master> synthesized (advanced).
+WARNING:Xst:2677 - Node <state_reg_1> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_2> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_3> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_4> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_5> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_6> of sequential type is unconnected in block <spi_flash_ctrl>.
+WARNING:Xst:2677 - Node <state_reg_7> of sequential type is unconnected in block <spi_flash_ctrl>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 1
+ 9-bit adder                                           : 1
+ 9-bit subtractor                                      : 1
+# Counters                                             : 5
+ 16-bit up counter                                     : 1
+ 32-bit up counter                                     : 1
+ 5-bit up counter                                      : 1
+ 8-bit up counter                                      : 1
+ 9-bit up counter                                      : 1
+# Registers                                            : 148
+ Flip-Flops                                            : 148
+# Comparators                                          : 4
+ 32-bit comparator greater                             : 1
+ 9-bit comparator equal                                : 1
+ 9-bit comparator lessequal                            : 2
+# Multiplexers                                         : 19
+ 1-bit 2-to-1 multiplexer                              : 9
+ 24-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 6
+ 8-bit 4-to-1 multiplexer                              : 2
+# FSMs                                                 : 4
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <cmd_5> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0100  | 001
+ 0011  | 010
+ 0101  | 011
+ 0010  | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <spi_flash_top_m0/spi_flash_ctrl_m0/FSM_1> on signal <state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 000
+ 00111 | 001
+ 00011 | 010
+ 00001 | 011
+ 00110 | 100
+ 00010 | 101
+ 00101 | 110
+ 00100 | 111
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <spi_flash_top_m0/spi_flash_cmd_m0/FSM_2> on signal <state[1:9]> with one-hot encoding.
+--------------------
+ State | Encoding
+--------------------
+ 00000 | 000000001
+ 00110 | 000000010
+ 00111 | 000000100
+ 01000 | 000001000
+ 00010 | 000010000
+ 00100 | 000100000
+ 00011 | 001000000
+ 00101 | 010000000
+ 00001 | 100000000
+--------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <spi_flash_top_m0/spi_master_m0/FSM_3> on signal <state[1:6]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000001
+ 010   | 000010
+ 100   | 000100
+ 001   | 001000
+ 101   | 010000
+ 011   | 100000
+-------------------
+WARNING:Xst:1710 - FF/Latch <addr_23> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_22> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_21> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_20> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_19> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_18> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_17> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_16> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_15> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_14> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_13> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_12> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_11> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_10> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_9> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_8> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_7> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_6> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_5> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_4> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_3> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_2> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_1> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <addr_0> (without init value) has a constant value of 0 in block <spi_flash_ctrl>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <cmd_6> in Unit <spi_flash_ctrl> is equivalent to the following FF/Latch, which will be removed : <cmd_7> 
+INFO:Xst:2261 - The FF/Latch <cmd_3> in Unit <spi_flash_ctrl> is equivalent to the following FF/Latch, which will be removed : <cmd_4> 
+
+Optimizing unit <spi_flash_test> ...
+
+Optimizing unit <ax_debounce> ...
+
+Optimizing unit <spi_flash_ctrl> ...
+
+Optimizing unit <spi_flash_cmd> ...
+
+Optimizing unit <spi_master> ...
+WARNING:Xst:1710 - FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/cmd_code_5> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_8> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_7> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_6> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_5> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_4> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/byte_size_3> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <ax_debounce_m0/button_posedge> of sequential type is unconnected in block <spi_flash_test>.
+WARNING:Xst:1710 - FF/Latch <ax_debounce_m0/q_reg_20> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_21> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_22> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_23> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_24> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_25> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_26> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_27> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_28> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_29> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_30> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <ax_debounce_m0/q_reg_31> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_31> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_30> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_29> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_28> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_27> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_26> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_25> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <timer_24> (without init value) has a constant value of 0 in block <spi_flash_test>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/cmd_code_7> in Unit <spi_flash_test> is equivalent to the following 3 FFs/Latches, which will be removed : <spi_flash_top_m0/spi_flash_cmd_m0/cmd_code_6> <spi_flash_top_m0/spi_flash_cmd_m0/cmd_code_4> <spi_flash_top_m0/spi_flash_cmd_m0/cmd_code_3> 
+INFO:Xst:2261 - The FF/Latch <spi_flash_top_m0/spi_flash_ctrl_m0/cmd_6> in Unit <spi_flash_test> is equivalent to the following FF/Latch, which will be removed : <spi_flash_top_m0/spi_flash_ctrl_m0/cmd_3> 
+INFO:Xst:2261 - The FF/Latch <spi_flash_top_m0/spi_flash_cmd_m0/wr_ack_d0> in Unit <spi_flash_test> is equivalent to the following FF/Latch, which will be removed : <spi_flash_top_m0/spi_master_m0/state_FSM_FFd2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block spi_flash_test, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 179
+ Flip-Flops                                            : 179
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : spi_flash_test.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 420
+#      GND                         : 1
+#      INV                         : 7
+#      LUT1                        : 42
+#      LUT2                        : 12
+#      LUT3                        : 59
+#      LUT4                        : 24
+#      LUT5                        : 49
+#      LUT6                        : 65
+#      MUXCY                       : 81
+#      MUXF7                       : 2
+#      VCC                         : 1
+#      XORCY                       : 77
+# FlipFlops/Latches                : 179
+#      FDC                         : 112
+#      FDCE                        : 53
+#      FDE                         : 8
+#      FDP                         : 6
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 10
+#      IBUF                        : 3
+#      OBUF                        : 7
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             179  out of  18224     0%  
+ Number of Slice LUTs:                  258  out of   9112     2%  
+    Number used as Logic:               258  out of   9112     2%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    280
+   Number with an unused Flip Flop:     101  out of    280    36%  
+   Number with an unused LUT:            22  out of    280     7%  
+   Number of fully used LUT-FF pairs:   157  out of    280    56%  
+   Number of unique control sets:         9
+
+IO Utilization: 
+ Number of IOs:                          11
+ Number of bonded IOBs:                  11  out of    232     4%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 179   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.961ns (Maximum Frequency: 201.572MHz)
+   Minimum input arrival time before clock: 5.151ns
+   Maximum output required time after clock: 5.138ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.961ns (frequency: 201.572MHz)
+  Total number of paths / destination ports: 3678 / 239
+-------------------------------------------------------------------------
+Delay:               4.961ns (Levels of Logic = 4)
+  Source:            spi_flash_top_m0/spi_flash_cmd_m0/byte_cnt_4 (FF)
+  Destination:       spi_flash_top_m0/spi_flash_cmd_m0/data_out_7 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: spi_flash_top_m0/spi_flash_cmd_m0/byte_cnt_4 to spi_flash_top_m0/spi_flash_cmd_m0/data_out_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             7   0.525   0.910  spi_flash_top_m0/spi_flash_cmd_m0/byte_cnt_4 (spi_flash_top_m0/spi_flash_cmd_m0/byte_cnt_4)
+     LUT2:I1->O            2   0.254   0.726  spi_flash_top_m0/spi_flash_cmd_m0/_n0216<8>_SW0 (N12)
+     LUT6:I5->O            3   0.254   0.766  spi_flash_top_m0/spi_flash_cmd_m0/_n0216<8> (spi_flash_top_m0/spi_flash_cmd_m0/_n0216)
+     LUT6:I5->O            8   0.254   0.944  spi_flash_top_m0/spi_flash_cmd_m0/data_out_0_dpot_SW0 (N64)
+     LUT6:I5->O            1   0.254   0.000  spi_flash_top_m0/spi_flash_cmd_m0/data_out_0_dpot (spi_flash_top_m0/spi_flash_cmd_m0/data_out_0_dpot)
+     FDCE:D                    0.074          spi_flash_top_m0/spi_flash_cmd_m0/data_out_0
+    ----------------------------------------
+    Total                      4.961ns (1.615ns logic, 3.346ns route)
+                                       (32.6% logic, 67.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 181 / 181
+-------------------------------------------------------------------------
+Offset:              5.151ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       flash_write_data_in_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to flash_write_data_in_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   0.725  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            171   0.255   2.384  rst_n_inv1_INV_0 (rst_n_inv)
+     FDCE:CLR                  0.459          flash_write_data_in_0
+    ----------------------------------------
+    Total                      5.151ns (2.042ns logic, 3.109ns route)
+                                       (39.6% logic, 60.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              5.138ns (Levels of Logic = 2)
+  Source:            read_data_3 (FF)
+  Destination:       led<3> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: read_data_3 to led<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.525   0.765  read_data_3 (read_data_3)
+     INV:I->O              1   0.255   0.681  led<3>1_INV_0 (led_3_OBUF)
+     OBUF:I->O                 2.912          led_3_OBUF (led<3>)
+    ----------------------------------------
+    Total                      5.138ns (3.692ns logic, 1.446ns route)
+                                       (71.9% logic, 28.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.961|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.12 secs
+ 
+--> 
+
+Total memory usage is 263596 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   71 (   0 filtered)
+Number of infos    :    9 (   0 filtered)
+

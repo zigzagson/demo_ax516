@@ -1,0 +1,24 @@
+NET "clk" LOC = V10 | TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 50000 kHz;
+
+##
+NET rst_n                  LOC = N4 | IOSTANDARD = "LVCMOS15"; ## reset pushbutton
+
+########Switch Pin define#####################
+NET key1     		         LOC = P7 | IOSTANDARD = "LVCMOS33";        ## KEY1
+
+
+
+########AD/DA Extended IO(J3)##################### 
+NET ad9708_clk                  LOC = V16 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 5 
+
+NET ad9708_data<0>              LOC = V11 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 13
+NET ad9708_data<1>              LOC = T12 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 12 
+NET ad9708_data<2>              LOC = V12 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 11 
+NET ad9708_data<3>              LOC = U13 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 10 
+NET ad9708_data<4>              LOC = V13 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 9 
+NET ad9708_data<5>              LOC = U15 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 8
+NET ad9708_data<6>              LOC = V15 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 7 
+NET ad9708_data<7>              LOC = U16 | IOSTANDARD = "LVCMOS33" | SLEW=FAST;       ## 6 
+
+

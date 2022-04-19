@@ -1,0 +1,644 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: usb_test.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "usb_test.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "usb_test"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : usb_test
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\31_usb_test\chipscope_ila.v" into library work
+Parsing module <chipscope_ila>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\31_usb_test\chipscope_icon.v" into library work
+Parsing module <chipscope_icon>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\31_usb_test\rtl\usb_test.v" into library work
+Parsing module <usb_test>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <usb_test>.
+
+Elaborating module <chipscope_icon>.
+
+Elaborating module <chipscope_ila>.
+WARNING:HDLCompiler:634 - "E:\BaiduYunDownload\AX516.190526\demo\31_usb_test\rtl\usb_test.v" Line 147: Net <TRIG0[255]> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <usb_test>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\31_usb_test\rtl\usb_test.v".
+        IDLE = 5'b00000
+        EP2_RD_CMD = 5'b00001
+        EP2_RD_DATA = 5'b00010
+        EP2_RD_OVER = 5'b00011
+        EP6_WR_CMD = 5'b00100
+        EP6_WR_OVER = 5'b00101
+WARNING:Xst:653 - Signal <TRIG0<255:25>> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 2-bit register for signal <usb_fifoaddr>.
+    Found 5-bit register for signal <usb_state>.
+    Found 1-bit register for signal <usb_fd_en>.
+    Found 1-bit register for signal <access_req>.
+    Found 1-bit register for signal <usb_slrd>.
+    Found 1-bit register for signal <usb_slwr>.
+    Found 1-bit register for signal <usb_sloe>.
+    Found 5-bit register for signal <i>.
+    Found 1-bit register for signal <bus_busy>.
+    Found 16-bit register for signal <data_reg>.
+    Found finite state machine <FSM_0> for signal <usb_state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 17                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst_n (negative)                               |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00000                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 5-bit adder for signal <i[4]_GND_1_o_add_4_OUT> created at line 86.
+    Found 1-bit tristate buffer for signal <usb_fd<15>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<14>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<13>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<12>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<11>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<10>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<9>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<8>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<7>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<6>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<5>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<4>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<3>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<2>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<1>> created at line 144
+    Found 1-bit tristate buffer for signal <usb_fd<0>> created at line 144
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  29 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
+	inferred  16 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <usb_test> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Registers                                            : 9
+ 1-bit register                                        : 6
+ 16-bit register                                       : 1
+ 2-bit register                                        : 1
+ 5-bit register                                        : 1
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 3
+ 5-bit 2-to-1 multiplexer                              : 9
+# Tristates                                            : 16
+ 1-bit tristate buffer                                 : 16
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <chipscope_ila.ngc>.
+Reading core <chipscope_icon.ngc>.
+Loading core <chipscope_ila> for timing and area information for instance <ila_filter_debug>.
+Loading core <chipscope_icon> for timing and area information for instance <icon_debug>.
+WARNING:Xst:1710 - FF/Latch <usb_fifoaddr_0> (without init value) has a constant value of 0 in block <usb_test>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 5-bit adder                                           : 1
+# Registers                                            : 29
+ Flip-Flops                                            : 29
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 3
+ 5-bit 2-to-1 multiplexer                              : 9
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <usb_fifoaddr_0> (without init value) has a constant value of 0 in block <usb_test>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <usb_state[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00000 | 000
+ 00001 | 001
+ 00010 | 010
+ 00011 | 011
+ 00100 | 100
+ 00101 | 101
+-------------------
+
+Optimizing unit <usb_test> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block usb_test, actual ratio is 10.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : usb_test.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 588
+#      GND                         : 3
+#      INV                         : 8
+#      LUT1                        : 56
+#      LUT2                        : 24
+#      LUT3                        : 22
+#      LUT4                        : 90
+#      LUT5                        : 9
+#      LUT6                        : 110
+#      MUXCY_L                     : 193
+#      MUXF5                       : 2
+#      MUXF6                       : 1
+#      MUXF7                       : 11
+#      MUXF8                       : 2
+#      VCC                         : 2
+#      XORCY                       : 55
+# FlipFlops/Latches                : 1254
+#      FD                          : 513
+#      FDC                         : 15
+#      FDCE                        : 16
+#      FDE                         : 54
+#      FDP                         : 517
+#      FDR                         : 48
+#      FDRE                        : 80
+#      FDS                         : 10
+#      LDC                         : 1
+# RAMS                             : 15
+#      RAMB16BWER                  : 14
+#      RAMB8BWER                   : 1
+# Shift Registers                  : 418
+#      SRL16                       : 256
+#      SRL16E                      : 1
+#      SRLC16E                     : 39
+#      SRLC32E                     : 122
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 26
+#      IBUF                        : 4
+#      IOBUF                       : 16
+#      OBUF                        : 6
+# Others                           : 1
+#      BSCAN_SPARTAN6              : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            1254  out of  18224     6%  
+ Number of Slice LUTs:                  737  out of   9112     8%  
+    Number used as Logic:               319  out of   9112     3%  
+    Number used as Memory:              418  out of   2176    19%  
+       Number used as SRL:              418
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1646
+   Number with an unused Flip Flop:     392  out of   1646    23%  
+   Number with an unused LUT:           909  out of   1646    55%  
+   Number of fully used LUT-FF pairs:   345  out of   1646    20%  
+   Number of unique control sets:        54
+
+IO Utilization: 
+ Number of IOs:                          27
+ Number of bonded IOBs:                  27  out of    232    11%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               15  out of     32    46%  
+    Number using Block RAM only:         15
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------------------------------------+-------------------------------------------------------------+-------+
+Clock Signal                                                                      | Clock buffer(FF name)                                       | Load  |
+----------------------------------------------------------------------------------+-------------------------------------------------------------+-------+
+clk                                                                               | BUFGP                                                       | 1433  |
+icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL                                 | BUFG                                                        | 267   |
+icon_debug/CONTROL0<13>(icon_debug/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_LCE:O)| NONE(*)(ila_filter_debug/U0/I_NO_D.U_ILA/U_STAT/U_DIRTY_LDC)| 1     |
+icon_debug/U0/iUPDATE_OUT                                                         | NONE(icon_debug/U0/U_ICON/U_iDATA_CMD)                      | 1     |
+----------------------------------------------------------------------------------+-------------------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 7.976ns (Maximum Frequency: 125.375MHz)
+   Minimum input arrival time before clock: 5.627ns
+   Maximum output required time after clock: 4.844ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.896ns (frequency: 204.269MHz)
+  Total number of paths / destination ports: 2381 / 1749
+-------------------------------------------------------------------------
+Delay:               4.896ns (Levels of Logic = 4)
+  Source:            i_2 (FF)
+  Destination:       i_4 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: i_2 to i_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             14   0.447   1.186  i_2 (i_2)
+     LUT5:I2->O            5   0.205   0.715  GND_1_o_GND_1_o_equal_13_o<4>1 (GND_1_o_GND_1_o_equal_13_o)
+     LUT6:I5->O            1   0.205   0.580  Mmux__n016221_SW4 (N44)
+     LUT6:I5->O            4   0.205   1.048  Mmux__n016221 (Mmux__n016221)
+     LUT6:I0->O            1   0.203   0.000  Mmux__n016251 (_n0162<4>)
+     FDE:D                     0.102          i_4
+    ----------------------------------------
+    Total                      4.896ns (1.367ns logic, 3.529ns route)
+                                       (27.9% logic, 72.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Clock period: 7.976ns (frequency: 125.375MHz)
+  Total number of paths / destination ports: 4244 / 556
+-------------------------------------------------------------------------
+Delay:               7.976ns (Levels of Logic = 8)
+  Source:            ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[9].u_ramb18/U_RAMB18 (RAM)
+  Destination:       icon_debug/U0/U_ICON/U_TDO_reg (FF)
+  Source Clock:      icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+  Destination Clock: icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[9].u_ramb18/U_RAMB18 to icon_debug/U0/U_ICON/U_TDO_reg
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKA->DOA7    1   1.850   0.827  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[9].u_ramb18/U_RAMB18 (U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/rd_data<169>)
+     LUT6:I2->O            1   0.203   0.827  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_1914 (U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_1914)
+     LUT6:I2->O            1   0.203   0.827  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_145 (U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_145)
+     LUT6:I2->O            1   0.203   0.827  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_91 (U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_91)
+     LUT6:I2->O            1   0.203   0.000  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_41 (U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_4)
+     MUXF7:I0->O           1   0.131   0.684  U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RD_COL_MUX/I9.U_MUX512/Mmux_O_2_f7 (U0/I_NO_D.U_ILA/iDATA_DOUT)
+     LUT3:I1->O            1   0.203   0.684  U0/I_NO_D.U_ILA/U_DOUT (CONTROL<3>)
+     end scope: 'ila_filter_debug:CONTROL<3>'
+     begin scope: 'icon_debug:CONTROL0<3>'
+     LUT6:I4->O            1   0.203   0.000  U0/U_ICON/U_TDO_MUX/U_CS_MUX/I4.U_MUX16/Mmux_O11 (U0/U_ICON/iTDO_next)
+     FDE:D                     0.102          U0/U_ICON/U_TDO_reg
+    ----------------------------------------
+    Total                      7.976ns (3.301ns logic, 4.675ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'icon_debug/U0/iUPDATE_OUT'
+  Clock period: 1.984ns (frequency: 504.007MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.984ns (Levels of Logic = 1)
+  Source:            icon_debug/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination:       icon_debug/U0/U_ICON/U_iDATA_CMD (FF)
+  Source Clock:      icon_debug/U0/iUPDATE_OUT rising
+  Destination Clock: icon_debug/U0/iUPDATE_OUT rising
+
+  Data Path: icon_debug/U0/U_ICON/U_iDATA_CMD to icon_debug/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.447   0.650  U0/U_ICON/U_iDATA_CMD (U0/U_ICON/iDATA_CMD)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iDATA_CMD_n (U0/U_ICON/iDATA_CMD_n)
+     FDC:D                     0.102          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.984ns (0.755ns logic, 1.229ns route)
+                                       (38.1% logic, 61.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 589 / 588
+-------------------------------------------------------------------------
+Offset:              5.149ns (Levels of Logic = 3)
+  Source:            icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2 (FF)
+  Destination Clock: clk rising
+
+  Data Path: icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
+     LUT2:I1->O           32   0.205   1.539  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
+     LUT4:I0->O          640   0.203   2.120  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[0].U_HCE (CONTROL0<20>)
+     end scope: 'icon_debug:CONTROL0<20>'
+     begin scope: 'ila_filter_debug:CONTROL<20>'
+     FDP:PRE                   0.430          U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY2[0].I_IN_RANGE.U_GAND_DLY2
+    ----------------------------------------
+    Total                      5.149ns (0.838ns logic, 4.311ns route)
+                                       (16.3% logic, 83.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 302 / 291
+-------------------------------------------------------------------------
+Offset:              5.627ns (Levels of Logic = 5)
+  Source:            icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT (PAD)
+  Destination:       ila_filter_debug/U0/I_NO_D.U_ILA/U_STAT/U_STAT_CNT/G[0].U_FDRE (FF)
+  Destination Clock: icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SHIFT to ila_filter_debug/U0/I_NO_D.U_ILA/U_STAT/U_STAT_CNT/G[0].U_FDRE
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SHIFT    3   0.000   0.651  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/iSHIFT_OUT)
+     LUT2:I1->O           32   0.205   1.539  U0/U_ICON/U_CTRL_OUT/U_DATA_VALID (U0/U_ICON/U_CTRL_OUT/iDATA_VALID)
+     LUT4:I0->O            3   0.203   0.755  U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[0].U_LCE (CONTROL0<4>)
+     end scope: 'icon_debug:CONTROL0<4>'
+     begin scope: 'ila_filter_debug:CONTROL<4>'
+     LUT2:I0->O            1   0.203   0.579  U0/I_NO_D.U_ILA/U_STAT/U_STATCMD (U0/I_NO_D.U_ILA/U_STAT/iSTATCMD_CE)
+     INV:I->O             10   0.206   0.856  U0/I_NO_D.U_ILA/U_STAT/U_STATCMD_n (U0/I_NO_D.U_ILA/U_STAT/iSTATCMD_CE_n)
+     FDRE:R                    0.430          U0/I_NO_D.U_ILA/U_STAT/U_STAT_CNT/G[9].U_FDRE
+    ----------------------------------------
+    Total                      5.627ns (1.247ns logic, 4.380ns route)
+                                       (22.2% logic, 77.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'icon_debug/U0/iUPDATE_OUT'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.831ns (Levels of Logic = 1)
+  Source:            icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL (PAD)
+  Destination:       icon_debug/U0/U_ICON/U_iDATA_CMD (FF)
+  Destination Clock: icon_debug/U0/iUPDATE_OUT rising
+
+  Data Path: icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:SEL to icon_debug/U0/U_ICON/U_iDATA_CMD
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    BSCAN_SPARTAN6:SEL     2   0.000   0.616  U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS (U0/U_ICON/iSEL)
+     INV:I->O              1   0.206   0.579  U0/U_ICON/U_iSEL_n (U0/U_ICON/iSEL_n)
+     FDC:CLR                   0.430          U0/U_ICON/U_iDATA_CMD
+    ----------------------------------------
+    Total                      1.831ns (0.636ns logic, 1.195ns route)
+                                       (34.7% logic, 65.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 36 / 20
+-------------------------------------------------------------------------
+Offset:              4.844ns (Levels of Logic = 2)
+  Source:            usb_fd_en (FF)
+  Destination:       usb_fd<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: usb_fd_en to usb_fd<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.447   0.616  usb_fd_en (usb_fd_en)
+     INV:I->O             16   0.206   1.004  usb_fd_en_inv1_INV_0 (usb_fd_en_inv)
+     IOBUF:T->IO               2.571          usb_fd_15_IOBUF (usb_fd<15>)
+    ----------------------------------------
+    Total                      4.844ns (3.224ns logic, 1.620ns route)
+                                       (66.6% logic, 33.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              0.447ns (Levels of Logic = 0)
+  Source:            icon_debug/U0/U_ICON/U_TDO_reg (FF)
+  Destination:       icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO (PAD)
+  Source Clock:      icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL rising
+
+  Data Path: icon_debug/U0/U_ICON/U_TDO_reg to icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS:TDO
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              0   0.447   0.000  U0/U_ICON/U_TDO_reg (U0/U_ICON/iTDO)
+    BSCAN_SPARTAN6:TDO         0.000          U0/U_ICON/I_YES_BSCAN.U_BS/I_S6.ISYN.I_USE_SOFTBSCAN_EQ0.U_BS
+    ----------------------------------------
+    Total                      0.447ns (0.447ns logic, 0.000ns route)
+                                       (100.0% logic, 0.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+-------------------------------------------------+---------+---------+---------+---------+
+                                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------+---------+---------+---------+---------+
+clk                                              |    4.896|         |         |         |
+icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    6.096|         |         |         |
+-------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock icon_debug/CONTROL0<13>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |    1.948|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL
+-------------------------------------------------+---------+---------+---------+---------+
+                                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------+---------+---------+---------+---------+
+clk                                              |    3.517|         |         |         |
+icon_debug/CONTROL0<13>                          |         |    3.669|         |         |
+icon_debug/U0/U_ICON/I_YES_BSCAN.U_BS/iDRCK_LOCAL|    7.976|         |         |         |
+icon_debug/U0/iUPDATE_OUT                        |    2.583|         |         |         |
+-------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock icon_debug/U0/iUPDATE_OUT
+-------------------------+---------+---------+---------+---------+
+                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------+---------+---------+---------+---------+
+icon_debug/U0/iUPDATE_OUT|    1.984|         |         |         |
+-------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.24 secs
+ 
+--> 
+
+Total memory usage is 266764 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

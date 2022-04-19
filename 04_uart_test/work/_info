@@ -1,0 +1,104 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX516.190526\demo\04_uart_test
+T_opt
+Z1 V3:In>NzNoh=2Wfe1QnP3I2
+Z2 04 12 4 work uart_test_tb fast 0
+Z3 04 4 4 work glbl fast 0
+Z4 =1-2c534a01a10c-5cd37fea-30d-2408
+Z5 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip +acc
+Z6 n@_opt
+Z7 OL;O;10.1c;51
+Z8 dE:\BaiduYunDownload\AX516.190526\demo\04_uart_test
+vglbl
+!i10b 1
+Z9 !s100 4BUMBVf6Tzc2Z4KLdBM[:3
+Z10 ID_fMj]QBM>Ecj5LGgB3e62
+Z11 VM[9mS]S:KA1i4VeCMX35[3
+R8
+Z12 w1381681120
+Z13 8C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+Z14 FC:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+Z15 OL;L;10.1c;51
+r1
+!s85 0
+31
+!s108 1558088423.475000
+!s107 C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+Z16 !s90 -reportprogress|300|C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+Z17 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+vuart_rx
+Z18 !s100 a3NQHKN9Q8SK8WeohYG@Y1
+Z19 I;3n91nKP<IiRCES8eo2f_0
+Z20 V;8=_JedmLNPTWN>i=UL`22
+R8
+Z21 w1512467050
+Z22 8src/uart_rx.v
+Z23 Fsrc/uart_rx.v
+L0 30
+R15
+r1
+31
+Z24 !s90 -reportprogress|300|src/uart_rx.v|
+R17
+Z25 !s108 1558088423.030000
+Z26 !s107 src/uart_rx.v|
+!i10b 1
+!s85 0
+vuart_test
+Z27 !s100 l0G9b4DFRG_UL56jUY<l=0
+Z28 IAJSFa@S]R8AfKo?PYXikb3
+Z29 Vkm@oH=F`mLjK:0F3d_Kdz1
+R8
+R21
+Z30 8src/uart_test.v
+Z31 Fsrc/uart_test.v
+L0 31
+R15
+r1
+31
+Z32 !s90 -reportprogress|300|src/uart_test.v|
+R17
+Z33 !s108 1558088423.196000
+Z34 !s107 src/uart_test.v|
+!i10b 1
+!s85 0
+vuart_test_tb
+Z35 !s100 @6>XejgJ2`aA[ILUUeX>G1
+Z36 IPo=doeiE6P0lX=f=:BW=Q2
+Z37 VVF5dNH<J336mlD`L?ZGUO2
+R8
+Z38 w1557303425
+Z39 8sim/uart_test_tb.v
+Z40 Fsim/uart_test_tb.v
+L0 6
+R15
+r1
+31
+Z41 !s90 -reportprogress|300|sim/uart_test_tb.v|
+R17
+!i10b 1
+!s85 0
+Z42 !s108 1558088423.339000
+Z43 !s107 sim/uart_test_tb.v|
+vuart_tx
+Z44 !s100 PXczNImPGT>I9:[n0JZzn2
+Z45 Ih>X_J0FS34@9OdY_]X?LE2
+Z46 V@Kno7jon7`Kc7S?@Mz<j12
+R8
+R21
+Z47 8src/uart_tx.v
+Z48 Fsrc/uart_tx.v
+L0 30
+R15
+r1
+31
+Z49 !s90 -reportprogress|300|src/uart_tx.v|
+R17
+Z50 !s108 1558088422.890000
+Z51 !s107 src/uart_tx.v|
+!i10b 1
+!s85 0

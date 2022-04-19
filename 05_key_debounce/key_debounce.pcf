@@ -1,0 +1,36 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Thu May 09 09:26:55 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "led<0>" LOCATE = SITE "V5" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "R3" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "T3" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "T4" LEVEL 1;
+COMP "key" LOCATE = SITE "P7" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "N4" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "count10_m0/data_0" BEL "count10_m0/data_1" BEL
+        "count10_m0/data_2" BEL "count10_m0/data_3" BEL
+        "ax_debounce_m0/button_out_d0" BEL "ax_debounce_m0/DFF2" BEL
+        "ax_debounce_m0/DFF1" BEL "ax_debounce_m0/button_negedge" BEL
+        "ax_debounce_m0/q_reg_31" BEL "ax_debounce_m0/q_reg_30" BEL
+        "ax_debounce_m0/q_reg_29" BEL "ax_debounce_m0/q_reg_28" BEL
+        "ax_debounce_m0/q_reg_27" BEL "ax_debounce_m0/q_reg_26" BEL
+        "ax_debounce_m0/q_reg_25" BEL "ax_debounce_m0/q_reg_24" BEL
+        "ax_debounce_m0/q_reg_23" BEL "ax_debounce_m0/q_reg_22" BEL
+        "ax_debounce_m0/q_reg_21" BEL "ax_debounce_m0/q_reg_20" BEL
+        "ax_debounce_m0/q_reg_19" BEL "ax_debounce_m0/q_reg_18" BEL
+        "ax_debounce_m0/q_reg_17" BEL "ax_debounce_m0/q_reg_16" BEL
+        "ax_debounce_m0/q_reg_15" BEL "ax_debounce_m0/q_reg_14" BEL
+        "ax_debounce_m0/q_reg_13" BEL "ax_debounce_m0/q_reg_12" BEL
+        "ax_debounce_m0/q_reg_11" BEL "ax_debounce_m0/q_reg_10" BEL
+        "ax_debounce_m0/q_reg_9" BEL "ax_debounce_m0/q_reg_8" BEL
+        "ax_debounce_m0/q_reg_7" BEL "ax_debounce_m0/q_reg_6" BEL
+        "ax_debounce_m0/q_reg_5" BEL "ax_debounce_m0/q_reg_4" BEL
+        "ax_debounce_m0/q_reg_3" BEL "ax_debounce_m0/q_reg_2" BEL
+        "ax_debounce_m0/q_reg_1" BEL "ax_debounce_m0/q_reg_0" BEL
+        "ax_debounce_m0/button_out" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

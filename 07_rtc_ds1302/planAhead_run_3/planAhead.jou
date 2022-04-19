@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Mon May 20 09:49:12 2019
+# Process ID: 7364
+# Log file: E:/BaiduYunDownload/AX516.190526/demo/07_rtc_ds1302/planAhead_run_3/planAhead.log
+# Journal file: E:/BaiduYunDownload/AX516.190526/demo/07_rtc_ds1302/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source E:/BaiduYunDownload/AX516.190526/demo/07_rtc_ds1302/pa.fromNetlist.tcl

@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/11_sd_card_test/sd_card_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/11_sd_card_test/sd_card_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc sd_card_test.ucf -p xc6slx16-csg324-2 sd_card_test.ngc sd_card_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o sd_card_test_map.ncd sd_card_test.ngd sd_card_test.pcf 
+par -w -intstyle ise -ol high -mt off sd_card_test_map.ncd sd_card_test.ncd sd_card_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml sd_card_test.twx sd_card_test.ncd -o sd_card_test.twr sd_card_test.pcf -ucf sd_card_test.ucf 
+bitgen -intstyle ise -f sd_card_test.ut sd_card_test.ncd 

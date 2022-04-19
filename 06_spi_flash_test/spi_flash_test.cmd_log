@@ -1,0 +1,19 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc spi_flash_test.ucf -p xc6slx16-csg324-2 spi_flash_test.ngc spi_flash_test.ngd  
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc spi_flash_test.ucf -p xc6slx16-csg324-2 spi_flash_test.ngc spi_flash_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o spi_flash_test_map.ncd spi_flash_test.ngd spi_flash_test.pcf 
+par -w -intstyle ise -ol high -mt off spi_flash_test_map.ncd spi_flash_test.ncd spi_flash_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml spi_flash_test.twx spi_flash_test.ncd -o spi_flash_test.twr spi_flash_test.pcf -ucf spi_flash_test.ucf 
+bitgen -intstyle ise -f spi_flash_test.ut spi_flash_test.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc spi_flash_test.ucf -p xc6slx16-csg324-2 spi_flash_test.ngc spi_flash_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o spi_flash_test_map.ncd spi_flash_test.ngd spi_flash_test.pcf 
+par -w -intstyle ise -ol high -mt off spi_flash_test_map.ncd spi_flash_test.ncd spi_flash_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml spi_flash_test.twx spi_flash_test.ncd -o spi_flash_test.twr spi_flash_test.pcf -ucf spi_flash_test.ucf 
+bitgen -intstyle ise -f spi_flash_test.ut spi_flash_test.ncd 
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/06_spi_flash_test/spi_flash_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc spi_flash_test.ucf -p xc6slx16-csg324-2 spi_flash_test.ngc spi_flash_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o spi_flash_test_map.ncd spi_flash_test.ngd spi_flash_test.pcf 
+par -w -intstyle ise -ol high -mt off spi_flash_test_map.ncd spi_flash_test.ncd spi_flash_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml spi_flash_test.twx spi_flash_test.ncd -o spi_flash_test.twr spi_flash_test.pcf -ucf spi_flash_test.ucf 
+bitgen -intstyle ise -f spi_flash_test.ut spi_flash_test.ncd 

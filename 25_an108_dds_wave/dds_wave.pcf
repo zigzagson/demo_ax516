@@ -1,0 +1,84 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Sun Jul 07 14:57:31 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "ad9708_clk" LOCATE = SITE "V16" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "ad9708_data<0>" LOCATE = SITE "V11" LEVEL 1;
+COMP "ad9708_data<1>" LOCATE = SITE "T12" LEVEL 1;
+COMP "ad9708_data<2>" LOCATE = SITE "V12" LEVEL 1;
+COMP "ad9708_data<3>" LOCATE = SITE "U13" LEVEL 1;
+COMP "ad9708_data<4>" LOCATE = SITE "V13" LEVEL 1;
+COMP "ad9708_data<5>" LOCATE = SITE "U15" LEVEL 1;
+COMP "ad9708_data<6>" LOCATE = SITE "V15" LEVEL 1;
+COMP "ad9708_data<7>" LOCATE = SITE "U16" LEVEL 1;
+COMP "key1" LOCATE = SITE "P7" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "N4" LEVEL 1;
+PIN sin_cos_inst/blk000000d1_pins<20> = BEL "sin_cos_inst/blk000000d1" PINNAME
+        CLKAWRCLK;
+PIN sin_cos_inst/blk000000d1_pins<21> = BEL "sin_cos_inst/blk000000d1" PINNAME
+        CLKBRDCLK;
+TIMEGRP sys_clk_pin = BEL "dds_we_req" BEL "dds_we" BEL "dds_data_0" BEL
+        "dds_data_1" BEL "dds_data_2" BEL "dds_data_3" BEL "dds_data_4" BEL
+        "dds_data_5" BEL "dds_data_6" BEL "dds_data_7" BEL "dds_data_8" BEL
+        "dds_data_9" BEL "dds_data_10" BEL "dds_data_11" BEL "dds_data_12" BEL
+        "dds_data_13" BEL "dds_data_14" BEL "dds_data_15" BEL "dds_data_16"
+        BEL "dds_data_17" BEL "dds_data_18" BEL "dds_data_19" BEL
+        "dds_data_20" BEL "dds_data_21" BEL "dds_data_22" BEL "dds_data_23"
+        BEL "dds_data_24" BEL "dds_data_25" BEL "dds_data_26" BEL "dadata_o_0"
+        BEL "dadata_o_1" BEL "dadata_o_2" BEL "dadata_o_3" BEL "dadata_o_4"
+        BEL "dadata_o_5" BEL "dadata_o_6" BEL "dadata_o_7" BEL "dds_freq_0"
+        BEL "dds_freq_1" BEL "dds_freq_2" BEL "dds_freq_3" BEL
+        "ax_debounce_m0/button_out_d0" BEL "ax_debounce_m0/DFF2" BEL
+        "ax_debounce_m0/DFF1" BEL "ax_debounce_m0/button_negedge" BEL
+        "ax_debounce_m0/q_reg_31" BEL "ax_debounce_m0/q_reg_30" BEL
+        "ax_debounce_m0/q_reg_29" BEL "ax_debounce_m0/q_reg_28" BEL
+        "ax_debounce_m0/q_reg_27" BEL "ax_debounce_m0/q_reg_26" BEL
+        "ax_debounce_m0/q_reg_25" BEL "ax_debounce_m0/q_reg_24" BEL
+        "ax_debounce_m0/q_reg_23" BEL "ax_debounce_m0/q_reg_22" BEL
+        "ax_debounce_m0/q_reg_21" BEL "ax_debounce_m0/q_reg_20" BEL
+        "ax_debounce_m0/q_reg_19" BEL "ax_debounce_m0/q_reg_18" BEL
+        "ax_debounce_m0/q_reg_17" BEL "ax_debounce_m0/q_reg_16" BEL
+        "ax_debounce_m0/q_reg_15" BEL "ax_debounce_m0/q_reg_14" BEL
+        "ax_debounce_m0/q_reg_13" BEL "ax_debounce_m0/q_reg_12" BEL
+        "ax_debounce_m0/q_reg_11" BEL "ax_debounce_m0/q_reg_10" BEL
+        "ax_debounce_m0/q_reg_9" BEL "ax_debounce_m0/q_reg_8" BEL
+        "ax_debounce_m0/q_reg_7" BEL "ax_debounce_m0/q_reg_6" BEL
+        "ax_debounce_m0/q_reg_5" BEL "ax_debounce_m0/q_reg_4" BEL
+        "ax_debounce_m0/q_reg_3" BEL "ax_debounce_m0/q_reg_2" BEL
+        "ax_debounce_m0/q_reg_1" BEL "ax_debounce_m0/q_reg_0" BEL
+        "ax_debounce_m0/button_out" BEL "ad9708_clk_OBUF_BUFG" BEL
+        "sin_cos_inst/blk00000005" BEL "sin_cos_inst/blk00000006" BEL
+        "sin_cos_inst/blk00000007" BEL "sin_cos_inst/blk00000008" BEL
+        "sin_cos_inst/blk00000009" BEL "sin_cos_inst/blk0000000a" BEL
+        "sin_cos_inst/blk0000000b" BEL "sin_cos_inst/blk0000000c" BEL
+        "sin_cos_inst/blk0000000d" BEL "sin_cos_inst/blk0000000e" BEL
+        "sin_cos_inst/blk0000000f" BEL "sin_cos_inst/blk00000010" BEL
+        "sin_cos_inst/blk00000011" BEL "sin_cos_inst/blk00000012" BEL
+        "sin_cos_inst/blk00000013" BEL "sin_cos_inst/blk00000014" BEL
+        "sin_cos_inst/blk00000015" BEL "sin_cos_inst/blk00000016" BEL
+        "sin_cos_inst/blk00000017" BEL "sin_cos_inst/blk00000018" BEL
+        "sin_cos_inst/blk00000019" BEL "sin_cos_inst/blk0000001a" BEL
+        "sin_cos_inst/blk0000001b" BEL "sin_cos_inst/blk0000001c" BEL
+        "sin_cos_inst/blk0000001d" BEL "sin_cos_inst/blk0000001e" BEL
+        "sin_cos_inst/blk0000001f" BEL "sin_cos_inst/blk00000021" BEL
+        "sin_cos_inst/blk00000022" BEL "sin_cos_inst/blk00000023" BEL
+        "sin_cos_inst/blk00000024" BEL "sin_cos_inst/blk00000025" BEL
+        "sin_cos_inst/blk00000026" BEL "sin_cos_inst/blk00000027" BEL
+        "sin_cos_inst/blk00000028" BEL "sin_cos_inst/blk00000029" BEL
+        "sin_cos_inst/blk0000002a" BEL "sin_cos_inst/blk0000002b" BEL
+        "sin_cos_inst/blk0000002c" BEL "sin_cos_inst/blk0000002d" BEL
+        "sin_cos_inst/blk0000002e" BEL "sin_cos_inst/blk0000002f" BEL
+        "sin_cos_inst/blk00000030" BEL "sin_cos_inst/blk00000031" BEL
+        "sin_cos_inst/blk00000032" BEL "sin_cos_inst/blk00000033" BEL
+        "sin_cos_inst/blk00000034" BEL "sin_cos_inst/blk00000035" BEL
+        "sin_cos_inst/blk00000036" BEL "sin_cos_inst/blk00000037" BEL
+        "sin_cos_inst/blk00000038" BEL "sin_cos_inst/blk00000039" BEL
+        "sin_cos_inst/blk0000003a" BEL "sin_cos_inst/blk0000003b" BEL
+        "sin_cos_inst/blk0000003c" BEL "sin_cos_inst/blk0000003d" PIN
+        "sin_cos_inst/blk000000d1_pins<20>" PIN
+        "sin_cos_inst/blk000000d1_pins<21>" BEL "ad9708_clk";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

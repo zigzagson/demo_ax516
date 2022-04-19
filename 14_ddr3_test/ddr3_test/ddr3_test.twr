@@ -1,0 +1,1204 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml ddr3_test.twx ddr3_test.ncd -o ddr3_test.twr ddr3_test.pcf
+-ucf ddr3.ucf
+
+Design file:              ddr3_test.ncd
+Physical constraint file: ddr3_test.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   5.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.548ns (period - min period limit)
+  Period: 1.600ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT0
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT0
+  Location pin: PLL_ADV_X0Y0.CLKOUT0
+  Clock network: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/clk_2x_0
+--------------------------------------------------------------------------------
+Slack: 0.548ns (period - min period limit)
+  Period: 1.600ns
+  Min period limit: 1.052ns (950.570MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT1
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT1
+  Location pin: PLL_ADV_X0Y0.CLKOUT1
+  Clock network: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/clk_2x_180
+--------------------------------------------------------------------------------
+Slack: 10.134ns (period - min period limit)
+  Period: 12.800ns
+  Min period limit: 2.666ns (375.094MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT3
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/u_pll_adv/CLKOUT3
+  Location pin: PLL_ADV_X0Y0.CLKOUT3
+  Clock network: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/mcb_drp_clk_bufg_in
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: 
+TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in =        
+ PERIOD TIMEGRP         
+"mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in"         
+TS_sys_clk_pin * 1.5625 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 24493 paths analyzed, 1648 endpoints analyzed, 1 failing endpoint
+ 1 timing error detected. (1 setup error, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  46.112ns.
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R1 (SLICE_X1Y48.AX), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -2.082ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 (CPU)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R1 (FF)
+  Requirement:          0.800ns
+  Data Path Delay:      1.738ns (Levels of Logic = 0)(Component delays alone exceeds constraint)
+  Clock Path Skew:      -0.881ns (1.509 - 2.390)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_sysclk_2x_180 rising at 12.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.263ns
+
+  Clock Uncertainty:          0.263ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.120ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R1
+    Location                 Delay type         Delay(ns)  Physical Resource
+                                                           Logical Resource(s)
+    -----------------------------------------------------  -------------------
+    MCB_X0Y1.SELFREFRESHMODE Tmcbcko_SELFREFRESHMODE  1.000   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0
+                                                           mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0
+    SLICE_X1Y48.AX           net (fanout=1)        0.624   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/selfrefresh_mcb_mode
+    SLICE_X1Y48.CLK          Tdick                 0.114   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R2
+                                                           mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/SELFREFRESH_MCB_MODE_R1
+    -----------------------------------------------------  ---------------------------
+    Total                                          1.738ns (1.114ns logic, 0.624ns route)
+                                                           (64.1% logic, 35.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3 (SLICE_X13Y37.CE), 49 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.928ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.706ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.023ns (0.421 - 0.444)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y59.AMUX    Tshcko                0.576   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd39-In1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38
+    SLICE_X21Y51.D1      net (fanout=8)        2.243   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38
+    SLICE_X21Y51.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>7
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>71
+    SLICE_X18Y56.A6      net (fanout=7)        1.000   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>7
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.408   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.706ns (2.265ns logic, 7.441ns route)
+                                                       (23.3% logic, 76.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.045ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.567ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.045ns (0.421 - 0.466)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y55.CQ       Tcko                  0.525   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42
+    SLICE_X18Y51.C4      net (fanout=12)       2.371   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42
+    SLICE_X18Y51.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd56
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>21
+    SLICE_X18Y56.A4      net (fanout=2)        0.788   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>2
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.408   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.567ns (2.210ns logic, 7.357ns route)
+                                                       (23.1% logic, 76.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.101ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.511ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.045ns (0.421 - 0.466)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y55.BQ       Tcko                  0.430   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+    SLICE_X18Y55.A2      net (fanout=14)       2.373   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+    SLICE_X18Y55.AMUX    Tilo                  0.326   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd23
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>3
+    SLICE_X18Y56.A2      net (fanout=1)        0.754   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>3
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.408   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_3
+    -------------------------------------------------  ---------------------------
+    Total                                      9.511ns (2.186ns logic, 7.325ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2 (SLICE_X13Y37.CE), 49 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.971ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.663ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.023ns (0.421 - 0.444)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y59.AMUX    Tshcko                0.576   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd39-In1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38
+    SLICE_X21Y51.D1      net (fanout=8)        2.243   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd38
+    SLICE_X21Y51.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>7
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>71
+    SLICE_X18Y56.A6      net (fanout=7)        1.000   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE[5]_GND_18_o_wide_mux_250_OUT<5>7
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.365   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.663ns (2.222ns logic, 7.441ns route)
+                                                       (23.0% logic, 77.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.088ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.524ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.045ns (0.421 - 0.466)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X6Y55.CQ       Tcko                  0.525   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd45
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42
+    SLICE_X18Y51.C4      net (fanout=12)       2.371   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd42
+    SLICE_X18Y51.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd56
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>21
+    SLICE_X18Y56.A4      net (fanout=2)        0.788   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>2
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.365   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.524ns (2.167ns logic, 7.357ns route)
+                                                       (22.8% logic, 77.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     3.144ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2 (FF)
+  Requirement:          12.800ns
+  Data Path Delay:      9.468ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.045ns (0.421 - 0.466)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 0.000ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.143ns
+
+  Clock Uncertainty:          0.143ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.276ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y55.BQ       Tcko                  0.430   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+    SLICE_X18Y55.A2      net (fanout=14)       2.373   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd44
+    SLICE_X18Y55.AMUX    Tilo                  0.326   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_FSM_FFd23
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>3
+    SLICE_X18Y56.A2      net (fanout=1)        0.754   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>3
+    SLICE_X18Y56.A       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE_STATE<1>4
+    SLICE_X18Y56.C1      net (fanout=6)        0.545   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE<1>
+    SLICE_X18Y56.C       Tilo                  0.255   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037<1>3
+    SLICE_X18Y56.D5      net (fanout=4)        0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1037
+    SLICE_X18Y56.D       Tilo                  0.254   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv11
+    SLICE_X13Y42.D5      net (fanout=4)        2.439   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1539_inv1
+    SLICE_X13Y42.D       Tilo                  0.259   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<5>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/STATE__n1316_inv1
+    SLICE_X13Y37.CE      net (fanout=3)        0.955   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/_n1316_inv
+    SLICE_X13Y37.CLK     Tceck                 0.365   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term<3>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/P_Term_2
+    -------------------------------------------------  ---------------------------
+    Total                                      9.468ns (2.143ns logic, 7.325ns route)
+                                                       (22.6% logic, 77.4% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in =
+        PERIOD TIMEGRP
+        "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in"
+        TS_sys_clk_pin * 1.5625 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_7 (SLICE_X10Y51.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.283ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_7 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.278ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.005ns (0.092 - 0.097)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_7
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y50.CQ       Tcko                  0.198   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CE      net (fanout=25)       0.188   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CLK     Tckce       (-Th)     0.108   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg<7>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_7
+    -------------------------------------------------  ---------------------------
+    Total                                      0.278ns (0.090ns logic, 0.188ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_3 (SLICE_X10Y51.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.287ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.282ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.005ns (0.092 - 0.097)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y50.CQ       Tcko                  0.198   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CE      net (fanout=25)       0.188   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CLK     Tckce       (-Th)     0.104   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg<7>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.282ns (0.094ns logic, 0.188ns route)
+                                                       (33.3% logic, 66.7% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_1 (SLICE_X10Y51.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.289ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 (FF)
+  Destination:          mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_1 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.284ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.005ns (0.092 - 0.097)
+  Source Clock:         mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Destination Clock:    mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk rising at 12.800ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8 to mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_1
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y50.CQ       Tcko                  0.198   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CE      net (fanout=25)       0.188   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/state_FSM_FFd8
+    SLICE_X10Y51.CLK     Tckce       (-Th)     0.102   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg<7>
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/iodrp_controller/memcell_addr_reg_1
+    -------------------------------------------------  ---------------------------
+    Total                                      0.284ns (0.096ns logic, 0.188ns route)
+                                                       (33.8% logic, 66.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in =
+        PERIOD TIMEGRP
+        "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_mcb_drp_clk_bufg_in"
+        TS_sys_clk_pin * 1.5625 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 10.134ns (period - min period limit)
+  Period: 12.800ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/U_BUFG_CLK1/I0
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/U_BUFG_CLK1/I0
+  Location pin: BUFGMUX_X2Y3.I0
+  Clock network: mem_ctrl_inst/ddr3_m0/memc3_infrastructure_inst/mcb_drp_clk_bufg_in
+--------------------------------------------------------------------------------
+Slack: 11.800ns (period - min period limit)
+  Period: 12.800ns
+  Min period limit: 1.000ns (1000.000MHz) (Tmcbcper_UICLK)
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/UICLK
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/UICLK
+  Location pin: MCB_X0Y1.UICLK
+  Clock network: mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk
+--------------------------------------------------------------------------------
+Slack: 12.320ns (period - min period limit)
+  Period: 12.800ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/WAIT_200us_COUNTER<3>/CLK
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/gen_term_calib.mcb_soft_calibration_top_inst/mcb_soft_calibration_inst/WAIT_200us_COUNTER_0/CK
+  Location pin: SLICE_X6Y36.CLK
+  Clock network: mem_ctrl_inst/ddr3_m0/c3_mcb_drp_clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: 
+TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_180 = PERIOD TIMEGRP  
+       "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_180"         
+TS_sys_clk_pin * 12.5 PHASE 0.8 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   1.599ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_180 = PERIOD TIMEGRP
+        "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_180"
+        TS_sys_clk_pin * 12.5 PHASE 0.8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.001ns (period - min period limit)
+  Period: 1.600ns
+  Min period limit: 1.599ns (625.391MHz) (Tmcbcper_PLLCLK)
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/PLLCLK1
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/PLLCLK1
+  Location pin: MCB_X0Y1.PLLCLK1
+  Clock network: mem_ctrl_inst/ddr3_m0/c3_sysclk_2x_180
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_0 
+= PERIOD TIMEGRP         
+"mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_0"         
+TS_sys_clk_pin * 12.5 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   1.599ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_0 = PERIOD TIMEGRP
+        "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk_2x_0"
+        TS_sys_clk_pin * 12.5 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 0.001ns (period - min period limit)
+  Period: 1.600ns
+  Min period limit: 1.599ns (625.391MHz) (Tmcbcper_PLLCLK)
+  Physical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/PLLCLK0
+  Logical resource: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0/PLLCLK0
+  Location pin: MCB_X0Y1.PLLCLK0
+  Clock network: mem_ctrl_inst/ddr3_m0/c3_sysclk_2x
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: 
+TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in = PERIOD        
+ TIMEGRP "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in"         
+TS_sys_clk_pin * 3.125 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 5153 paths analyzed, 2614 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.160ns.
+--------------------------------------------------------------------------------
+
+Paths for end point ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG (SLICE_X14Y41.CIN), 512 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.240ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[11].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG (FF)
+  Requirement:          6.400ns
+  Data Path Delay:      6.005ns (Levels of Logic = 32)
+  Clock Path Skew:      -0.028ns (0.501 - 0.529)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[11].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 to ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y10.DQ      Tcko                  0.476   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<11>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[11].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1
+    SLICE_X14Y10.B4      net (fanout=2)        1.650   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<11>
+    SLICE_X14Y10.COUT    Topcyb                0.483   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE_NO_RPM/U_SRLB
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y11.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y11.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y12.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y12.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y13.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y13.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y14.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y14.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y15.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y15.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y16.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y16.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y17.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y17.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y18.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y18.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y19.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y19.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y20.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y20.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y21.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y21.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y22.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y22.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y23.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y23.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y24.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y24.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y25.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y25.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y26.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y26.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y27.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y27.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y28.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y28.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y29.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y29.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y30.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y30.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y31.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y31.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y32.CIN     net (fanout=1)        0.135   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y32.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y33.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y33.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y34.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y34.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y35.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y35.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y36.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y36.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y37.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y37.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y38.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y38.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y39.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y39.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y40.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y40.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y41.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y41.CLK     Tcinck                0.223   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/DOUT_tmp
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.U_MUXF
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    -------------------------------------------------  ---------------------------
+    Total                                      6.005ns (3.972ns logic, 2.033ns route)
+                                                       (66.1% logic, 33.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.334ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[19].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG (FF)
+  Requirement:          6.400ns
+  Data Path Delay:      5.909ns (Levels of Logic = 31)
+  Clock Path Skew:      -0.030ns (0.501 - 0.531)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[19].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 to ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y11.DQ      Tcko                  0.476   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<19>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[19].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1
+    SLICE_X14Y11.B4      net (fanout=2)        1.650   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<19>
+    SLICE_X14Y11.COUT    Topcyb                0.483   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_SRLB
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y12.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y12.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y13.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y13.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y14.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y14.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y15.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y15.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y16.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y16.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y17.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y17.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y18.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y18.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y19.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y19.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y20.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y20.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y21.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y21.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y22.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y22.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y23.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y23.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y24.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y24.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y25.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y25.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y26.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y26.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y27.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y27.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y28.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y28.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y29.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y29.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y30.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y30.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y31.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y31.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y32.CIN     net (fanout=1)        0.135   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y32.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y33.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y33.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y34.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y34.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y35.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y35.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y36.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y36.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y37.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y37.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y38.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y38.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y39.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y39.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y40.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y40.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y41.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y41.CLK     Tcinck                0.223   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/DOUT_tmp
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.U_MUXF
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    -------------------------------------------------  ---------------------------
+    Total                                      5.909ns (3.879ns logic, 2.030ns route)
+                                                       (65.6% logic, 34.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.404ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[20].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG (FF)
+  Requirement:          6.400ns
+  Data Path Delay:      5.839ns (Levels of Logic = 31)
+  Clock Path Skew:      -0.030ns (0.501 - 0.531)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[20].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1 to ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X17Y11.AQ      Tcko                  0.430   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<23>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/G_GAND_DLY1[20].I_IN_RANGE.I_USE_INPUT_REG_NE0.U_GAND_DLY1
+    SLICE_X14Y11.C2      net (fanout=2)        1.781   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/gand_dly1<20>
+    SLICE_X14Y11.COUT    Topcyc                0.328   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_SRLC
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y12.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[2].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y12.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y13.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[3].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y13.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y14.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[4].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y14.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y15.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[5].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y15.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y16.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[6].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y16.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y17.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[7].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y17.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y18.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[8].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y18.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y19.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[9].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y19.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y20.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[10].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y20.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y21.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[11].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y21.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y22.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[12].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y22.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y23.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[13].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y23.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y24.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[14].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y24.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y25.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[15].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y25.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y26.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[16].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y26.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y27.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[17].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y27.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y28.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[18].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y28.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y29.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[19].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y29.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y30.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[20].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y30.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y31.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[21].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y31.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y32.CIN     net (fanout=1)        0.135   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[22].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y32.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y33.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[23].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y33.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y34.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[24].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y34.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y35.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[25].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y35.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y36.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[26].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y36.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y37.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[27].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y37.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y38.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[28].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y38.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y39.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[29].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y39.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y40.CIN     net (fanout=1)        0.082   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[30].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y40.COUT    Tbyp                  0.093   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD
+    SLICE_X14Y41.CIN     net (fanout=1)        0.003   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/U_MUXD/O
+    SLICE_X14Y41.CLK     Tcinck                0.223   ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/DOUT_tmp
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.U_MUXF
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_EQ0.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[31].U_GAND_SRL_SLICE_NO_RPM/I_IS_TERMINATION_SLICE_NE0.I_USE_OUTPUT_REG_NE0.U_OREG
+    -------------------------------------------------  ---------------------------
+    Total                                      5.839ns (3.678ns logic, 2.161ns route)
+                                                       (63.0% logic, 37.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18 (RAMB16_X0Y10.WEB3), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     0.396ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_INTCAP_F.U_CAPWE1 (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18 (RAM)
+  Requirement:          6.400ns
+  Data Path Delay:      5.870ns (Levels of Logic = 0)
+  Clock Path Skew:      -0.007ns (0.543 - 0.550)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_INTCAP_F.U_CAPWE1 to ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y40.DQ      Tcko                  0.430   ila_filter_debug/U0/I_NO_D.U_ILA/iCAP_WR_EN
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL/I_INTCAP_F.U_CAPWE1
+    RAMB16_X0Y10.WEB3    net (fanout=58)       5.110   ila_filter_debug/U0/I_NO_D.U_ILA/iCAP_WR_EN
+    RAMB16_X0Y10.CLKB    Trcck_WEB             0.330   ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[5].u_ramb18/U_RAMB18
+    -------------------------------------------------  ---------------------------
+    Total                                      5.870ns (0.760ns logic, 5.110ns route)
+                                                       (12.9% logic, 87.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mem_test_m0/wr_cnt_0 (SLICE_X2Y29.CE), 2 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.410ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 (CPU)
+  Destination:          mem_test_m0/wr_cnt_0 (FF)
+  Requirement:          6.400ns
+  Data Path Delay:      5.847ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.016ns (0.346 - 0.362)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0 to mem_test_m0/wr_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    MCB_X0Y1.P1WRFULL    Tmcbcko_WRFULL        2.310   mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0
+                                                       mem_ctrl_inst/ddr3_m0/memc3_wrapper_inst/mcb_ui_top_inst/mcb_raw_wrapper_inst/samc_0
+    SLICE_X4Y22.A4       net (fanout=5)        1.837   mem_ctrl_inst/wr_full
+    SLICE_X4Y22.A        Tilo                  0.235   wr_burst_data_req
+                                                       mem_ctrl_inst/mem_burst_m0/wr_burst_data_req1
+    SLICE_X2Y29.CE       net (fanout=3)        1.152   wr_burst_data_req
+    SLICE_X2Y29.CLK      Tceck                 0.313   mem_test_m0/wr_cnt<3>
+                                                       mem_test_m0/wr_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      5.847ns (2.858ns logic, 2.989ns route)
+                                                       (48.9% logic, 51.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.854ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mem_ctrl_inst/mem_burst_m0/data_req (FF)
+  Destination:          mem_test_m0/wr_cnt_0 (FF)
+  Requirement:          6.400ns
+  Data Path Delay:      3.405ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.014ns (0.346 - 0.360)
+  Source Clock:         phy_clk rising at 0.000ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.127ns
+
+  Clock Uncertainty:          0.127ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Discrete Jitter (DJ):       0.244ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mem_ctrl_inst/mem_burst_m0/data_req to mem_test_m0/wr_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y27.AQ       Tcko                  0.430   mem_ctrl_inst/mem_burst_m0/data_req
+                                                       mem_ctrl_inst/mem_burst_m0/data_req
+    SLICE_X4Y22.A5       net (fanout=4)        1.275   mem_ctrl_inst/mem_burst_m0/data_req
+    SLICE_X4Y22.A        Tilo                  0.235   wr_burst_data_req
+                                                       mem_ctrl_inst/mem_burst_m0/wr_burst_data_req1
+    SLICE_X2Y29.CE       net (fanout=3)        1.152   wr_burst_data_req
+    SLICE_X2Y29.CLK      Tceck                 0.313   mem_test_m0/wr_cnt<3>
+                                                       mem_test_m0/wr_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      3.405ns (0.978ns logic, 2.427ns route)
+                                                       (28.7% logic, 71.3% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in = PERIOD
+        TIMEGRP "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in"
+        TS_sys_clk_pin * 3.125 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT (SLICE_X31Y58.SR), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.195ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT1 (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.196ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.112 - 0.111)
+  Source Clock:         phy_clk rising at 6.400ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT1 to ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X33Y58.BQ      Tcko                  0.198   ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iDIN<1>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT1
+    SLICE_X31Y58.SR      net (fanout=1)        0.129   ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iDIN<1>
+    SLICE_X31Y58.CLK     Tcksr       (-Th)     0.131   ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iDOUT
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/U_DOUT
+    -------------------------------------------------  ---------------------------
+    Total                                      0.196ns (0.067ns logic, 0.129ns route)
+                                                       (34.2% logic, 65.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18 (RAMB16_X1Y2.DIB15), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.330ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[51].I_SRLT_NE_0.FF (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.340ns (Levels of Logic = 0)
+  Clock Path Skew:      0.010ns (0.117 - 0.107)
+  Source Clock:         phy_clk rising at 6.400ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[51].I_SRLT_NE_0.FF to ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X30Y5.DQ       Tcko                  0.234   ila_filter_debug/U0/I_NO_D.U_ILA/iDATA<51>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[51].I_SRLT_NE_0.FF
+    RAMB16_X1Y2.DIB15    net (fanout=1)        0.159   ila_filter_debug/U0/I_NO_D.U_ILA/iDATA<51>
+    RAMB16_X1Y2.CLKB     Trckd_DIB   (-Th)     0.053   ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18
+    -------------------------------------------------  ---------------------------
+    Total                                      0.340ns (0.181ns logic, 0.159ns route)
+                                                       (53.2% logic, 46.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[8].u_ramb18/U_RAMB18 (RAMB16_X0Y12.DIB2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.341ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[145].I_SRLT_NE_0.FF (FF)
+  Destination:          ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[8].u_ramb18/U_RAMB18 (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.341ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         phy_clk rising at 6.400ns
+  Destination Clock:    phy_clk rising at 6.400ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[145].I_SRLT_NE_0.FF to ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[8].u_ramb18/U_RAMB18
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X2Y25.BMUX     Tshcko                0.266   ila_filter_debug/U0/I_NO_D.U_ILA/iDATA<147>
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/I_DQ.U_DQQ/DLY_9.DLY_9_GEN[145].I_SRLT_NE_0.FF
+    RAMB16_X0Y12.DIB2    net (fanout=1)        0.128   ila_filter_debug/U0/I_NO_D.U_ILA/iDATA<145>
+    RAMB16_X0Y12.CLKB    Trckd_DIB   (-Th)     0.053   ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[8].u_ramb18/U_RAMB18
+                                                       ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[8].u_ramb18/U_RAMB18
+    -------------------------------------------------  ---------------------------
+    Total                                      0.341ns (0.213ns logic, 0.128ns route)
+                                                       (62.5% logic, 37.5% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in = PERIOD
+        TIMEGRP "mem_ctrl_inst_ddr3_m0_memc3_infrastructure_inst_clk0_bufg_in"
+        TS_sys_clk_pin * 3.125 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 2.830ns (period - min period limit)
+  Period: 6.400ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[12].u_ramb18/U_RAMB18/CLKB
+  Logical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[12].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y28.CLKB
+  Clock network: phy_clk
+--------------------------------------------------------------------------------
+Slack: 2.830ns (period - min period limit)
+  Period: 6.400ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[7].u_ramb18/U_RAMB18/CLKB
+  Logical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[7].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y20.CLKB
+  Clock network: phy_clk
+--------------------------------------------------------------------------------
+Slack: 2.830ns (period - min period limit)
+  Period: 6.400ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18/CLKB
+  Logical resource: ila_filter_debug/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/U_RAM/I_S6.U_CS_BRAM_CASCADE_S6/I_DEPTH_LTEQ_16K.U_SBRAM_0/I_B18KGT0.G_RAMB18[2].u_ramb18/U_RAMB18/CLKB
+  Location pin: RAMB16_X1Y2.CLKB
+  Clock network: phy_clk
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_sys_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_sys_clk_pin                 |     20.000ns|      5.000ns|     72.050ns|            0|            1|            0|        29646|
+| TS_mem_ctrl_inst_ddr3_m0_memc3|     12.800ns|     46.112ns|          N/A|            1|            0|        24493|            0|
+| _infrastructure_inst_mcb_drp_c|             |             |             |             |             |             |             |
+| lk_bufg_in                    |             |             |             |             |             |             |             |
+| TS_mem_ctrl_inst_ddr3_m0_memc3|      1.600ns|      1.599ns|          N/A|            0|            0|            0|            0|
+| _infrastructure_inst_clk_2x_18|             |             |             |             |             |             |             |
+| 0                             |             |             |             |             |             |             |             |
+| TS_mem_ctrl_inst_ddr3_m0_memc3|      1.600ns|      1.599ns|          N/A|            0|            0|            0|            0|
+| _infrastructure_inst_clk_2x_0 |             |             |             |             |             |             |             |
+| TS_mem_ctrl_inst_ddr3_m0_memc3|      6.400ns|      6.160ns|          N/A|            0|            0|         5153|            0|
+| _infrastructure_inst_clk0_bufg|             |             |             |             |             |             |             |
+| _in                           |             |             |             |             |             |             |             |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+1 constraint not met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock sys_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+sys_clk        |    9.872|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 1  Score: 2082  (Setup/Max: 2082, Hold: 0)
+
+Constraints cover 29646 paths, 0 nets, and 6005 connections
+
+Design statistics:
+   Minimum period:  46.112ns{1}   (Maximum frequency:  21.686MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue May 21 10:41:41 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 260 MB
+
+
+

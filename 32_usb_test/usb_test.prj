@@ -1,0 +1,3 @@
+verilog work "chipscope_ila.v"
+verilog work "chipscope_icon.v"
+verilog work "rtl/usb_test.v"

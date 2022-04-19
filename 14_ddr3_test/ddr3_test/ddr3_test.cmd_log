@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/ddr3_test/ddr3_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/ddr3_test/ddr3_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc ddr3.ucf -p xc6slx16-csg324-2 ddr3_test.ngc ddr3_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ddr3_test_map.ncd ddr3_test.ngd ddr3_test.pcf 
+par -w -intstyle ise -ol high -mt off ddr3_test_map.ncd ddr3_test.ncd ddr3_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ddr3_test.twx ddr3_test.ncd -o ddr3_test.twr ddr3_test.pcf -ucf ddr3.ucf 
+bitgen -intstyle ise -f ddr3_test.ut ddr3_test.ncd 
+bitgen -intstyle ise -f ddr3_test.ut ddr3_test.ncd 

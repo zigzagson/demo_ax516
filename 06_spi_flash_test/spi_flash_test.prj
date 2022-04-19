@@ -1,0 +1,6 @@
+verilog work "src/spi_master.v"
+verilog work "src/spi_flash_ctrl.v"
+verilog work "src/spi_flash_cmd.v"
+verilog work "src/spi_flash_top.v"
+verilog work "src/ax_debounce.v"
+verilog work "src/spi_flash_test.v"

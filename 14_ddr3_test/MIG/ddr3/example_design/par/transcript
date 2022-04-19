@@ -1,0 +1,161 @@
+# Reading C:/modeltech64_10.1c/tcl/vsim/pref.tcl 
+# //  ModelSim SE-64 10.1c Jul 28 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# do {memc_tb_top.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module data_prbs_gen
+# 
+# Top level modules:
+# 	data_prbs_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module v6_data_gen
+# 
+# Top level modules:
+# 	v6_data_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module sp6_data_gen
+# 
+# Top level modules:
+# 	sp6_data_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module afifo
+# 
+# Top level modules:
+# 	afifo
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module wr_data_gen
+# 
+# Top level modules:
+# 	wr_data_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module read_posted_fifo
+# 
+# Top level modules:
+# 	read_posted_fifo
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module rd_data_gen
+# 
+# Top level modules:
+# 	rd_data_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module cmd_prbs_gen
+# 
+# Top level modules:
+# 	cmd_prbs_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module write_data_path
+# 
+# Top level modules:
+# 	write_data_path
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module tg_status
+# 
+# Top level modules:
+# 	tg_status
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module read_data_path
+# 
+# Top level modules:
+# 	read_data_path
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module mcb_flow_control
+# 
+# Top level modules:
+# 	mcb_flow_control
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module cmd_gen
+# 
+# Top level modules:
+# 	cmd_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module mcb_traffic_gen
+# 
+# Top level modules:
+# 	mcb_traffic_gen
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module init_mem_pattern_ctr
+# 
+# Top level modules:
+# 	init_mem_pattern_ctr
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module memc_tb_top
+# 
+# Top level modules:
+# 	memc_tb_top
+# Model Technology ModelSim SE-64 vlog 10.1c Compiler 2012.07 Jul 27 2012
+# -- Compiling module glbl
+# 
+# Top level modules:
+# 	glbl
+# vsim -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip -lib work -voptargs=\"+acc\" -t 1ps work.memc_tb_top glbl 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading work.memc_tb_top(fast)
+# Loading work.init_mem_pattern_ctr(fast)
+# Loading work.mcb_traffic_gen(fast)
+# Loading work.cmd_gen(fast)
+# Loading work.cmd_prbs_gen(fast)
+# Loading work.cmd_prbs_gen(fast__1)
+# Loading work.cmd_prbs_gen(fast__2)
+# Loading work.cmd_prbs_gen(fast__3)
+# Loading work.mcb_flow_control(fast)
+# Loading work.afifo(fast)
+# Loading work.read_data_path(fast)
+# Loading work.read_posted_fifo(fast)
+# Loading work.afifo(fast__1)
+# Loading work.rd_data_gen(fast)
+# Loading work.sp6_data_gen(fast)
+# Loading work.data_prbs_gen(fast)
+# Loading work.write_data_path(fast)
+# Loading work.wr_data_gen(fast)
+# Loading work.tg_status(fast)
+# Loading work.init_mem_pattern_ctr(fast__1)
+# Loading work.mcb_traffic_gen(fast__1)
+# Loading work.cmd_gen(fast__1)
+# Loading work.cmd_prbs_gen(fast__4)
+# Loading work.init_mem_pattern_ctr(fast__2)
+# Loading work.mcb_traffic_gen(fast__2)
+# Loading work.cmd_gen(fast__2)
+# Loading work.glbl(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+restart
+# Loading work.memc_tb_top(fast)
+# Loading work.init_mem_pattern_ctr(fast)
+# Loading work.mcb_traffic_gen(fast)
+# Loading work.cmd_gen(fast)
+# Loading work.cmd_prbs_gen(fast)
+# Loading work.cmd_prbs_gen(fast__1)
+# Loading work.cmd_prbs_gen(fast__2)
+# Loading work.cmd_prbs_gen(fast__3)
+# Loading work.mcb_flow_control(fast)
+# Loading work.afifo(fast)
+# Loading work.read_data_path(fast)
+# Loading work.read_posted_fifo(fast)
+# Loading work.afifo(fast__1)
+# Loading work.rd_data_gen(fast)
+# Loading work.sp6_data_gen(fast)
+# Loading work.data_prbs_gen(fast)
+# Loading work.write_data_path(fast)
+# Loading work.wr_data_gen(fast)
+# Loading work.tg_status(fast)
+# Loading work.init_mem_pattern_ctr(fast__1)
+# Loading work.mcb_traffic_gen(fast__1)
+# Loading work.cmd_gen(fast__1)
+# Loading work.cmd_prbs_gen(fast__4)
+# Loading work.init_mem_pattern_ctr(fast__2)
+# Loading work.mcb_traffic_gen(fast__2)
+# Loading work.cmd_gen(fast__2)
+# Loading work.glbl(fast)
+run -all
+run

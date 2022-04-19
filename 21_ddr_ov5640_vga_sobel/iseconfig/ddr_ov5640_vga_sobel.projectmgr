@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="ddr_ov5640_vga_sobel" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Automatic `includes</ClosedNode>
+         <ClosedNode>/base_2d_linebuffer - rtl E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|VHDL|ImageXlib_arch.vhd</ClosedNode>
+         <ClosedNode>/base_2d_linebuffer - rtl E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|VHDL|lb1.vhd</ClosedNode>
+         <ClosedNode>/base_single_linebuffer - rtl E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|VHDL|ImageXlib_arch.vhd</ClosedNode>
+         <ClosedNode>/base_single_linebuffer - rtl E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|VHDL|lb1.vhd</ClosedNode>
+         <ClosedNode>/linebuffer - rtl E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|VHDL|ImageXlib_arch.vhd</ClosedNode>
+         <ClosedNode>/top E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|top.v/frame_read_write_m0 - frame_read_write</ClosedNode>
+         <ClosedNode>/top E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|top.v/i2c_config_m0 - i2c_config</ClosedNode>
+         <ClosedNode>/top E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|top.v/mem_ctrl_inst - mem_ctrl</ClosedNode>
+         <ClosedNode>/top E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|top.v/sobel_m0 - sobel</ClosedNode>
+         <ClosedNode>/top E:|BaiduYunDownload|AX516.190526|21_ddr_ov5640_vga_sobel|src|top.v/video_timing_data_m0 - video_timing_data</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>top (E:/BaiduYunDownload/AX516.190526/21_ddr_ov5640_vga_sobel/src/top.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000003dc000000020000000000000000000000000200000064ffffffff000000810000000300000002000003dc0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>top (E:/BaiduYunDownload/AX516.190526/21_ddr_ov5640_vga_sobel/src/top.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Configure Target Device</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000256000000010000000100000000000000000000000064ffffffff000000810000000000000001000002560000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Configure Target Device</CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000004c4000000040101000100000000000000000000000064ffffffff000000810000000000000004000002e60000000100000000000000fc00000001000000000000007800000001000000000000006a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>E:\BaiduYunDownload\AX516.190526\21_ddr_ov5640_vga_sobel\ddr3\user_design\rtl\ddr3.v</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000011f000000010001000100000000000000000000000064ffffffff0000008100000000000000010000011f0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Design Utilities</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000033a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000033a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Design Utilities</CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000001d7000000e301000000040100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000256000000010000000100000000000000000000000064ffffffff000000810000000000000001000002560000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000256000000010000000100000000000000000000000064ffffffff000000810000000000000001000002560000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+</Project>

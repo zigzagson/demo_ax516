@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/ddr3.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/infrastructure.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/iodrp_controller.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/iodrp_mcb_controller.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/mcb_raw_wrapper.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/mcb_soft_calibration.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/mcb_soft_calibration_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/mcb_controller/mcb_ui_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/ddr3/user_design/rtl/memc_wrapper.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/audio_key.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/audio_record_play_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/audio_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/audio_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/ax_debounce.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/frame_fifo_read.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/frame_fifo_write.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/frame_read_write.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_config.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_bit_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_bit_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">141</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_bit_ctrl.v&quot; line 141
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_byte_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_byte_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">73</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_byte_ctrl.v&quot; line 73
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/i2c_master/i2c_master_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/lut_wm8731.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/mem_burst_v2.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/mem_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/15_audio_record_play/src/top.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

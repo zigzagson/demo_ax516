@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/camera_delay.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_config.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_bit_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_bit_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">141</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_bit_ctrl.v&quot; line 141
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_byte_ctrl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_byte_ctrl.v</arg>&quot; Line <arg fmt="%d" index="2">73</arg>. <arg fmt="%s" index="3">Include file found: &apos;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_defines.v&apos; in file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_byte_ctrl.v&quot; line 73
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/i2c_master/i2c_master_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/lut_ov5640_rgb565_800_600.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/arp_cache.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/crc.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/dpram.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/icmp_reply.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/mac_test.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/mac_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/rx/arp_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/rx/ip_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/rx/mac_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/rx/mac_rx_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/rx/udp_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/arp_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/ip_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/ip_tx_mode.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/mac_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/mac_tx_mode.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/mac_tx_top.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/mac/tx/udp_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;E:/BaiduYunDownload/AX516.190526/demo/30_video_ethernet/src/top.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

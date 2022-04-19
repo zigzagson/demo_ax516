@@ -1,0 +1,3 @@
+verilog work "src/uart_tx.v"
+verilog work "src/uart_rx.v"
+verilog work "src/uart_test.v"

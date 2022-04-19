@@ -1,0 +1,6 @@
+verilog work "src/spi_master.v"
+verilog work "src/sd_card_sec_read_write.v"
+verilog work "src/sd_card_cmd.v"
+verilog work "src/sd_card_top.v"
+verilog work "src/ax_debounce.v"
+verilog work "src/sd_card_test.v"

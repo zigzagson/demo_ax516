@@ -1,0 +1,947 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Tue Jul 02 15:48:59 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "key1" LOCATE = SITE "P7" LEVEL 1;
+COMP "wm8731_sda" LOCATE = SITE "M11" LEVEL 1;
+COMP "wm8731_scl" LOCATE = SITE "N11" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "N4" LEVEL 1;
+COMP "sd_dclk" LOCATE = SITE "U18" LEVEL 1;
+COMP "sd_miso" LOCATE = SITE "N14" LEVEL 1;
+COMP "sd_mosi" LOCATE = SITE "P15" LEVEL 1;
+COMP "led<0>" LOCATE = SITE "V5" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "R3" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "T3" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "T4" LEVEL 1;
+COMP "wm8731_bclk" LOCATE = SITE "U16" LEVEL 1;
+COMP "sd_ncs" LOCATE = SITE "L14" LEVEL 1;
+COMP "wm8731_adcdat" LOCATE = SITE "V15" LEVEL 1;
+COMP "wm8731_dacdat" LOCATE = SITE "V16" LEVEL 1;
+COMP "wm8731_adclrc" LOCATE = SITE "V13" LEVEL 1;
+COMP "wm8731_daclrc" LOCATE = SITE "U15" LEVEL 1;
+PIN
+        sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<29>
+        = BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram"
+        PINNAME CLKB;
+PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
+PIN sys_pll_m0/dcm_sp_inst_pins<1> = BEL "sys_pll_m0/dcm_sp_inst" PINNAME
+        CLKFB;
+TIMEGRP sys_pll_m0_clk2x = BEL "sys_pll_m0/clkout1_buf" BEL
+        "sd_card_audio_m0/ax_debounce_m0/button_out_d0" BEL
+        "sd_card_audio_m0/ax_debounce_m0/DFF2" BEL
+        "sd_card_audio_m0/ax_debounce_m0/DFF1" BEL
+        "sd_card_audio_m0/ax_debounce_m0/button_negedge" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_20" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_19" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_18" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_17" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_16" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_15" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_14" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_13" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_12" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_11" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_10" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_9" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_8" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_7" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_6" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_5" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_4" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_3" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_2" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_1" BEL
+        "sd_card_audio_m0/ax_debounce_m0/q_reg_0" BEL
+        "sd_card_audio_m0/audio_tx_m0/ws_lrc_d1" BEL
+        "sd_card_audio_m0/audio_tx_m0/sck_bclk_d1" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_31" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_30" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_29" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_28" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_27" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_26" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_25" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_24" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_23" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_22" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_21" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_20" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_19" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_18" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_17" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_16" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_15" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_14" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_13" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_12" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_11" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_10" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_9" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_8" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_7" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_6" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_5" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_4" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_3" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_2" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_1" BEL
+        "sd_card_audio_m0/audio_tx_m0/right_data_shift_0" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_31" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_30" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_29" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_28" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_27" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_26" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_25" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_24" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_23" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_22" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_21" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_20" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_19" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_18" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_17" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_16" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_15" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_14" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_13" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_12" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_11" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_10" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_9" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_8" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_7" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_6" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_5" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_4" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_3" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_2" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_1" BEL
+        "sd_card_audio_m0/audio_tx_m0/left_data_shift_0" BEL
+        "sd_card_audio_m0/audio_tx_m0/read_data_en" BEL
+        "sd_card_audio_m0/audio_tx_m0/sdata" BEL
+        "sd_card_audio_m0/audio_tx_m0/sck_bclk_d0" BEL
+        "sd_card_audio_m0/audio_tx_m0/ws_lrc_d0" BEL
+        "sd_card_audio_m0/wav_read_m0/state_FSM_FFd2" BEL
+        "sd_card_audio_m0/wav_read_m0/state_FSM_FFd3" BEL
+        "sd_card_audio_m0/wav_read_m0/state_FSM_FFd1" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_31" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_30" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_29" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_28" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_27" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_26" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_25" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_24" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_23" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_22" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_21" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_20" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_19" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_18" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_17" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_16" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_15" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_14" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_13" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_12" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_11" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_10" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_9" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_8" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_7" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_6" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_5" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_4" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_3" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_2" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_1" BEL
+        "sd_card_audio_m0/wav_read_m0/play_cnt_0" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_31" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_30" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_29" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_28" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_27" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_26" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_25" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_24" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_23" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_22" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_21" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_20" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_19" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_18" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_17" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_16" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_15" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_14" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_13" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_12" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_11" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_10" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_9" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_8" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_7" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_6" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_5" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_4" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_3" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_2" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_1" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read_addr_0" BEL
+        "sd_card_audio_m0/wav_read_m0/state_code_1" BEL
+        "sd_card_audio_m0/wav_read_m0/state_code_0" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_9" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_8" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_7" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_6" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_5" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_4" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_3" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_2" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_1" BEL
+        "sd_card_audio_m0/wav_read_m0/rd_cnt_0" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_31" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_30" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_29" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_28" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_27" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_26" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_25" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_24" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_23" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_22" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_21" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_20" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_19" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_18" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_17" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_16" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_15" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_14" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_13" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_12" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_11" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_10" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_9" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_8" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_7" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_6" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_5" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_4" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_3" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_2" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_1" BEL
+        "sd_card_audio_m0/wav_read_m0/file_len_0" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_wr_en" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_7" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_6" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_5" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_4" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_3" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_2" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_1" BEL
+        "sd_card_audio_m0/wav_read_m0/wav_data_0" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_7" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_6" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_5" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_4" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_3" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_2" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_1" BEL
+        "sd_card_audio_m0/wav_read_m0/header_3_0" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_7" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_6" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_5" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_4" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_3" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_2" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_1" BEL
+        "sd_card_audio_m0/wav_read_m0/header_2_0" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_7" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_6" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_5" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_4" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_3" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_2" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_1" BEL
+        "sd_card_audio_m0/wav_read_m0/header_1_0" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_7" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_6" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_5" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_4" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_3" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_2" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_1" BEL
+        "sd_card_audio_m0/wav_read_m0/header_0_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd2"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd3"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd1"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd5"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd6"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd4"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd8"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd9"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd7"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sd_init_done"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/spi_clk_div_7"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_45"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_44"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_43"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_42"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_40"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_39"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_38"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_37"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_36"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_35"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_34"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_33"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_32"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_31"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_30"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_29"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_28"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_27"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_26"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_25"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_24"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_23"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_22"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_21"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_20"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_19"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_18"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_17"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_16"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_15"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_14"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_13"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_12"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_11"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_10"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_9"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_8"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_7"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_4"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_1"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_data_len_2"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_31"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_30"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_29"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_28"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_27"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_26"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_25"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_24"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_23"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_22"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_21"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_20"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_19"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_18"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_17"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_16"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_15"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_14"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_13"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_12"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_11"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_10"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_9"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_8"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_7"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_6"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_5"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_4"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_3"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_2"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_1"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/sec_addr_0"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd1"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd4"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/send_data_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_13" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_12" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_11" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_10" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_9" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_8" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_valid" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/block_read_data_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_edge_cnt_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_edge_cnt_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_edge_cnt_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_edge_cnt_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_edge_cnt_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_15" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_14" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_13" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_12" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_11" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_10" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_9" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_8" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/clk_cnt_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/state_FSM_FFd6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MISO_shift_0" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_6" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_5" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_4" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_3" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_2" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/MOSI_shift_0" BEL
+        "sd_card_audio_m0/ax_debounce_m0/button_out" BEL
+        "sd_card_audio_m0/wav_read_m0/sd_sec_read" BEL
+        "sd_card_audio_m0/wav_read_m0/found" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/cmd_req"
+        BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_sec_read_write_m0/block_read_req"
+        BEL "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/spi_wr_req" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/cmd_req_error" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/CS_reg" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/clk_div_7" BEL
+        "sd_card_audio_m0/sd_card_top_m0/spi_master_m0/DCLK_reg" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1_1" BEL
+        "sd_card_audio_m0/sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2_1" BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/RST_FULL_GEN"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/rd_rst_asreg_d1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/wr_rst_asreg_d1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.rst_d1"
+        PIN
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"
+        PIN
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<29>"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_d1_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/rpntr/gc0.count_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.gwdc0.wdc/wr_data_count_i_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d2_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_d1_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/wpntr/gic0.gc0.count_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_bin_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_bin_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_gc_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_gc_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].wr_stg_inst/Q_reg_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_1"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].wr_stg_inst/Q_reg_0"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[2].rd_stg_inst/Q_reg_2"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_9"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_8"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_7"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_6"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_5"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_4"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_3"
+        BEL
+        "sd_card_audio_m0/audio_buf/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/gsync_stage[1].rd_stg_inst/Q_reg_2"
+        BEL "sys_pll_m0/clkf_buf" PIN
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
+        "sys_pll_m0/dcm_sp_inst_pins<1>";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN sys_pll_m0/dcm_sp_inst_pins<2> = BEL "sys_pll_m0/dcm_sp_inst" PINNAME
+        CLKIN;
+TIMEGRP sys_clk_pin = BEL "i2c_config_m0/lut_index_9" BEL
+        "i2c_config_m0/lut_index_8" BEL "i2c_config_m0/lut_index_7" BEL
+        "i2c_config_m0/lut_index_6" BEL "i2c_config_m0/lut_index_5" BEL
+        "i2c_config_m0/lut_index_4" BEL "i2c_config_m0/lut_index_3" BEL
+        "i2c_config_m0/lut_index_2" BEL "i2c_config_m0/lut_index_1" BEL
+        "i2c_config_m0/lut_index_0" BEL "i2c_config_m0/state_FSM_FFd1" BEL
+        "i2c_config_m0/state_FSM_FFd2" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd2" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd1" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd3" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd4" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd5" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd6" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd8" BEL
+        "i2c_config_m0/i2c_master_top_m0/state_FSM_FFd7" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_7" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_6" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_5" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_4" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_3" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_2" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_1" BEL
+        "i2c_config_m0/i2c_master_top_m0/txr_0" BEL
+        "i2c_config_m0/i2c_master_top_m0/ack_in" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd2" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd3" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/c_state_FSM_FFd1" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_7" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_6" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_5" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_4" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_3" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_2" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_1" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/sr_0" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/cmd_ack" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/shift" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/core_txd" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/ld" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_3" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_2" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_1" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/core_cmd_0" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/filter_cnt_2"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/filter_cnt_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/filter_cnt_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd2"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd3"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd5"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd6"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd4"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd7"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd8"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd9"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd10"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd12"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd13"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd11"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd15"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd16"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd14"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd18"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/c_state_FSM_FFd17"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_6"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_4"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_3"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_5"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_2"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cnt_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/dscl_oen"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/scl_oen"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSDA_2"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSDA_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSDA_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/sda_oen"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSCL_2"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSCL_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/fSCL_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/dSDA"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/dSCL"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/sSDA"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/sSCL"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/sto_condition"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/al"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSDA_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSCL_1"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cSCL_0"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/slave_wait"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/clk_en"
+        BEL "i2c_config_m0/i2c_master_top_m0/byte_controller/dcnt_2" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/dcnt_1" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/dcnt_0" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/filter_cnt_3"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/filter_cnt_4"
+        BEL "i2c_config_m0/i2c_master_top_m0/stop" BEL
+        "i2c_config_m0/i2c_master_top_m0/start" BEL
+        "i2c_config_m0/i2c_master_top_m0/write" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/ack_out" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_stop"
+        BEL "i2c_config_m0/i2c_write_req" BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/cmd_ack"
+        BEL
+        "i2c_config_m0/i2c_master_top_m0/byte_controller/bit_controller/dout"
+        BEL "clk_bufg_BUFG" PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "sys_pll_m0/dcm_sp_inst_pins<2>";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+TS_sys_pll_m0_clk2x = PERIOD TIMEGRP "sys_pll_m0_clk2x" TS_sys_clk_pin * 2
+        HIGH 50%;
+SCHEMATIC END;
+

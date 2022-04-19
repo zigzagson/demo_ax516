@@ -1,0 +1,989 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v" into library work
+Parsing module <adda_pll>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\video_pll.v" into library work
+Parsing module <video_pll>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\timing_gen_xy.v" into library work
+Parsing module <timing_gen_xy>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\dpram1024x8.v" into library work
+Parsing module <dpram1024x8>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\wav_display.v" into library work
+Parsing module <wav_display>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\grid_display.v" into library work
+Parsing module <grid_display>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\color_bar.v" into library work
+Parsing verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\/video_define.v" included at line 32.
+Parsing module <color_bar>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\ad9280_sample.v" into library work
+Parsing module <ad9280_sample>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\da_rom.v" into library work
+Parsing module <da_rom>.
+Analyzing Verilog file "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <video_pll>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=10,CLKFX_MULTIPLY=13,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=20.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\video_pll.v" Line 128: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <adda_pll>.
+
+Elaborating module <PLL_BASE(BANDWIDTH="OPTIMIZED",CLK_FEEDBACK="CLKFBOUT",COMPENSATION="SYSTEM_SYNCHRONOUS",DIVCLK_DIVIDE=1,CLKFBOUT_MULT=20,CLKFBOUT_PHASE=0.0,CLKOUT0_DIVIDE=8,CLKOUT0_PHASE=0.0,CLKOUT0_DUTY_CYCLE=0.5,CLKOUT1_DIVIDE=31,CLKOUT1_PHASE=0.0,CLKOUT1_DUTY_CYCLE=0.5,CLKIN_PERIOD=20.0,REF_JITTER=0.01)>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v" Line 119: Assignment to clkout2_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v" Line 120: Assignment to clkout3_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v" Line 121: Assignment to clkout4_unused ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v" Line 122: Assignment to clkout5_unused ignored, since the identifier is never used
+
+Elaborating module <color_bar>.
+
+Elaborating module <da_rom>.
+WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\da_rom.v" Line 39: Empty module <da_rom> remains a black box.
+
+Elaborating module <grid_display>.
+
+Elaborating module <timing_gen_xy>.
+
+Elaborating module <ad9280_sample>.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\ad9280_sample.v" Line 61: Assignment to adc_data_d1 ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" Line 148: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+
+Elaborating module <wav_display>.
+
+Elaborating module <dpram1024x8>.
+WARNING:HDLCompiler:1499 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\dpram1024x8.v" Line 39: Empty module <dpram1024x8> remains a black box.
+WARNING:HDLCompiler:189 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" Line 159: Size mismatch in connection of port <adc_buf_addr>. Formal port size is 12-bit while actual signal size is 11-bit.
+WARNING:HDLCompiler:1127 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" Line 167: Assignment to wave0_de ignored, since the identifier is never used
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v".
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" line 93: Output port <locked> of the instance <video_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" line 100: Output port <locked> of the instance <adda_pll_m0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\top.v" line 153: Output port <o_de> of the instance <wav_display_m0> is unconnected or connected to loadless signal.
+    Found 9-bit register for signal <rom_addr>.
+    Found 9-bit adder for signal <rom_addr[8]_GND_1_o_add_5_OUT> created at line 121.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+Unit <top> synthesized.
+
+Synthesizing Unit <video_pll>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\video_pll.v".
+    Summary:
+	no macro.
+Unit <video_pll> synthesized.
+
+Synthesizing Unit <adda_pll>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\ipcore_dir\adda_pll.v".
+    Summary:
+	no macro.
+Unit <adda_pll> synthesized.
+
+Synthesizing Unit <color_bar>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\color_bar.v".
+        H_ACTIVE = 16'b0000010000000000
+        H_FP = 16'b0000000000011000
+        H_SYNC = 16'b0000000010001000
+        H_BP = 16'b0000000010100000
+        V_ACTIVE = 16'b0000001100000000
+        V_FP = 16'b0000000000000011
+        V_SYNC = 16'b0000000000000110
+        V_BP = 16'b0000000000011101
+        HS_POL = 1'b0
+        VS_POL = 1'b0
+        H_TOTAL = 16'b0000010101000000
+        V_TOTAL = 16'b0000001100100110
+        WHITE_R = 8'b11111111
+        WHITE_G = 8'b11111111
+        WHITE_B = 8'b11111111
+        YELLOW_R = 8'b11111111
+        YELLOW_G = 8'b11111111
+        YELLOW_B = 8'b00000000
+        CYAN_R = 8'b00000000
+        CYAN_G = 8'b11111111
+        CYAN_B = 8'b11111111
+        GREEN_R = 8'b00000000
+        GREEN_G = 8'b11111111
+        GREEN_B = 8'b00000000
+        MAGENTA_R = 8'b11111111
+        MAGENTA_G = 8'b00000000
+        MAGENTA_B = 8'b11111111
+        RED_R = 8'b11111111
+        RED_G = 8'b00000000
+        RED_B = 8'b00000000
+        BLUE_R = 8'b00000000
+        BLUE_G = 8'b00000000
+        BLUE_B = 8'b11111111
+        BLACK_R = 8'b00000000
+        BLACK_G = 8'b00000000
+        BLACK_B = 8'b00000000
+    Found 12-bit register for signal <h_cnt>.
+    Found 12-bit register for signal <active_x>.
+    Found 12-bit register for signal <v_cnt>.
+    Found 8-bit register for signal <rgb_r_reg>.
+    Found 8-bit register for signal <rgb_g_reg>.
+    Found 8-bit register for signal <rgb_b_reg>.
+    Found 1-bit register for signal <vs_reg_d0>.
+    Found 1-bit register for signal <video_active_d0>.
+    Found 1-bit register for signal <hs_reg>.
+    Found 1-bit register for signal <h_active>.
+    Found 1-bit register for signal <vs_reg>.
+    Found 1-bit register for signal <v_active>.
+    Found 1-bit register for signal <hs_reg_d0>.
+    Found 12-bit subtractor for signal <h_cnt[11]_GND_8_o_sub_12_OUT> created at line 220.
+    Found 12-bit adder for signal <h_cnt[11]_GND_8_o_add_6_OUT> created at line 212.
+    Found 12-bit adder for signal <v_cnt[11]_GND_8_o_add_17_OUT> created at line 233.
+    Found 12-bit comparator greater for signal <n0015> created at line 219
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  21 Multiplexer(s).
+Unit <color_bar> synthesized.
+
+Synthesizing Unit <grid_display>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\grid_display.v".
+    Found 9-bit register for signal <grid_x>.
+    Found 24-bit register for signal <v_data>.
+    Found 1-bit register for signal <region_active>.
+    Found 9-bit adder for signal <grid_x[8]_GND_10_o_add_10_OUT> created at line 66.
+    Found 12-bit comparator lessequal for signal <n0004> created at line 57
+    Found 12-bit comparator lessequal for signal <n0006> created at line 57
+    Found 12-bit comparator lessequal for signal <n0009> created at line 57
+    Found 12-bit comparator lessequal for signal <n0012> created at line 57
+    Found 12-bit comparator greater for signal <pos_y[11]_GND_10_o_LessThan_20_o> created at line 74
+    Found 12-bit comparator greater for signal <GND_10_o_pos_y[11]_LessThan_21_o> created at line 74
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+Unit <grid_display> synthesized.
+
+Synthesizing Unit <timing_gen_xy>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\timing_gen_xy.v".
+        DATA_WIDTH = 24
+    Found 12-bit register for signal <x_cnt>.
+    Found 12-bit register for signal <y_cnt>.
+    Found 1-bit register for signal <de_d1>.
+    Found 1-bit register for signal <vs_d0>.
+    Found 1-bit register for signal <vs_d1>.
+    Found 1-bit register for signal <hs_d0>.
+    Found 1-bit register for signal <hs_d1>.
+    Found 24-bit register for signal <i_data_d0>.
+    Found 24-bit register for signal <i_data_d1>.
+    Found 1-bit register for signal <de_d0>.
+    Found 12-bit adder for signal <x_cnt[11]_GND_11_o_add_6_OUT> created at line 80.
+    Found 12-bit adder for signal <y_cnt[11]_GND_11_o_add_12_OUT> created at line 91.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  78 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <timing_gen_xy> synthesized.
+
+Synthesizing Unit <ad9280_sample>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\ad9280_sample.v".
+    Found 3-bit register for signal <state>.
+    Found 32-bit register for signal <wait_cnt>.
+    Found 11-bit register for signal <sample_cnt>.
+    Found 8-bit register for signal <adc_data_d0>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | adc_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11-bit adder for signal <sample_cnt[10]_GND_12_o_add_15_OUT> created at line 94.
+    Found 32-bit adder for signal <wait_cnt[31]_GND_12_o_add_21_OUT> created at line 111.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  51 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <ad9280_sample> synthesized.
+
+Synthesizing Unit <wav_display>.
+    Related source file is "E:\BaiduYunDownload\AX516.190526\demo\24_an108_adda_vga_test\src\wav_display.v".
+WARNING:Xst:647 - Input <adc_buf_addr<11:10>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit register for signal <rdaddress>.
+    Found 24-bit register for signal <v_data>.
+    Found 1-bit register for signal <region_active>.
+    Found 12-bit subtractor for signal <GND_13_o_pos_y[11]_sub_15_OUT> created at line 80.
+    Found 10-bit adder for signal <rdaddress[9]_GND_13_o_add_9_OUT> created at line 72.
+    Found 12-bit comparator lessequal for signal <n0004> created at line 63
+    Found 12-bit comparator lessequal for signal <n0006> created at line 63
+    Found 12-bit comparator lessequal for signal <n0009> created at line 63
+    Found 12-bit comparator lessequal for signal <n0012> created at line 63
+    Found 12-bit comparator equal for signal <GND_13_o_GND_13_o_equal_16_o> created at line 80
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  35 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+Unit <wav_display> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 13
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 12-bit adder                                          : 6
+ 12-bit subtractor                                     : 2
+ 32-bit adder                                          : 1
+ 9-bit adder                                           : 2
+# Registers                                            : 43
+ 1-bit register                                        : 21
+ 10-bit register                                       : 1
+ 11-bit register                                       : 1
+ 12-bit register                                       : 7
+ 24-bit register                                       : 6
+ 32-bit register                                       : 1
+ 8-bit register                                        : 4
+ 9-bit register                                        : 2
+# Comparators                                          : 12
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 8
+# Multiplexers                                         : 27
+ 1-bit 2-to-1 multiplexer                              : 2
+ 11-bit 2-to-1 multiplexer                             : 1
+ 12-bit 2-to-1 multiplexer                             : 6
+ 32-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 17
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/da_rom.ngc>.
+Reading core <ipcore_dir/dpram1024x8.ngc>.
+Loading core <da_rom> for timing and area information for instance <da_rom_m0>.
+Loading core <dpram1024x8> for timing and area information for instance <buffer>.
+WARNING:Xst:2677 - Node <i_data_d0_0> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_1> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_2> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_8> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_9> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_16> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_17> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_18> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_0> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_1> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_2> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_8> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_9> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_16> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_17> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_18> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <v_data_0> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_1> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_2> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_8> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_9> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_16> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_17> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <v_data_18> of sequential type is unconnected in block <grid_display_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_0> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_1> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_2> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_8> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_9> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_16> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_17> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d0_18> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_0> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_1> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_2> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_8> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_9> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_16> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_17> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <i_data_d1_18> of sequential type is unconnected in block <timing_gen_xy_m0>.
+WARNING:Xst:2677 - Node <v_data_0> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_1> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_2> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_8> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_9> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_16> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_17> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <v_data_18> of sequential type is unconnected in block <wav_display_m0>.
+WARNING:Xst:2677 - Node <rgb_g_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_g_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_r_reg_2> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_0> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_1> of sequential type is unconnected in block <color_bar_m0>.
+WARNING:Xst:2677 - Node <rgb_b_reg_2> of sequential type is unconnected in block <color_bar_m0>.
+
+Synthesizing (advanced) Unit <ad9280_sample>.
+The following registers are absorbed into counter <wait_cnt>: 1 register on signal <wait_cnt>.
+The following registers are absorbed into counter <sample_cnt>: 1 register on signal <sample_cnt>.
+Unit <ad9280_sample> synthesized (advanced).
+
+Synthesizing (advanced) Unit <color_bar>.
+The following registers are absorbed into counter <h_cnt>: 1 register on signal <h_cnt>.
+The following registers are absorbed into counter <v_cnt>: 1 register on signal <v_cnt>.
+Unit <color_bar> synthesized (advanced).
+
+Synthesizing (advanced) Unit <grid_display>.
+The following registers are absorbed into counter <grid_x>: 1 register on signal <grid_x>.
+Unit <grid_display> synthesized (advanced).
+
+Synthesizing (advanced) Unit <timing_gen_xy>.
+The following registers are absorbed into counter <x_cnt>: 1 register on signal <x_cnt>.
+The following registers are absorbed into counter <y_cnt>: 1 register on signal <y_cnt>.
+Unit <timing_gen_xy> synthesized (advanced).
+
+Synthesizing (advanced) Unit <top>.
+The following registers are absorbed into counter <rom_addr>: 1 register on signal <rom_addr>.
+Unit <top> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wav_display>.
+The following registers are absorbed into counter <rdaddress>: 1 register on signal <rdaddress>.
+Unit <wav_display> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 12-bit subtractor                                     : 2
+# Counters                                             : 11
+ 10-bit up counter                                     : 1
+ 11-bit up counter                                     : 1
+ 12-bit up counter                                     : 6
+ 32-bit up counter                                     : 1
+ 9-bit up counter                                      : 2
+# Registers                                            : 209
+ Flip-Flops                                            : 209
+# Comparators                                          : 12
+ 12-bit comparator equal                               : 1
+ 12-bit comparator greater                             : 3
+ 12-bit comparator lessequal                           : 8
+# Multiplexers                                         : 19
+ 1-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 17
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <ad9280_sample_m0/FSM_0> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 00
+ 001   | 01
+ 010   | 11
+-------------------
+INFO:Xst:1901 - Instance adda_pll_m0/pll_base_inst in unit adda_pll_m0/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <rgb_b_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_b_reg_1> <rgb_b_reg_2> <rgb_b_reg_3> <rgb_b_reg_4> <rgb_b_reg_5> <rgb_b_reg_6> <rgb_b_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_r_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_r_reg_1> <rgb_r_reg_2> <rgb_r_reg_3> <rgb_r_reg_4> <rgb_r_reg_5> <rgb_r_reg_6> <rgb_r_reg_7> 
+INFO:Xst:2261 - The FF/Latch <rgb_g_reg_0> in Unit <color_bar> is equivalent to the following 7 FFs/Latches, which will be removed : <rgb_g_reg_1> <rgb_g_reg_2> <rgb_g_reg_3> <rgb_g_reg_4> <rgb_g_reg_5> <rgb_g_reg_6> <rgb_g_reg_7> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <ad9280_sample> ...
+
+Optimizing unit <grid_display> ...
+
+Optimizing unit <wav_display> ...
+
+Optimizing unit <color_bar> ...
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d0_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/timing_gen_xy_m0/i_data_d1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <grid_display_m0/v_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d0_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/timing_gen_xy_m0/i_data_d1_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <wav_display_m0/v_data_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_29> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_28> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_27> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_26> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/wait_cnt_25> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ad9280_sample_m0/sample_cnt_10> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_8> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_7> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_6> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_5> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <grid_display_m0/grid_x_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/h_cnt_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <color_bar_m0/active_x_11> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_22> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/v_data_21> <wav_display_m0/v_data_20> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_23> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/v_data_19> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_11> <grid_display_m0/timing_gen_xy_m0/i_data_d1_12> <grid_display_m0/timing_gen_xy_m0/i_data_d1_13> <grid_display_m0/timing_gen_xy_m0/i_data_d1_14> <grid_display_m0/timing_gen_xy_m0/i_data_d1_15> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_20> <grid_display_m0/timing_gen_xy_m0/i_data_d1_21> <grid_display_m0/timing_gen_xy_m0/i_data_d1_22> <grid_display_m0/timing_gen_xy_m0/i_data_d1_23> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_10> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_11> <wav_display_m0/timing_gen_xy_m0/i_data_d1_12> <wav_display_m0/timing_gen_xy_m0/i_data_d1_13> <wav_display_m0/timing_gen_xy_m0/i_data_d1_14> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_20> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_21> <wav_display_m0/timing_gen_xy_m0/i_data_d1_22> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_4> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_5> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_6> <wav_display_m0/timing_gen_xy_m0/i_data_d0_7> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_19> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_23> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_4> <grid_display_m0/timing_gen_xy_m0/i_data_d0_5> <grid_display_m0/timing_gen_xy_m0/i_data_d0_6> <grid_display_m0/timing_gen_xy_m0/i_data_d0_7> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_3> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_4> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d1_5> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d1_6> <wav_display_m0/timing_gen_xy_m0/i_data_d1_7> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_10> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_11> <grid_display_m0/timing_gen_xy_m0/i_data_d0_12> <grid_display_m0/timing_gen_xy_m0/i_data_d0_13> <grid_display_m0/timing_gen_xy_m0/i_data_d0_14> <grid_display_m0/timing_gen_xy_m0/i_data_d0_15> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d0_19> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d0_20> <grid_display_m0/timing_gen_xy_m0/i_data_d0_21> <grid_display_m0/timing_gen_xy_m0/i_data_d0_22> <grid_display_m0/timing_gen_xy_m0/i_data_d0_23> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/timing_gen_xy_m0/i_data_d1_3> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/timing_gen_xy_m0/i_data_d1_4> <grid_display_m0/timing_gen_xy_m0/i_data_d1_5> <grid_display_m0/timing_gen_xy_m0/i_data_d1_6> <grid_display_m0/timing_gen_xy_m0/i_data_d1_7> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_14> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <grid_display_m0/v_data_13> <grid_display_m0/v_data_12> <grid_display_m0/v_data_11> <grid_display_m0/v_data_10> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_22> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <grid_display_m0/v_data_21> <grid_display_m0/v_data_20> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_23> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <grid_display_m0/v_data_19> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_10> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_11> <wav_display_m0/timing_gen_xy_m0/i_data_d0_12> <wav_display_m0/timing_gen_xy_m0/i_data_d0_13> <wav_display_m0/timing_gen_xy_m0/i_data_d0_14> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_20> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_21> <wav_display_m0/timing_gen_xy_m0/i_data_d0_22> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/timing_gen_xy_m0/i_data_d0_19> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/timing_gen_xy_m0/i_data_d0_23> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <grid_display_m0/v_data_3> 
+INFO:Xst:2261 - The FF/Latch <grid_display_m0/v_data_7> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <grid_display_m0/v_data_6> <grid_display_m0/v_data_5> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_4> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <wav_display_m0/v_data_3> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_7> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <wav_display_m0/v_data_6> <wav_display_m0/v_data_5> 
+INFO:Xst:2261 - The FF/Latch <wav_display_m0/v_data_14> in Unit <top> is equivalent to the following 4 FFs/Latches, which will be removed : <wav_display_m0/v_data_13> <wav_display_m0/v_data_12> <wav_display_m0/v_data_11> <wav_display_m0/v_data_10> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 3.
+
+Final Macro Processing ...
+
+Processing Unit <top> :
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_3>.
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_10>.
+	Found 2-bit shift register for signal <grid_display_m0/timing_gen_xy_m0/i_data_d1_19>.
+	Found 4-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/hs_d1>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_3>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_5>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_10>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_15>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_19>.
+	Found 2-bit shift register for signal <wav_display_m0/timing_gen_xy_m0/i_data_d1_20>.
+Unit <top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 182
+ Flip-Flops                                            : 182
+# Shift Registers                                      : 10
+ 2-bit shift register                                  : 9
+ 4-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 539
+#      GND                         : 3
+#      INV                         : 11
+#      LUT1                        : 70
+#      LUT2                        : 47
+#      LUT3                        : 40
+#      LUT4                        : 9
+#      LUT5                        : 24
+#      LUT6                        : 64
+#      MUXCY                       : 128
+#      VCC                         : 3
+#      XORCY                       : 140
+# FlipFlops/Latches                : 192
+#      FD                          : 28
+#      FDC                         : 52
+#      FDCE                        : 85
+#      FDE                         : 10
+#      FDR                         : 17
+# RAMS                             : 2
+#      RAMB8BWER                   : 2
+# Shift Registers                  : 10
+#      SRLC16E                     : 10
+# Clock Buffers                    : 5
+#      BUFG                        : 5
+# IO Buffers                       : 38
+#      IBUF                        : 9
+#      IBUFG                       : 1
+#      OBUF                        : 28
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             192  out of  18224     1%  
+ Number of Slice LUTs:                  275  out of   9112     3%  
+    Number used as Logic:               265  out of   9112     2%  
+    Number used as Memory:               10  out of   2176     0%  
+       Number used as SRL:               10
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    294
+   Number with an unused Flip Flop:     102  out of    294    34%  
+   Number with an unused LUT:            19  out of    294     6%  
+   Number of fully used LUT-FF pairs:   173  out of    294    58%  
+   Number of unique control sets:        15
+
+IO Utilization: 
+ Number of IOs:                          38
+ Number of bonded IOBs:                  38  out of    232    16%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                5  out of     16    31%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                             | Load  |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+adda_pll_m0/pll_base_inst/CLKOUT0  | BUFG                                                                                                                              | 10    |
+adda_pll_m0/pll_base_inst/CLKOUT1  | BUFG                                                                                                                              | 46    |
+clk                                | DCM_SP:CLKFX                                                                                                                      | 149   |
+da_rom_m0/N1                       | NONE(da_rom_m0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram)| 1     |
+-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 7.770ns (Maximum Frequency: 128.698MHz)
+   Minimum input arrival time before clock: 5.045ns
+   Maximum output required time after clock: 5.393ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'adda_pll_m0/pll_base_inst/CLKOUT0'
+  Clock period: 2.163ns (frequency: 462.374MHz)
+  Total number of paths / destination ports: 54 / 18
+-------------------------------------------------------------------------
+Delay:               2.163ns (Levels of Logic = 10)
+  Source:            rom_addr_0 (FF)
+  Destination:       rom_addr_8 (FF)
+  Source Clock:      adda_pll_m0/pll_base_inst/CLKOUT0 rising
+  Destination Clock: adda_pll_m0/pll_base_inst/CLKOUT0 rising
+
+  Data Path: rom_addr_0 to rom_addr_8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.525   0.725  rom_addr_0 (rom_addr_0)
+     INV:I->O              1   0.255   0.000  Mcount_rom_addr_lut<0>_INV_0 (Mcount_rom_addr_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Mcount_rom_addr_cy<0> (Mcount_rom_addr_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<1> (Mcount_rom_addr_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<2> (Mcount_rom_addr_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<3> (Mcount_rom_addr_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<4> (Mcount_rom_addr_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<5> (Mcount_rom_addr_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Mcount_rom_addr_cy<6> (Mcount_rom_addr_cy<6>)
+     MUXCY:CI->O           0   0.023   0.000  Mcount_rom_addr_cy<7> (Mcount_rom_addr_cy<7>)
+     XORCY:CI->O           1   0.206   0.000  Mcount_rom_addr_xor<8> (Result<8>)
+     FD:D                      0.074          rom_addr_8
+    ----------------------------------------
+    Total                      2.163ns (1.438ns logic, 0.725ns route)
+                                       (66.5% logic, 33.5% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'adda_pll_m0/pll_base_inst/CLKOUT1'
+  Clock period: 5.159ns (frequency: 193.836MHz)
+  Total number of paths / destination ports: 1744 / 91
+-------------------------------------------------------------------------
+Delay:               5.159ns (Levels of Logic = 13)
+  Source:            ad9280_sample_m0/sample_cnt_4 (FF)
+  Destination:       ad9280_sample_m0/sample_cnt_9 (FF)
+  Source Clock:      adda_pll_m0/pll_base_inst/CLKOUT1 rising
+  Destination Clock: adda_pll_m0/pll_base_inst/CLKOUT1 rising
+
+  Data Path: ad9280_sample_m0/sample_cnt_4 to ad9280_sample_m0/sample_cnt_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.525   1.196  ad9280_sample_m0/sample_cnt_4 (ad9280_sample_m0/sample_cnt_4)
+     LUT5:I0->O            7   0.254   0.910  ad9280_sample_m0/sample_cnt[10]_GND_12_o_equal_15_o<10>_SW0 (N3)
+     LUT6:I5->O            6   0.254   1.104  ad9280_sample_m0/sample_cnt[10]_GND_12_o_equal_15_o<10> (ad9280_sample_m0/sample_cnt[10]_GND_12_o_equal_15_o)
+     LUT3:I0->O            1   0.235   0.000  ad9280_sample_m0/Mcount_sample_cnt_lut<0> (ad9280_sample_m0/Mcount_sample_cnt_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<0> (ad9280_sample_m0/Mcount_sample_cnt_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<1> (ad9280_sample_m0/Mcount_sample_cnt_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<2> (ad9280_sample_m0/Mcount_sample_cnt_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<3> (ad9280_sample_m0/Mcount_sample_cnt_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<4> (ad9280_sample_m0/Mcount_sample_cnt_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<5> (ad9280_sample_m0/Mcount_sample_cnt_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<6> (ad9280_sample_m0/Mcount_sample_cnt_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<7> (ad9280_sample_m0/Mcount_sample_cnt_cy<7>)
+     MUXCY:CI->O           0   0.023   0.000  ad9280_sample_m0/Mcount_sample_cnt_cy<8> (ad9280_sample_m0/Mcount_sample_cnt_cy<8>)
+     XORCY:CI->O           1   0.206   0.000  ad9280_sample_m0/Mcount_sample_cnt_xor<9> (ad9280_sample_m0/Mcount_sample_cnt9)
+     FDCE:D                    0.074          ad9280_sample_m0/sample_cnt_9
+    ----------------------------------------
+    Total                      5.159ns (1.949ns logic, 3.210ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.770ns (frequency: 128.698MHz)
+  Total number of paths / destination ports: 2302 / 225
+-------------------------------------------------------------------------
+Delay:               5.977ns (Levels of Logic = 5)
+  Source:            grid_display_m0/timing_gen_xy_m0/y_cnt_2 (FF)
+  Destination:       grid_display_m0/v_data_23 (FF)
+  Source Clock:      clk rising 1.3X
+  Destination Clock: clk rising 1.3X
+
+  Data Path: grid_display_m0/timing_gen_xy_m0/y_cnt_2 to grid_display_m0/v_data_23
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             5   0.525   1.296  grid_display_m0/timing_gen_xy_m0/y_cnt_2 (grid_display_m0/timing_gen_xy_m0/y_cnt_2)
+     LUT6:I0->O            1   0.254   0.682  grid_display_m0/_n00594 (grid_display_m0/_n00594)
+     LUT3:I2->O            1   0.254   0.682  grid_display_m0/_n00595 (grid_display_m0/_n00595)
+     LUT6:I5->O            1   0.254   0.682  grid_display_m0/_n00596_SW0 (N17)
+     LUT6:I5->O            3   0.254   0.766  grid_display_m0/_n00596 (grid_display_m0/_n0059)
+     LUT3:I2->O            1   0.254   0.000  grid_display_m0/v_data_23_rstpot (grid_display_m0/v_data_23_rstpot)
+     FD:D                      0.074          grid_display_m0/v_data_23
+    ----------------------------------------
+    Total                      5.977ns (1.869ns logic, 4.108ns route)
+                                       (31.3% logic, 68.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'adda_pll_m0/pll_base_inst/CLKOUT1'
+  Total number of paths / destination ports: 53 / 53
+-------------------------------------------------------------------------
+Offset:              5.045ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       ad9280_sample_m0/wait_cnt_24 (FF)
+  Destination Clock: adda_pll_m0/pll_base_inst/CLKOUT1 rising
+
+  Data Path: rst_n to ad9280_sample_m0/wait_cnt_24
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            137   0.255   2.322  rst_n_INV_1_o1_INV_0 (rst_n_INV_1_o)
+     FDC:CLR                   0.459          ad9280_sample_m0/adc_data_d0_0
+    ----------------------------------------
+    Total                      5.045ns (2.042ns logic, 3.003ns route)
+                                       (40.5% logic, 59.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 92 / 92
+-------------------------------------------------------------------------
+Offset:              5.045ns (Levels of Logic = 2)
+  Source:            rst_n (PAD)
+  Destination:       grid_display_m0/timing_gen_xy_m0/x_cnt_11 (FF)
+  Destination Clock: clk rising 1.3X
+
+  Data Path: rst_n to grid_display_m0/timing_gen_xy_m0/x_cnt_11
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
+     INV:I->O            137   0.255   2.322  rst_n_INV_1_o1_INV_0 (rst_n_INV_1_o)
+     FDC:CLR                   0.459          color_bar_m0/video_active_d0
+    ----------------------------------------
+    Total                      5.045ns (2.042ns logic, 3.003ns route)
+                                       (40.5% logic, 59.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'adda_pll_m0/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              5.393ns (Levels of Logic = 2)
+  Source:            da_rom_m0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (RAM)
+  Destination:       ad9708_data<7> (PAD)
+  Source Clock:      adda_pll_m0/pll_base_inst/CLKOUT0 rising
+
+  Data Path: da_rom_m0/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram to ad9708_data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB8BWER:CLKAWRCLK->DOADO11    1   1.800   0.681  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM9.ram (douta<7>)
+     end scope: 'da_rom_m0:douta<7>'
+     OBUF:I->O                 2.912          ad9708_data_7_OBUF (ad9708_data<7>)
+    ----------------------------------------
+    Total                      5.393ns (4.712ns logic, 0.681ns route)
+                                       (87.4% logic, 12.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              4.591ns (Levels of Logic = 1)
+  Source:            wav_display_m0/timing_gen_xy_m0/vs_d1 (FF)
+  Destination:       vga_out_vs (PAD)
+  Source Clock:      clk rising 1.3X
+
+  Data Path: wav_display_m0/timing_gen_xy_m0/vs_d1 to vga_out_vs
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              15   0.525   1.154  wav_display_m0/timing_gen_xy_m0/vs_d1 (wav_display_m0/timing_gen_xy_m0/vs_d1)
+     OBUF:I->O                 2.912          vga_out_vs_OBUF (vga_out_vs)
+    ----------------------------------------
+    Total                      4.591ns (3.437ns logic, 1.154ns route)
+                                       (74.9% logic, 25.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock adda_pll_m0/pll_base_inst/CLKOUT0
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+adda_pll_m0/pll_base_inst/CLKOUT0|    2.163|         |         |         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock adda_pll_m0/pll_base_inst/CLKOUT1
+---------------------------------+---------+---------+---------+---------+
+                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                     |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------------+---------+---------+---------+---------+
+adda_pll_m0/pll_base_inst/CLKOUT1|    5.159|         |         |         |
+---------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    5.977|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.37 secs
+ 
+--> 
+
+Total memory usage is 263588 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  131 (   0 filtered)
+Number of infos    :   34 (   0 filtered)
+

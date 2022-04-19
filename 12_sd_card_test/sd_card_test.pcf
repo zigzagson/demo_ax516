@@ -1,0 +1,169 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 20 11:34:15 2019
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "SD_DCLK" LOCATE = SITE "U18" LEVEL 1;
+COMP "SD_MISO" LOCATE = SITE "N14" LEVEL 1;
+COMP "SD_MOSI" LOCATE = SITE "P15" LEVEL 1;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "key1" LOCATE = SITE "P7" LEVEL 1;
+COMP "rst_n" LOCATE = SITE "N4" LEVEL 1;
+COMP "SD_nCS" LOCATE = SITE "L14" LEVEL 1;
+COMP "led<0>" LOCATE = SITE "V5" LEVEL 1;
+COMP "led<1>" LOCATE = SITE "R3" LEVEL 1;
+COMP "led<2>" LOCATE = SITE "T3" LEVEL 1;
+COMP "led<3>" LOCATE = SITE "T4" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "sd_sec_write_data_0" BEL "sd_sec_write_data_1" BEL
+        "sd_sec_write_data_2" BEL "sd_sec_write_data_3" BEL
+        "sd_sec_write_data_4" BEL "sd_sec_write_data_5" BEL
+        "sd_sec_write_data_6" BEL "sd_sec_write_data_7" BEL "rd_cnt_0" BEL
+        "rd_cnt_1" BEL "rd_cnt_2" BEL "rd_cnt_3" BEL "rd_cnt_4" BEL "rd_cnt_5"
+        BEL "rd_cnt_6" BEL "rd_cnt_7" BEL "rd_cnt_8" BEL "rd_cnt_9" BEL
+        "state_FSM_FFd2" BEL "state_FSM_FFd1" BEL "wr_cnt_0" BEL "wr_cnt_1"
+        BEL "wr_cnt_2" BEL "wr_cnt_3" BEL "wr_cnt_4" BEL "wr_cnt_5" BEL
+        "wr_cnt_6" BEL "wr_cnt_7" BEL "read_data_0" BEL "read_data_1" BEL
+        "read_data_2" BEL "read_data_3" BEL "read_data_4" BEL "read_data_5"
+        BEL "read_data_6" BEL "read_data_7" BEL "ax_debounce_m0/button_out_d0"
+        BEL "ax_debounce_m0/DFF2" BEL "ax_debounce_m0/DFF1" BEL
+        "ax_debounce_m0/button_negedge" BEL "ax_debounce_m0/q_reg_19" BEL
+        "ax_debounce_m0/q_reg_18" BEL "ax_debounce_m0/q_reg_17" BEL
+        "ax_debounce_m0/q_reg_16" BEL "ax_debounce_m0/q_reg_15" BEL
+        "ax_debounce_m0/q_reg_14" BEL "ax_debounce_m0/q_reg_13" BEL
+        "ax_debounce_m0/q_reg_12" BEL "ax_debounce_m0/q_reg_11" BEL
+        "ax_debounce_m0/q_reg_10" BEL "ax_debounce_m0/q_reg_9" BEL
+        "ax_debounce_m0/q_reg_8" BEL "ax_debounce_m0/q_reg_7" BEL
+        "ax_debounce_m0/q_reg_6" BEL "ax_debounce_m0/q_reg_5" BEL
+        "ax_debounce_m0/q_reg_4" BEL "ax_debounce_m0/q_reg_3" BEL
+        "ax_debounce_m0/q_reg_2" BEL "ax_debounce_m0/q_reg_1" BEL
+        "ax_debounce_m0/q_reg_0" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd1" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd2" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd3" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd4" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd5" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd6" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd7" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd8" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd9" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd10" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd11" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd12" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/state_FSM_FFd13" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/sd_init_done" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_req" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/spi_clk_div_7" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_45" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_44" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_43" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_42" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_40" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_38" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_17" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_16" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_7" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_6" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_4" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_1" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/cmd_r1_0" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_9" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_8" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_7" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_6" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_5" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_4" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_3" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_2" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_1" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/wr_data_cnt_0" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd1" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd2" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd3" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/state_FSM_FFd4" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_7" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_6" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_5" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_4" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_3" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_2" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_1" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/send_data_0" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_15" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_14" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_13" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_12" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_11" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_10" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_9" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_8" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_7" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_6" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_5" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_4" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_3" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_2" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_1" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/byte_cnt_0" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_valid" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_7" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_6" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_5" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_4" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_3" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_2" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_1" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/block_read_data_0" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd2" BEL
+        "sd_card_top_m0/spi_master_m0/clk_edge_cnt_4" BEL
+        "sd_card_top_m0/spi_master_m0/clk_edge_cnt_3" BEL
+        "sd_card_top_m0/spi_master_m0/clk_edge_cnt_2" BEL
+        "sd_card_top_m0/spi_master_m0/clk_edge_cnt_1" BEL
+        "sd_card_top_m0/spi_master_m0/clk_edge_cnt_0" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd1" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd3" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd4" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd5" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_15" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_14" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_13" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_12" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_11" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_10" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_9" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_8" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_7" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_6" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_5" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_4" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_3" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_2" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_1" BEL
+        "sd_card_top_m0/spi_master_m0/clk_cnt_0" BEL
+        "sd_card_top_m0/spi_master_m0/state_FSM_FFd6" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_7" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_6" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_5" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_4" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_3" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_2" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_1" BEL
+        "sd_card_top_m0/spi_master_m0/MISO_shift_0" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_7" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_6" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_5" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_4" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_3" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_2" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_1" BEL
+        "sd_card_top_m0/spi_master_m0/MOSI_shift_0" BEL "sd_sec_read" BEL
+        "sd_sec_write" BEL "ax_debounce_m0/button_out" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/block_read_req" BEL
+        "sd_card_top_m0/sd_card_sec_read_write_m0/block_write_req" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/spi_wr_req" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/cmd_req_error" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/CS_reg" BEL
+        "sd_card_top_m0/sd_card_cmd_m0/clk_div_7" BEL
+        "sd_card_top_m0/spi_master_m0/DCLK_reg" BEL "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+SCHEMATIC END;
+

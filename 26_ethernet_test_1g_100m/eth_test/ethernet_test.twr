@@ -1,0 +1,1113 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml ethernet_test.twx ethernet_test.ncd -o ethernet_test.twr
+ethernet_test.pcf -ucf eth_test.ucf
+
+Design file:              ethernet_test.ncd
+Physical constraint file: ethernet_test.pcf
+Device,package,speed:     xc6slx16,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 1950 paths analyzed, 452 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.222ns.
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/smi_inst/mdc (SLICE_X19Y43.A6), 16 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.778ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/mdc_cnt_5 (FF)
+  Destination:          smi_config_inst/smi_inst/mdc (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.111ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.076ns (0.499 - 0.575)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/mdc_cnt_5 to smi_config_inst/smi_inst/mdc
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y11.CQ       Tcko                  0.430   smi_config_inst/smi_inst/mdc_cnt<7>
+                                                       smi_config_inst/smi_inst/mdc_cnt_5
+    SLICE_X0Y12.C2       net (fanout=2)        0.894   smi_config_inst/smi_inst/mdc_cnt<5>
+    SLICE_X0Y12.C        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>1
+    SLICE_X0Y12.A1       net (fanout=1)        0.532   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>
+    SLICE_X0Y12.A        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>3
+    SLICE_X19Y43.A6      net (fanout=9)        3.412   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o
+    SLICE_X19Y43.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdc
+                                                       smi_config_inst/smi_inst/mdc_rstpot
+                                                       smi_config_inst/smi_inst/mdc
+    -------------------------------------------------  ---------------------------
+    Total                                      6.111ns (1.273ns logic, 4.838ns route)
+                                                       (20.8% logic, 79.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.801ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/mdc_cnt_4 (FF)
+  Destination:          smi_config_inst/smi_inst/mdc (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.088ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.076ns (0.499 - 0.575)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/mdc_cnt_4 to smi_config_inst/smi_inst/mdc
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y11.CMUX     Tshcko                0.518   smi_config_inst/smi_inst/mdc_cnt<7>
+                                                       smi_config_inst/smi_inst/mdc_cnt_4
+    SLICE_X0Y12.C1       net (fanout=2)        0.783   smi_config_inst/smi_inst/mdc_cnt<4>
+    SLICE_X0Y12.C        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>1
+    SLICE_X0Y12.A1       net (fanout=1)        0.532   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>
+    SLICE_X0Y12.A        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>3
+    SLICE_X19Y43.A6      net (fanout=9)        3.412   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o
+    SLICE_X19Y43.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdc
+                                                       smi_config_inst/smi_inst/mdc_rstpot
+                                                       smi_config_inst/smi_inst/mdc
+    -------------------------------------------------  ---------------------------
+    Total                                      6.088ns (1.361ns logic, 4.727ns route)
+                                                       (22.4% logic, 77.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.945ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/mdc_cnt_7 (FF)
+  Destination:          smi_config_inst/smi_inst/mdc (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      5.944ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.076ns (0.499 - 0.575)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/mdc_cnt_7 to smi_config_inst/smi_inst/mdc
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X3Y11.DQ       Tcko                  0.430   smi_config_inst/smi_inst/mdc_cnt<7>
+                                                       smi_config_inst/smi_inst/mdc_cnt_7
+    SLICE_X0Y12.D2       net (fanout=2)        0.945   smi_config_inst/smi_inst/mdc_cnt<7>
+    SLICE_X0Y12.D        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>2
+    SLICE_X0Y12.A5       net (fanout=1)        0.314   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>1
+    SLICE_X0Y12.A        Tilo                  0.235   smi_config_inst/smi_inst/mdc_cnt<15>
+                                                       smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o<15>3
+    SLICE_X19Y43.A6      net (fanout=9)        3.412   smi_config_inst/smi_inst/GND_44_o_GND_44_o_equal_25_o
+    SLICE_X19Y43.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdc
+                                                       smi_config_inst/smi_inst/mdc_rstpot
+                                                       smi_config_inst/smi_inst/mdc
+    -------------------------------------------------  ---------------------------
+    Total                                      5.944ns (1.273ns logic, 4.671ns route)
+                                                       (21.4% logic, 78.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/smi_inst/mdio_out (SLICE_X27Y51.A2), 13 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.205ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/write_cnt_0 (FF)
+  Destination:          smi_config_inst/smi_inst/mdio_out (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.761ns (Levels of Logic = 3)
+  Clock Path Skew:      0.001ns (0.315 - 0.314)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/write_cnt_0 to smi_config_inst/smi_inst/mdio_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y50.AQ      Tcko                  0.430   smi_config_inst/smi_inst/write_cnt<4>
+                                                       smi_config_inst/smi_inst/write_cnt_0
+    SLICE_X20Y50.B1      net (fanout=10)       0.967   smi_config_inst/smi_inst/write_cnt<0>
+    SLICE_X20Y50.B       Tilo                  0.235   smi_config_inst/write_data
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.D2      net (fanout=1)        0.947   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.DMUX    Tilo                  0.337   N2
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.A2      net (fanout=1)        1.472   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdio_out
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o9
+                                                       smi_config_inst/smi_inst/mdio_out
+    -------------------------------------------------  ---------------------------
+    Total                                      4.761ns (1.375ns logic, 3.386ns route)
+                                                       (28.9% logic, 71.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.218ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/write_cnt_1 (FF)
+  Destination:          smi_config_inst/smi_inst/mdio_out (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.748ns (Levels of Logic = 3)
+  Clock Path Skew:      0.001ns (0.315 - 0.314)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/write_cnt_1 to smi_config_inst/smi_inst/mdio_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y50.AMUX    Tshcko                0.518   smi_config_inst/smi_inst/write_cnt<4>
+                                                       smi_config_inst/smi_inst/write_cnt_1
+    SLICE_X20Y50.B3      net (fanout=9)        0.866   smi_config_inst/smi_inst/write_cnt<1>
+    SLICE_X20Y50.B       Tilo                  0.235   smi_config_inst/write_data
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.D2      net (fanout=1)        0.947   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.DMUX    Tilo                  0.337   N2
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.A2      net (fanout=1)        1.472   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdio_out
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o9
+                                                       smi_config_inst/smi_inst/mdio_out
+    -------------------------------------------------  ---------------------------
+    Total                                      4.748ns (1.463ns logic, 3.285ns route)
+                                                       (30.8% logic, 69.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     15.349ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/state_FSM_FFd2 (FF)
+  Destination:          smi_config_inst/smi_inst/mdio_out (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.615ns (Levels of Logic = 3)
+  Clock Path Skew:      -0.001ns (0.315 - 0.316)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/state_FSM_FFd2 to smi_config_inst/smi_inst/mdio_out
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y48.BQ      Tcko                  0.525   smi_config_inst/smi_inst/state_FSM_FFd3
+                                                       smi_config_inst/smi_inst/state_FSM_FFd2
+    SLICE_X20Y50.B5      net (fanout=23)       0.726   smi_config_inst/smi_inst/state_FSM_FFd2
+    SLICE_X20Y50.B       Tilo                  0.235   smi_config_inst/write_data
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.D2      net (fanout=1)        0.947   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o2
+    SLICE_X19Y48.DMUX    Tilo                  0.337   N2
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.A2      net (fanout=1)        1.472   smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o4
+    SLICE_X27Y51.CLK     Tas                   0.373   smi_config_inst/smi_inst/mdio_out
+                                                       smi_config_inst/smi_inst/PWR_33_o_write_cnt[5]_MUX_1053_o9
+                                                       smi_config_inst/smi_inst/mdio_out
+    -------------------------------------------------  ---------------------------
+    Total                                      4.615ns (1.470ns logic, 3.145ns route)
+                                                       (31.9% logic, 68.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/state_FSM_FFd4 (SLICE_X16Y28.D2), 5 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     15.582ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/state_FSM_FFd4 (FF)
+  Destination:          smi_config_inst/state_FSM_FFd4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      4.383ns (Levels of Logic = 2)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/state_FSM_FFd4 to smi_config_inst/state_FSM_FFd4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y28.DQ      Tcko                  0.476   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4
+    SLICE_X18Y37.A4      net (fanout=6)        1.465   smi_config_inst/state_FSM_FFd4
+    SLICE_X18Y37.A       Tilo                  0.254   N4
+                                                       smi_config_inst/state_FSM_FFd4-In_SW0
+    SLICE_X16Y28.D2      net (fanout=1)        1.839   N4
+    SLICE_X16Y28.CLK     Tas                   0.349   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4-In
+                                                       smi_config_inst/state_FSM_FFd4
+    -------------------------------------------------  ---------------------------
+    Total                                      4.383ns (1.079ns logic, 3.304ns route)
+                                                       (24.6% logic, 75.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.378ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/done (FF)
+  Destination:          smi_config_inst/state_FSM_FFd4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.562ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.025ns (0.503 - 0.528)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/done to smi_config_inst/state_FSM_FFd4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y43.AQ      Tcko                  0.525   smi_config_inst/smi_inst/mdc_posedge
+                                                       smi_config_inst/smi_inst/done
+    SLICE_X18Y37.A6      net (fanout=1)        0.595   smi_config_inst/smi_inst/done
+    SLICE_X18Y37.A       Tilo                  0.254   N4
+                                                       smi_config_inst/state_FSM_FFd4-In_SW0
+    SLICE_X16Y28.D2      net (fanout=1)        1.839   N4
+    SLICE_X16Y28.CLK     Tas                   0.349   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4-In
+                                                       smi_config_inst/state_FSM_FFd4
+    -------------------------------------------------  ---------------------------
+    Total                                      3.562ns (1.128ns logic, 2.434ns route)
+                                                       (31.7% logic, 68.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     16.458ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               smi_config_inst/smi_inst/read_data_15 (FF)
+  Destination:          smi_config_inst/state_FSM_FFd4 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      3.484ns (Levels of Logic = 2)
+  Clock Path Skew:      -0.023ns (0.503 - 0.526)
+  Source Clock:         clk_BUFGP rising at 0.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: smi_config_inst/smi_inst/read_data_15 to smi_config_inst/state_FSM_FFd4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y37.DMUX    Tshcko                0.518   smi_config_inst/smi_inst/read_data<14>
+                                                       smi_config_inst/smi_inst/read_data_15
+    SLICE_X18Y37.A2      net (fanout=2)        0.524   smi_config_inst/smi_inst/read_data<15>
+    SLICE_X18Y37.A       Tilo                  0.254   N4
+                                                       smi_config_inst/state_FSM_FFd4-In_SW0
+    SLICE_X16Y28.D2      net (fanout=1)        1.839   N4
+    SLICE_X16Y28.CLK     Tas                   0.349   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4-In
+                                                       smi_config_inst/state_FSM_FFd4
+    -------------------------------------------------  ---------------------------
+    Total                                      3.484ns (1.121ns logic, 2.363ns route)
+                                                       (32.2% logic, 67.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/smi_inst/mdio_in_3 (SLICE_X29Y49.DX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.399ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               smi_config_inst/smi_inst/mdio_in_2 (FF)
+  Destination:          smi_config_inst/smi_inst/mdio_in_3 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.399ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: smi_config_inst/smi_inst/mdio_in_2 to smi_config_inst/smi_inst/mdio_in_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y49.CQ      Tcko                  0.198   smi_config_inst/smi_inst/mdio_in<3>
+                                                       smi_config_inst/smi_inst/mdio_in_2
+    SLICE_X29Y49.DX      net (fanout=1)        0.142   smi_config_inst/smi_inst/mdio_in<2>
+    SLICE_X29Y49.CLK     Tckdi       (-Th)    -0.059   smi_config_inst/smi_inst/mdio_in<3>
+                                                       smi_config_inst/smi_inst/mdio_in_3
+    -------------------------------------------------  ---------------------------
+    Total                                      0.399ns (0.257ns logic, 0.142ns route)
+                                                       (64.4% logic, 35.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/smi_inst/read_data_2 (SLICE_X18Y39.B5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.424ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               smi_config_inst/smi_inst/read_data_1 (FF)
+  Destination:          smi_config_inst/smi_inst/read_data_2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.424ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: smi_config_inst/smi_inst/read_data_1 to smi_config_inst/smi_inst/read_data_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X18Y39.BQ      Tcko                  0.234   smi_config_inst/smi_inst/read_data<6>
+                                                       smi_config_inst/smi_inst/read_data_1
+    SLICE_X18Y39.B5      net (fanout=1)        0.059   smi_config_inst/smi_inst/read_data<1>
+    SLICE_X18Y39.CLK     Tah         (-Th)    -0.131   smi_config_inst/smi_inst/read_data<6>
+                                                       smi_config_inst/smi_inst/Mmux_read_data[15]_read_data[15]_mux_96_OUT91
+                                                       smi_config_inst/smi_inst/read_data_2
+    -------------------------------------------------  ---------------------------
+    Total                                      0.424ns (0.365ns logic, 0.059ns route)
+                                                       (86.1% logic, 13.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point smi_config_inst/state_FSM_FFd4 (SLICE_X16Y28.D6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.433ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               smi_config_inst/state_FSM_FFd4 (FF)
+  Destination:          smi_config_inst/state_FSM_FFd4 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.433ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_BUFGP rising at 20.000ns
+  Destination Clock:    clk_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: smi_config_inst/state_FSM_FFd4 to smi_config_inst/state_FSM_FFd4
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y28.DQ      Tcko                  0.200   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4
+    SLICE_X16Y28.D6      net (fanout=6)        0.043   smi_config_inst/state_FSM_FFd4
+    SLICE_X16Y28.CLK     Tah         (-Th)    -0.190   smi_config_inst/state_FSM_FFd4
+                                                       smi_config_inst/state_FSM_FFd4-In
+                                                       smi_config_inst/state_FSM_FFd4
+    -------------------------------------------------  ---------------------------
+    Total                                      0.433ns (0.390ns logic, 0.043ns route)
+                                                       (90.1% logic, 9.9% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 17.334ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.666ns (375.094MHz) (Tbcper_I)
+  Physical resource: clk_BUFGP/BUFG/I0
+  Logical resource: clk_BUFGP/BUFG/I0
+  Location pin: BUFGMUX_X3Y13.I0
+  Clock network: clk_BUFGP/IBUFG
+--------------------------------------------------------------------------------
+Slack: 17.751ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: smi_config_inst/write_data_1/CLK0
+  Logical resource: smi_config_inst/write_data_1/CK0
+  Location pin: OLOGIC_X2Y3.CLK0
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 19.520ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: smi_config_inst/timer<3>/CLK
+  Logical resource: smi_config_inst/timer_0/CK
+  Location pin: SLICE_X14Y22.CLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 149568 paths analyzed, 16147 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   7.314ns.
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3 (SLICE_X25Y30.A6), 1725 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.686ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.257ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.022ns (0.315 - 0.337)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y30.CQ      Tcko                  0.430   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<6>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5
+    SLICE_X27Y31.B1      net (fanout=4)        0.929   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<5>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.A6      net (fanout=16)       0.623   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<3>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT101
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.257ns (2.285ns logic, 4.972ns route)
+                                                       (31.5% logic, 68.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.712ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.223ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.030ns (0.315 - 0.345)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y31.BQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<14>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8
+    SLICE_X27Y31.B3      net (fanout=4)        0.849   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<8>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.A6      net (fanout=16)       0.623   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<3>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT101
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.223ns (2.331ns logic, 4.892ns route)
+                                                       (32.3% logic, 67.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.778ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.158ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.029ns (0.315 - 0.344)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y30.CQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<10>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9
+    SLICE_X29Y31.A4      net (fanout=4)        0.907   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<9>
+    SLICE_X29Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/_n0596_inv
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A5      net (fanout=2)        0.441   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.A6      net (fanout=16)       0.623   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X25Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<3>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT101
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_3
+    -------------------------------------------------  ---------------------------
+    Total                                      7.158ns (2.331ns logic, 4.827ns route)
+                                                       (32.6% logic, 67.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0 (SLICE_X29Y30.A2), 1725 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.727ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.228ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.010ns (0.327 - 0.337)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y30.CQ      Tcko                  0.430   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<6>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5
+    SLICE_X27Y31.B1      net (fanout=4)        0.929   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<5>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.A2      net (fanout=16)       0.594   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT11
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      7.228ns (2.285ns logic, 4.943ns route)
+                                                       (31.6% logic, 68.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.759ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.194ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.012ns (0.196 - 0.208)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y31.BQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<14>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8
+    SLICE_X27Y31.B3      net (fanout=4)        0.849   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<8>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.A2      net (fanout=16)       0.594   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT11
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      7.194ns (2.331ns logic, 4.863ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.825ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.129ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.011ns (0.196 - 0.207)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y30.CQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<10>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9
+    SLICE_X29Y31.A4      net (fanout=4)        0.907   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<9>
+    SLICE_X29Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/_n0596_inv
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A5      net (fanout=2)        0.441   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.A2      net (fanout=16)       0.594   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X29Y30.CLK     Tas                   0.373   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT11
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_0
+    -------------------------------------------------  ---------------------------
+    Total                                      7.129ns (2.331ns logic, 4.798ns route)
+                                                       (32.7% logic, 67.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12 (SLICE_X28Y32.B4), 1725 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.736ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.208ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.021ns (0.535 - 0.556)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X27Y30.CQ      Tcko                  0.430   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<6>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_5
+    SLICE_X27Y31.B1      net (fanout=4)        0.929   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<5>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.B4      net (fanout=16)       0.598   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.CLK     Tas                   0.349   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<12>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT41
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    -------------------------------------------------  ---------------------------
+    Total                                      7.208ns (2.261ns logic, 4.947ns route)
+                                                       (31.4% logic, 68.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.762ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.174ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.029ns (0.535 - 0.564)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y31.BQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<14>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_8
+    SLICE_X27Y31.B3      net (fanout=4)        0.849   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<8>
+    SLICE_X27Y31.B       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A3      net (fanout=2)        0.564   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o11
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.B4      net (fanout=16)       0.598   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.CLK     Tas                   0.349   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<12>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT41
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    -------------------------------------------------  ---------------------------
+    Total                                      7.174ns (2.307ns logic, 4.867ns route)
+                                                       (32.2% logic, 67.8% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.828ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 (FF)
+  Destination:          mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12 (FF)
+  Requirement:          8.000ns
+  Data Path Delay:      7.109ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.028ns (0.535 - 0.563)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 0.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9 to mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X28Y30.CQ      Tcko                  0.476   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<10>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_9
+    SLICE_X29Y31.A4      net (fanout=4)        0.907   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<9>
+    SLICE_X29Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/_n0596_inv
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A5      net (fanout=2)        0.441   mac_test0/mac_top0/mac_tx0/udp0/ck_state_ck_state[5]_checksum_cnt[15]_AND_134_o12
+    SLICE_X27Y31.A       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_finish
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o<15>1
+    SLICE_X24Y30.B2      net (fanout=4)        0.786   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt[15]_GND_17_o_equal_72_o
+    SLICE_X24Y30.B       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A5      net (fanout=7)        0.225   mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o1
+    SLICE_X24Y30.A       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o3_SW0_SW0
+    SLICE_X24Y30.D1      net (fanout=1)        1.435   N134
+    SLICE_X24Y30.D       Tilo                  0.235   mac_test0/mac_top0/mac_rx0/arp0/arp_rec_destination_ip_addr_3
+                                                       mac_test0/mac_top0/mac_tx0/udp0/ck_state[5]_ck_next_state[5]_not_equal_152_o2_SW0
+    SLICE_X29Y30.C6      net (fanout=1)        0.410   N130
+    SLICE_X29Y30.C       Tilo                  0.259   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<2>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.B4      net (fanout=16)       0.598   mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT18
+    SLICE_X28Y32.CLK     Tas                   0.349   mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt<12>
+                                                       mac_test0/mac_top0/mac_tx0/udp0/Mmux_GND_17_o_GND_17_o_mux_162_OUT41
+                                                       mac_test0/mac_top0/mac_tx0/udp0/checksum_cnt_12
+    -------------------------------------------------  ---------------------------
+    Total                                      7.109ns (2.307ns logic, 4.802ns route)
+                                                       (32.5% logic, 67.5% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y10.ADDRBRDADDR11), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.247ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_6 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.257ns (Levels of Logic = 0)
+  Clock Path Skew:      0.010ns (0.119 - 0.109)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_6 to mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X33Y22.DQ           Tcko                  0.198   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<6>
+                                                            mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr_6
+    RAMB8_X1Y10.ADDRBRDADDR11 net (fanout=1)        0.125   mac_test0/mac_top0/icmp0/icmp_rec_ram_read_addr<6>
+    RAMB8_X1Y10.CLKBRDCLK     Trckc_ADDRB (-Th)     0.066   mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                                            mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.257ns (0.132ns logic, 0.125ns route)
+                                                            (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y20.ADDRA10), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.251ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/mac_rx0/udp0/ram_write_addr_7 (FF)
+  Destination:          mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.257ns (Levels of Logic = 0)
+  Clock Path Skew:      0.006ns (0.116 - 0.110)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/mac_rx0/udp0/ram_write_addr_7 to mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X33Y41.AQ      Tcko                  0.198   mac_test0/mac_top0/mac_rx0/udp0/ram_write_addr<8>
+                                                       mac_test0/mac_top0/mac_rx0/udp0/ram_write_addr_7
+    RAMB16_X1Y20.ADDRA10 net (fanout=1)        0.125   mac_test0/mac_top0/mac_rx0/udp0/ram_write_addr<7>
+    RAMB16_X1Y20.CLKA    Trckc_ADDRA (-Th)     0.066   mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+                                                       mac_test0/mac_top0/mac_rx0/udp0/udp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram
+    -------------------------------------------------  ---------------------------
+    Total                                      0.257ns (0.132ns logic, 0.125ns route)
+                                                       (51.4% logic, 48.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAMB8_X1Y10.ADDRAWRADDR10), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.252ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mac_test0/mac_top0/icmp0/ram_write_addr_5 (FF)
+  Destination:          mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram (RAM)
+  Requirement:          0.000ns
+  Data Path Delay:      0.259ns (Levels of Logic = 0)
+  Clock Path Skew:      0.007ns (0.119 - 0.112)
+  Source Clock:         e_gtxc_OBUF_BUFG rising at 8.000ns
+  Destination Clock:    e_gtxc_OBUF_BUFG rising at 8.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mac_test0/mac_top0/icmp0/ram_write_addr_5 to mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    Location                  Delay type         Delay(ns)  Physical Resource
+                                                            Logical Resource(s)
+    ------------------------------------------------------  -------------------
+    SLICE_X32Y21.CQ           Tcko                  0.200   mac_test0/mac_top0/icmp0/ram_write_addr<6>
+                                                            mac_test0/mac_top0/icmp0/ram_write_addr_5
+    RAMB8_X1Y10.ADDRAWRADDR10 net (fanout=1)        0.125   mac_test0/mac_top0/icmp0/ram_write_addr<5>
+    RAMB8_X1Y10.CLKAWRCLK     Trckc_ADDRA (-Th)     0.066   mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+                                                            mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram
+    ------------------------------------------------------  ---------------------------
+    Total                                           0.259ns (0.134ns logic, 0.125ns route)
+                                                            (51.7% logic, 48.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_grxc_clk_pin = PERIOD TIMEGRP "grxc_clk_pin" 8 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Logical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y10.CLKAWRCLK
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Logical resource: mac_test0/mac_top0/icmp0/icmp_receive_ram/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKBRDCLK
+  Location pin: RAMB8_X1Y10.CLKBRDCLK
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+Slack: 4.430ns (period - min period limit)
+  Period: 8.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Logical resource: mac_test0/mac_top0/mac_tx0/udp0/udp_tx_checksum/U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.WIDE_PRIM9.ram/CLKAWRCLK
+  Location pin: RAMB8_X1Y9.CLKAWRCLK
+  Clock network: e_gtxc_OBUF_BUFG
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_gtxc_clk_pin = PERIOD TIMEGRP "gtxc_clk_pin" 8 ns HIGH 
+50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    6.222|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock e_rxc
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+e_rxc          |    7.314|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 151518 paths, 0 nets, and 15861 connections
+
+Design statistics:
+   Minimum period:   7.314ns{1}   (Maximum frequency: 136.724MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Jul 07 17:19:39 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 298 MB
+
+
+

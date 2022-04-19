@@ -1,0 +1,24 @@
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx16-csg324-2 ethernet_test.ngc ethernet_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ethernet_test_map.ncd ethernet_test.ngd ethernet_test.pcf 
+par -w -intstyle ise -ol high -mt off ethernet_test_map.ncd ethernet_test.ncd ethernet_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ethernet_test.twx ethernet_test.ncd -o ethernet_test.twr ethernet_test.pcf 
+bitgen -intstyle ise -f ethernet_test.ut ethernet_test.ncd 
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc eth_test.ucf -p xc6slx16-csg324-2 ethernet_test.ngc ethernet_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ethernet_test_map.ncd ethernet_test.ngd ethernet_test.pcf 
+par -w -intstyle ise -ol high -mt off ethernet_test_map.ncd ethernet_test.ncd ethernet_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ethernet_test.twx ethernet_test.ncd -o ethernet_test.twr ethernet_test.pcf -ucf eth_test.ucf 
+bitgen -intstyle ise -f ethernet_test.ut ethernet_test.ncd 
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc eth_test.ucf -p xc6slx16-csg324-2 ethernet_test.ngc ethernet_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ethernet_test_map.ncd ethernet_test.ngd ethernet_test.pcf 
+par -w -intstyle ise -ol high -mt off ethernet_test_map.ncd ethernet_test.ncd ethernet_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ethernet_test.twx ethernet_test.ncd -o ethernet_test.twr ethernet_test.pcf -ucf eth_test.ucf 
+bitgen -intstyle ise -f ethernet_test.ut ethernet_test.ncd 
+xst -intstyle ise -ifn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.xst" -ofn "E:/BaiduYunDownload/AX516.190526/demo/23_ethernet_test_1g_100m/eth_test/ethernet_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc eth_test.ucf -p xc6slx16-csg324-2 ethernet_test.ngc ethernet_test.ngd  
+map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o ethernet_test_map.ncd ethernet_test.ngd ethernet_test.pcf 
+par -w -intstyle ise -ol high -mt off ethernet_test_map.ncd ethernet_test.ncd ethernet_test.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml ethernet_test.twx ethernet_test.ncd -o ethernet_test.twr ethernet_test.pcf -ucf eth_test.ucf 
+bitgen -intstyle ise -f ethernet_test.ut ethernet_test.ncd 

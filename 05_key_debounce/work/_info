@@ -1,0 +1,104 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\BaiduYunDownload\AX516.190526\demo\05_key_debounce
+T_opt
+Z1 V5?Ci_4olPVkiiZMLb2J2N1
+Z2 04 15 4 work key_debounce_tb fast 0
+Z3 04 4 4 work glbl fast 0
+Z4 =1-2c534a01a10c-5cd38701-9e-1f88
+Z5 o-quiet -auto_acc_if_foreign -work work -L xilinxcorelib_ver -L unisims_ver -L unimacro_ver -L secureip +acc
+Z6 n@_opt
+Z7 OL;O;10.1c;51
+Z8 dE:\BaiduYunDownload\AX516.190526\demo\05_key_debounce
+vax_debounce
+Z9 !s100 SNjIfPj3T`mR8iC9@F7Od1
+Z10 IhHIId5P]Zl4Dm^OeOoaY92
+Z11 V4@R`obMo:4X2e82_YSOD<1
+R8
+Z12 w1512467016
+Z13 8src/ax_debounce.v
+Z14 Fsrc/ax_debounce.v
+L0 31
+Z15 OL;L;10.1c;51
+r1
+31
+Z16 !s90 -reportprogress|300|src/ax_debounce.v|
+Z17 o-L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF
+Z18 !s108 1558088775.547000
+Z19 !s107 src/ax_debounce.v|
+!i10b 1
+!s85 0
+vcount_m10
+Z20 !s100 E4<OCGCP3K<6L8l1E^iQ]1
+Z21 Ie3GY_M4R_`4=AeECM[LZO3
+Z22 V]U;hj8:jEAdA1zbaX2H5a0
+R8
+R12
+Z23 8src/count_m10.v
+Z24 Fsrc/count_m10.v
+L0 30
+R15
+r1
+31
+Z25 !s90 -reportprogress|300|src/count_m10.v|
+R17
+Z26 !s108 1558088775.392000
+Z27 !s107 src/count_m10.v|
+!i10b 1
+!s85 0
+vglbl
+!i10b 1
+Z28 !s100 4BUMBVf6Tzc2Z4KLdBM[:3
+Z29 ID_fMj]QBM>Ecj5LGgB3e62
+Z30 VM[9mS]S:KA1i4VeCMX35[3
+R8
+Z31 w1381681120
+Z32 8C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+Z33 FC:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v
+L0 5
+R15
+r1
+!s85 0
+31
+!s108 1558088775.978000
+!s107 C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+Z34 !s90 -reportprogress|300|C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v|
+R17
+vkey_debounce
+Z35 !s100 cFofF^=;oo@Nma4gPd8R?2
+Z36 Im7H4GXYdQj]7K2]BbnOh`0
+Z37 VZ7kXHIAhRD[ne2kg:X1Qm1
+R8
+Z38 w1557304251
+Z39 8src/key_debounce.v
+Z40 Fsrc/key_debounce.v
+L0 29
+R15
+r1
+31
+Z41 !s90 -reportprogress|300|src/key_debounce.v|
+R17
+Z42 !s108 1558088775.711000
+Z43 !s107 src/key_debounce.v|
+!i10b 1
+!s85 0
+vkey_debounce_tb
+Z44 !s100 UTl2BeW[D8acQ^_ACXR2o3
+Z45 I:BKMzfQc=0?96:beR@Z9J3
+Z46 VSKLeg2NH=f[mzNHBbU41J1
+R8
+Z47 w1557366505
+Z48 8sim/key_debounce_tb.v
+Z49 Fsim/key_debounce_tb.v
+L0 2
+R15
+r1
+31
+Z50 !s90 -reportprogress|300|sim/key_debounce_tb.v|
+R17
+!i10b 1
+!s85 0
+Z51 !s108 1558088775.861000
+Z52 !s107 sim/key_debounce_tb.v|
